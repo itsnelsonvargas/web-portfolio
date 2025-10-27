@@ -16,6 +16,7 @@
 /public/build
 /public/hot
 /public/storage
+/resources/views/seminars/
 /storage/*.key
 /storage/pail
 /vendor
@@ -23,4 +24,4 @@ Homestead.json
 Homestead.yaml
 Thumbs.db
 .claude/
-".claude/" 
+".claude/"

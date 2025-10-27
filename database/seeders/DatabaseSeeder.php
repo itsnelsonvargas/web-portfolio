@@ -51,34 +51,41 @@ class DatabaseSeeder extends Seeder
             'order' => 3,
         ]);
 
-        // Seed Skills
+        // Seed Skills - Balanced distribution (5 skills per category)
         // Backend
-        \App\Models\Skill::create(['name' => 'PHP', 'icon' => '🐘', 'category' => 'Backend', 'proficiency' => 95, 'order' => 1]);
-        \App\Models\Skill::create(['name' => 'Laravel', 'icon' => '⚡', 'category' => 'Backend', 'proficiency' => 90, 'order' => 2]);
-        \App\Models\Skill::create(['name' => 'Node.js', 'icon' => '🟢', 'category' => 'Backend', 'proficiency' => 85, 'order' => 3]);
-        \App\Models\Skill::create(['name' => 'Python', 'icon' => '🐍', 'category' => 'Backend', 'proficiency' => 75, 'order' => 4]);
-        \App\Models\Skill::create(['name' => 'REST APIs', 'icon' => '🔌', 'category' => 'Backend', 'proficiency' => 90, 'order' => 5]);
+        \App\Models\Skill::create(['name' => 'PHP', 'icon' => '🐘', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg', 'category' => 'Backend', 'proficiency' => 95, 'order' => 1]);
+        \App\Models\Skill::create(['name' => 'Laravel', 'icon' => '⚡', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg', 'category' => 'Backend', 'proficiency' => 90, 'order' => 2]);
+        \App\Models\Skill::create(['name' => 'Node.js', 'icon' => '🟢', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg', 'category' => 'Backend', 'proficiency' => 85, 'order' => 3]);
+        \App\Models\Skill::create(['name' => 'Express.js', 'icon' => '🚂', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg', 'category' => 'Backend', 'proficiency' => 80, 'order' => 4]);
+        \App\Models\Skill::create(['name' => 'REST APIs', 'icon' => '🔌', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg', 'category' => 'Backend', 'proficiency' => 90, 'order' => 5]);
 
         // Frontend
-        \App\Models\Skill::create(['name' => 'JavaScript', 'icon' => '📜', 'category' => 'Frontend', 'proficiency' => 90, 'order' => 6]);
-        \App\Models\Skill::create(['name' => 'TypeScript', 'icon' => '📘', 'category' => 'Frontend', 'proficiency' => 85, 'order' => 7]);
-        \App\Models\Skill::create(['name' => 'React', 'icon' => '⚛️', 'category' => 'Frontend', 'proficiency' => 85, 'order' => 8]);
-        \App\Models\Skill::create(['name' => 'Vue.js', 'icon' => '💚', 'category' => 'Frontend', 'proficiency' => 80, 'order' => 9]);
-        \App\Models\Skill::create(['name' => 'Tailwind CSS', 'icon' => '🎨', 'category' => 'Frontend', 'proficiency' => 90, 'order' => 10]);
-        \App\Models\Skill::create(['name' => 'HTML/CSS', 'icon' => '🌐', 'category' => 'Frontend', 'proficiency' => 95, 'order' => 11]);
+        \App\Models\Skill::create(['name' => 'JavaScript', 'icon' => '📜', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg', 'category' => 'Frontend', 'proficiency' => 90, 'order' => 6]);
+        \App\Models\Skill::create(['name' => 'TypeScript', 'icon' => '📘', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg', 'category' => 'Frontend', 'proficiency' => 85, 'order' => 7]);
+        \App\Models\Skill::create(['name' => 'React', 'icon' => '⚛️', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg', 'category' => 'Frontend', 'proficiency' => 85, 'order' => 8]);
+        \App\Models\Skill::create(['name' => 'Vue.js', 'icon' => '💚', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg', 'category' => 'Frontend', 'proficiency' => 80, 'order' => 9]);
+        \App\Models\Skill::create(['name' => 'HTML/CSS', 'icon' => '🌐', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg', 'category' => 'Frontend', 'proficiency' => 95, 'order' => 10]);
 
         // Database
-        \App\Models\Skill::create(['name' => 'MySQL', 'icon' => '🐬', 'category' => 'Database', 'proficiency' => 85, 'order' => 12]);
-        \App\Models\Skill::create(['name' => 'PostgreSQL', 'icon' => '🐘', 'category' => 'Database', 'proficiency' => 75, 'order' => 13]);
-        \App\Models\Skill::create(['name' => 'MongoDB', 'icon' => '🍃', 'category' => 'Database', 'proficiency' => 70, 'order' => 14]);
-        \App\Models\Skill::create(['name' => 'Redis', 'icon' => '⚡', 'category' => 'Database', 'proficiency' => 80, 'order' => 15]);
+        \App\Models\Skill::create(['name' => 'MySQL', 'icon' => '🐬', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg', 'category' => 'Database', 'proficiency' => 85, 'order' => 11]);
+        \App\Models\Skill::create(['name' => 'PostgreSQL', 'icon' => '🐘', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg', 'category' => 'Database', 'proficiency' => 75, 'order' => 12]);
+        \App\Models\Skill::create(['name' => 'MongoDB', 'icon' => '🍃', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg', 'category' => 'Database', 'proficiency' => 70, 'order' => 13]);
+        \App\Models\Skill::create(['name' => 'Redis', 'icon' => '⚡', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg', 'category' => 'Database', 'proficiency' => 80, 'order' => 14]);
+        \App\Models\Skill::create(['name' => 'Tailwind CSS', 'icon' => '🎨', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg', 'category' => 'Database', 'proficiency' => 90, 'order' => 15]);
 
         // DevOps & Tools
-        \App\Models\Skill::create(['name' => 'Git', 'icon' => '📦', 'category' => 'DevOps & Tools', 'proficiency' => 90, 'order' => 16]);
-        \App\Models\Skill::create(['name' => 'Docker', 'icon' => '🐳', 'category' => 'DevOps & Tools', 'proficiency' => 80, 'order' => 17]);
-        \App\Models\Skill::create(['name' => 'AWS', 'icon' => '☁️', 'category' => 'DevOps & Tools', 'proficiency' => 75, 'order' => 18]);
-        \App\Models\Skill::create(['name' => 'CI/CD', 'icon' => '🔄', 'category' => 'DevOps & Tools', 'proficiency' => 70, 'order' => 19]);
-        \App\Models\Skill::create(['name' => 'Linux', 'icon' => '🐧', 'category' => 'DevOps & Tools', 'proficiency' => 85, 'order' => 20]);
+        \App\Models\Skill::create(['name' => 'Git', 'icon' => '📦', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg', 'category' => 'DevOps', 'proficiency' => 90, 'order' => 16]);
+        \App\Models\Skill::create(['name' => 'Docker', 'icon' => '🐳', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg', 'category' => 'DevOps', 'proficiency' => 80, 'order' => 17]);
+        \App\Models\Skill::create(['name' => 'AWS', 'icon' => '☁️', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg', 'category' => 'DevOps', 'proficiency' => 75, 'order' => 18]);
+        \App\Models\Skill::create(['name' => 'CI/CD', 'icon' => '🔄', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg', 'category' => 'DevOps', 'proficiency' => 70, 'order' => 19]);
+        \App\Models\Skill::create(['name' => 'Linux', 'icon' => '🐧', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg', 'category' => 'DevOps', 'proficiency' => 85, 'order' => 20]);
+
+        // Programming Languages
+        \App\Models\Skill::create(['name' => 'Java', 'icon' => '☕', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg', 'category' => 'Programming Languages', 'proficiency' => 80, 'order' => 21]);
+        \App\Models\Skill::create(['name' => 'Python', 'icon' => '🐍', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg', 'category' => 'Programming Languages', 'proficiency' => 85, 'order' => 22]);
+        \App\Models\Skill::create(['name' => 'C#', 'icon' => '🔷', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg', 'category' => 'Programming Languages', 'proficiency' => 75, 'order' => 23]);
+        \App\Models\Skill::create(['name' => 'C++', 'icon' => '⚙️', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg', 'category' => 'Programming Languages', 'proficiency' => 70, 'order' => 24]);
+        \App\Models\Skill::create(['name' => 'VB.NET', 'icon' => '💎', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg', 'category' => 'Programming Languages', 'proficiency' => 65, 'order' => 25]);
 
         // Social links are now in .env file, not database
 

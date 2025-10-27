@@ -156,6 +156,30 @@
                 transform: scale(1.05);
             }
         }
+
+        /* Infinite Scroll Animation for Skills */
+        .scroll-container {
+            animation: scroll 5.33s linear infinite;
+        }
+
+        .scroll-container:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Skill card hover effects */
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
+        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -295,7 +319,7 @@
                         <div class="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-gradient-to-br from-slate-900 to-slate-800 border-2 border-blue-500/30 px-10 py-5 rounded-xl shadow-2xl backdrop-blur-md">
                             <div class="flex items-center gap-6">
                                 <div class="text-center border-r-2 border-slate-700 pr-6">
-                                    <div class="text-3xl font-black bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">{{ $about->large_scale_projects }}++</div>
+                                    <div class="text-3xl font-black bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">{{ $about->years_of_experience }}+</div>
                                     <div class="text-xs text-slate-400 font-bold uppercase tracking-widest mt-1">Years</div>
                                 </div>
                                 <div class="text-center">
@@ -336,14 +360,14 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div class="group relative bg-gradient-to-br from-slate-800 to-slate-900 p-8 rounded-2xl border-2 border-slate-700 hover:border-blue-500 transition-all duration-300 transform hover:-translate-y-2">
                         <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-blue-600/20 to-transparent rounded-bl-full"></div>
-                        <div class="text-5xl font-black bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-3">{{ $projects->count() }}+</div>
+                        <div class="text-5xl font-black bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-3">{{ $about->large_scale_projects }}+</div>
                         <div class="text-slate-300 font-bold text-lg uppercase tracking-wide">Large projects</div>
                         <div class="mt-4 w-12 h-1 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full group-hover:w-full transition-all duration-300"></div>
                     </div>
 
                     <div class="group relative bg-gradient-to-br from-slate-800 to-slate-900 p-8 rounded-2xl border-2 border-slate-700 hover:border-cyan-500 transition-all duration-300 transform hover:-translate-y-2">
                         <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-cyan-600/20 to-transparent rounded-bl-full"></div>
-                        <div class="text-5xl font-black bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-3">5+</div>
+                        <div class="text-5xl font-black bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-3">{{ $about->years_of_experience }}+</div>
                         <div class="text-slate-300 font-bold text-lg uppercase tracking-wide">Years Experience</div>
                         <div class="mt-4 w-12 h-1 bg-gradient-to-r from-cyan-600 to-blue-500 rounded-full group-hover:w-full transition-all duration-300"></div>
                     </div>
@@ -367,14 +391,14 @@
 
         <div class="container mx-auto px-4 relative z-10">
             <div class="text-center mb-16">
-                <h2 class="text-5xl md:text-6xl font-black text-white mb-4">Achievements & Recognition</h2>
+                <h2 class="text-5xl md:text-6xl font-black text-white mb-4">Certificates & Achievements</h2>
                 <div class="flex justify-center gap-2 items-center mb-4">
                     <div class="h-1 w-24 bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 rounded-full"></div>
                 </div>
-                <p class="text-slate-400 text-lg">Certifications, awards, and milestones earned throughout my career</p>
+                <p class="text-slate-400 text-lg">Professional certifications, seminars, webinars, and recognitions</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 @foreach($achievements as $achievement)
                 <div class="group bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl border-2 border-slate-700 hover:border-blue-500 p-6 transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden">
                     <!-- Type badge -->
@@ -484,13 +508,13 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-20 md:py-32 bg-slate-900 relative overflow-hidden">
+    <section id="skills" class="py-20 md:py-32 bg-slate-900 relative overflow-x-clip">
         <!-- Background -->
         <div class="absolute inset-0 bg-grid-pattern opacity-[0.02]"></div>
         <div class="absolute top-1/2 right-0 w-96 h-96 bg-blue-600/10 rounded-full filter blur-3xl"></div>
 
-        <div class="container mx-auto px-4 relative z-10">
-            <div class="text-center mb-16">
+        <div class="relative z-10">
+            <div class="text-center mb-16 container mx-auto px-4">
                 <h2 class="text-5xl md:text-6xl font-black text-white mb-4">Skills & Expertise</h2>
                 <div class="flex justify-center gap-2 items-center mb-4">
                     <div class="h-1 w-24 bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 rounded-full"></div>
@@ -498,39 +522,138 @@
                 <p class="text-slate-400 text-lg">Technologies I work with</p>
             </div>
 
-            <div class="max-w-5xl mx-auto">
+            <div class="space-y-16">
                 @php
                     $categories = $skills->groupBy('category');
                 @endphp
                 @foreach($categories as $category => $categorySkills)
-                <div class="mb-12">
-                    <h3 class="text-3xl font-black text-white mb-8 flex items-center gap-3">
-                        <span class="text-blue-400">//</span>
-                        {{ $category }}
+                <div class="relative w-full">
+                    <!-- Category Title - Centered -->
+                    <h3 class="text-3xl md:text-4xl font-black text-white text-center mb-8">
+                        <span class="text-blue-400">//</span> {{ $category }}
                     </h3>
-                    <div class="space-y-6">
-                        @foreach($categorySkills as $skill)
-                        <div class="skill-item group">
-                            <div class="flex justify-between mb-3">
-                                <div class="flex items-center gap-3">
-                                    @if($skill->icon)
-                                    <span class="text-2xl">{{ $skill->icon }}</span>
-                                    @endif
-                                    <span class="font-bold text-slate-200 text-lg">{{ $skill->name }}</span>
+
+                    <!-- Scrolling Container - Full Width -->
+                    <div class="relative overflow-hidden py-4 w-full">
+                        <div class="scroll-container flex {{ $category === 'Database' ? 'gap-24' : 'gap-6' }} animate-scroll">
+                            @foreach($categorySkills as $skill)
+                            <div class="skill-card flex-shrink-0 bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl border-2 border-slate-700 hover:border-blue-500 transition-all duration-300 p-4 w-48">
+                                <div class="flex flex-col items-center gap-3">
+                                    <div class="w-14 h-14 flex items-center justify-center bg-white rounded-lg p-2 shadow-lg">
+                                        @if($skill->logo_url)
+                                        <img src="{{ $skill->logo_url }}" alt="{{ $skill->name }}" class="w-full h-full object-contain">
+                                        @else
+                                        <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-500 to-cyan-500 rounded text-white font-black text-lg">
+                                            {{ strtoupper(substr($skill->name, 0, 2)) }}
+                                        </div>
+                                        @endif
+                                    </div>
+                                    <div class="text-center w-full">
+                                        <div class="font-bold text-slate-200 text-base mb-2">{{ $skill->name }}</div>
+                                        <div class="w-full bg-slate-800 rounded-full h-1.5 overflow-hidden mb-1.5">
+                                            <div class="skill-bar bg-gradient-to-r from-blue-600 to-cyan-500 h-1.5 rounded-full" data-width="{{ $skill->proficiency }}" style="width: 0%"></div>
+                                        </div>
+                                        <span class="text-blue-400 font-bold text-xs">{{ $skill->proficiency }}%</span>
+                                    </div>
                                 </div>
-                                <span class="text-blue-400 font-black text-lg">{{ $skill->proficiency }}%</span>
                             </div>
-                            <div class="w-full bg-slate-800 rounded-full h-3 overflow-hidden border border-slate-700">
-                                <div class="skill-bar bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-500 h-3 rounded-full relative" data-width="{{ $skill->proficiency }}" style="width: 0%">
-                                    <div class="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 animate-pulse"></div>
+                            @endforeach
+                            <!-- Duplicate items for seamless loop -->
+                            @foreach($categorySkills as $skill)
+                            <div class="skill-card flex-shrink-0 bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl border-2 border-slate-700 hover:border-blue-500 transition-all duration-300 p-4 w-48">
+                                <div class="flex flex-col items-center gap-3">
+                                    <div class="w-14 h-14 flex items-center justify-center bg-white rounded-lg p-2 shadow-lg">
+                                        @if($skill->logo_url)
+                                        <img src="{{ $skill->logo_url }}" alt="{{ $skill->name }}" class="w-full h-full object-contain">
+                                        @else
+                                        <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-500 to-cyan-500 rounded text-white font-black text-lg">
+                                            {{ strtoupper(substr($skill->name, 0, 2)) }}
+                                        </div>
+                                        @endif
+                                    </div>
+                                    <div class="text-center w-full">
+                                        <div class="font-bold text-slate-200 text-base mb-2">{{ $skill->name }}</div>
+                                        <div class="w-full bg-slate-800 rounded-full h-1.5 overflow-hidden mb-1.5">
+                                            <div class="skill-bar bg-gradient-to-r from-blue-600 to-cyan-500 h-1.5 rounded-full" data-width="{{ $skill->proficiency }}" style="width: 0%"></div>
+                                        </div>
+                                        <span class="text-blue-400 font-bold text-xs">{{ $skill->proficiency }}%</span>
+                                    </div>
                                 </div>
                             </div>
+                            @endforeach
                         </div>
-                        @endforeach
                     </div>
                 </div>
                 @endforeach
             </div>
+        </div>
+    </section>
+
+    <!-- Seminars, Webinars, and Trainings Section -->
+    <section id="seminars" class="py-20 md:py-32 bg-slate-900 relative overflow-hidden">
+        <!-- Background -->
+        <div class="absolute inset-0 bg-grid-pattern opacity-[0.02]"></div>
+        <div class="absolute top-0 right-1/4 w-96 h-96 bg-purple-600/10 rounded-full filter blur-3xl"></div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl md:text-6xl font-black text-white mb-4">Seminars, Webinars, and Trainings</h2>
+                <div class="flex justify-center gap-2 items-center mb-6">
+                    <div class="h-1 w-24 bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 rounded-full"></div>
+                </div>
+                <p class="text-slate-400 text-xl max-w-2xl mx-auto">Explore certificates and materials from professional development sessions</p>
+            </div>
+
+            @if(count($seminars) > 0)
+            <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8 gap-3 max-w-7xl mx-auto">
+                @foreach($seminars as $seminar)
+                <a href="{{ $seminar['url'] }}" target="_blank" class="group block" style="aspect-ratio: 1 / 1.3;">
+                    <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-lg border border-slate-700 hover:border-purple-500 transition-all duration-300 overflow-hidden flex flex-col hover:shadow-lg hover:shadow-purple-500/20 hover:-translate-y-1 h-full">
+                        <!-- Icon/Thumbnail -->
+                        <div class="relative flex-shrink-0 bg-gradient-to-br from-purple-600 to-pink-600" style="height: 50%; overflow: hidden;">
+                            @if($seminar['is_image'])
+                                <!-- Display actual image -->
+                                <img src="{{ $seminar['url'] }}" alt="{{ $seminar['name'] }}" class="w-full h-full object-cover" style="display: block;">
+                            @elseif($seminar['extension'] === 'pdf')
+                                <!-- Embed PDF preview -->
+                                <div style="width: 100%; height: 100%; overflow: hidden;">
+                                    <iframe src="{{ $seminar['url'] }}#view=FitH&toolbar=0&navpanes=0&scrollbar=0" style="width: 100%; height: 100%; border: 0; overflow: hidden; pointer-events: none; display: block;" scrolling="no"></iframe>
+                                </div>
+                            @else
+                                <!-- Default icon for other file types -->
+                                <div class="w-full h-full p-4 flex items-center justify-center relative">
+                                    <div class="absolute inset-0 bg-black/10"></div>
+                                    <svg class="w-6 h-6 text-white relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                    </svg>
+                                </div>
+                            @endif
+                        </div>
+
+                        <!-- Content -->
+                        <div class="p-3 flex-1 flex flex-col justify-between" style="height: 50%;">
+                            <h3 class="text-white font-medium text-[11px] line-clamp-3 group-hover:text-purple-400 transition-colors leading-tight overflow-hidden" style="height: 3.3em;">{{ $seminar['name'] }}</h3>
+
+                            <div class="mt-auto pt-2">
+                                <span class="px-2 py-1 text-[9px] font-semibold rounded text-center {{ $seminar['badge_class'] }} block truncate">
+                                    {{ $seminar['type'] }}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                @endforeach
+            </div>
+            @else
+            <div class="text-center py-12">
+                <div class="inline-block p-6 bg-slate-800/50 rounded-2xl border-2 border-slate-700">
+                    <svg class="w-16 h-16 text-slate-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                    </svg>
+                    <p class="text-slate-400 text-lg">No seminars or webinars available yet</p>
+                </div>
+            </div>
+            @endif
         </div>
     </section>
 
