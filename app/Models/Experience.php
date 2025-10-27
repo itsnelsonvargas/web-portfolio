@@ -15,7 +15,6 @@ class Experience extends Model
         'is_current',
         'description',
         'responsibilities',
-        'order',
     ];
 
     protected $casts = [

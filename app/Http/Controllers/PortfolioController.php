@@ -8,6 +8,7 @@ use App\Models\Skill;
 use App\Models\SocialLink;
 use App\Models\ContactMessage;
 use App\Models\Achievement;
+use App\Models\CharacterReference;
 use Illuminate\Http\Request;
 
 class PortfolioController extends Controller
@@ -48,14 +49,15 @@ class PortfolioController extends Controller
         ];
 
         // Keep database queries for projects, skills, and achievements
-        $projects = Project::orderBy('order')->get();
-        $skills = Skill::orderBy('order')->get();
-        $achievements = Achievement::orderBy('order')->get();
+        $projects = Project::all();
+        $skills = Skill::all();
+        $achievements = Achievement::all();
+        $characterReferences = CharacterReference::all();
 
         // Load seminars from public/seminars folder
         $seminars = $this->getSeminars();
 
-        return view('portfolio.index', compact('profile', 'projects', 'skills', 'socialLinks', 'achievements', 'about', 'seminars'));
+        return view('portfolio.index', compact('profile', 'projects', 'skills', 'socialLinks', 'achievements', 'about', 'seminars', 'characterReferences'));
     }
 
     /**

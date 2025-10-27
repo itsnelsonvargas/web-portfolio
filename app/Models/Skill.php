@@ -8,10 +8,8 @@ class Skill extends Model
 {
     protected $fillable = [
         'name',
-        'icon',
         'logo_url',
         'category',
         'proficiency',
-        'order',
     ];
 }

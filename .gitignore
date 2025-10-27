@@ -25,3 +25,7 @@ Homestead.yaml
 Thumbs.db
 .claude/
 ".claude/"
+
+# Ignore all seminar files
+/public/seminars/*
+!/public/seminars/.gitkeep

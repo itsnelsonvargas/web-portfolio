@@ -14,7 +14,6 @@ class Project extends Model
         'github_url',
         'technologies',
         'featured',
-        'order'
     ];
 
     protected $casts = [

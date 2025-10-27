@@ -485,7 +485,7 @@
                         <div class="flex gap-4 pt-4 border-t border-slate-700">
                             @if($project->demo_url)
                             <a href="{{ $project->demo_url }}" target="_blank" class="flex items-center gap-2 text-blue-400 hover:text-blue-300 font-bold transition group/link">
-                                <span>Live Demo</span>
+                                <span>Link</span>
                                 <svg class="w-4 h-4 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                                 </svg>
@@ -607,23 +607,23 @@
             @if(count($seminars) > 0)
             <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8 gap-3 max-w-7xl mx-auto">
                 @foreach($seminars as $seminar)
-                <a href="{{ $seminar['url'] }}" target="_blank" class="group block" style="aspect-ratio: 1 / 1.3;">
-                    <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-lg border border-slate-700 hover:border-purple-500 transition-all duration-300 overflow-hidden flex flex-col hover:shadow-lg hover:shadow-purple-500/20 hover:-translate-y-1 h-full">
+                <a href="{{ $seminar['url'] }}" target="_blank" class="group block" style="aspect-ratio: 1 / 1.3; overflow: hidden;">
+                    <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-lg border border-slate-700 hover:border-purple-500 transition-all duration-300 flex flex-col hover:shadow-lg hover:shadow-purple-500/20 hover:-translate-y-1 h-full" style="overflow: hidden;">
                         <!-- Icon/Thumbnail -->
-                        <div class="relative flex-shrink-0 bg-gradient-to-br from-purple-600 to-pink-600" style="height: 50%; overflow: hidden;">
+                        <div class="relative flex-shrink-0 bg-gradient-to-br from-purple-600 to-pink-600" style="height: 50%; overflow: hidden; position: relative;">
                             @if($seminar['is_image'])
                                 <!-- Display actual image -->
-                                <img src="{{ $seminar['url'] }}" alt="{{ $seminar['name'] }}" class="w-full h-full object-cover" style="display: block;">
+                                <img src="{{ $seminar['url'] }}" alt="{{ $seminar['name'] }}" style="width: 130%; height: 130%; object-fit: cover; display: block; transform: scale(1.0); transform-origin: top left; margin-left: -15%; margin-top: -15%;">
                             @elseif($seminar['extension'] === 'pdf')
                                 <!-- Embed PDF preview -->
-                                <div style="width: 100%; height: 100%; overflow: hidden;">
-                                    <iframe src="{{ $seminar['url'] }}#view=FitH&toolbar=0&navpanes=0&scrollbar=0" style="width: 100%; height: 100%; border: 0; overflow: hidden; pointer-events: none; display: block;" scrolling="no"></iframe>
+                                <div style="width: 100%; height: 100%; overflow: hidden; position: relative;">
+                                    <iframe src="{{ $seminar['url'] }}#view=FitH&toolbar=0&navpanes=0&scrollbar=0" style="width: 130%; height: 130%; border: 0; pointer-events: none; display: block; position: absolute; top: -15%; left: -15%;" scrolling="no"></iframe>
                                 </div>
                             @else
                                 <!-- Default icon for other file types -->
-                                <div class="w-full h-full p-4 flex items-center justify-center relative">
-                                    <div class="absolute inset-0 bg-black/10"></div>
-                                    <svg class="w-6 h-6 text-white relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <div style="width: 100%; height: 100%; padding: 1rem; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+                                    <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.1);"></div>
+                                    <svg style="width: 1.5rem; height: 1.5rem; color: white; position: relative; z-index: 10;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                                     </svg>
                                 </div>
@@ -652,6 +652,93 @@
                     </svg>
                     <p class="text-slate-400 text-lg">No seminars or webinars available yet</p>
                 </div>
+            </div>
+            @endif
+        </div>
+    </section>
+
+    <!-- Character References Section -->
+    <section id="references" class="py-20 md:py-32 bg-slate-900 relative overflow-hidden">
+        <!-- Background -->
+        <div class="absolute inset-0 bg-grid-pattern opacity-[0.02]"></div>
+        <div class="absolute top-0 right-1/4 w-96 h-96 bg-purple-600/10 rounded-full filter blur-3xl"></div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                    <span class="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+                        Character References
+                    </span>
+                </h2>
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+                    Testimonials from professionals I've had the privilege to work with
+                </p>
+            </div>
+
+            @if(count($characterReferences) > 0)
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                @foreach($characterReferences as $reference)
+                <div class="group bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl border border-slate-700 hover:border-purple-500 transition-all duration-300 overflow-hidden">
+                    <div class="p-6">
+                        <!-- Profile Header -->
+                        <div class="flex items-start gap-4 mb-4">
+                            <div class="flex-shrink-0">
+                                @if($reference->image)
+                                <img src="{{ $reference->image }}" alt="{{ $reference->name }}" class="w-16 h-16 rounded-full border-2 border-purple-500/50">
+                                @else
+                                <div class="w-16 h-16 rounded-full bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center text-white text-xl font-bold">
+                                    {{ substr($reference->name, 0, 1) }}
+                                </div>
+                                @endif
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <h3 class="text-lg font-bold text-white mb-1">{{ $reference->name }}</h3>
+                                <p class="text-sm text-slate-400 mb-1">{{ $reference->position }}</p>
+                                <p class="text-sm text-purple-400">{{ $reference->company }}</p>
+                            </div>
+                        </div>
+
+                        <!-- Relationship Badge -->
+                        <div class="mb-4">
+                            <span class="inline-block px-3 py-1 text-xs font-medium rounded-full bg-purple-500/20 text-purple-400 border border-purple-500/30">
+                                {{ $reference->relationship }}
+                            </span>
+                        </div>
+
+                        <!-- Testimonial -->
+                        <div class="mb-4">
+                            <p class="text-slate-300 text-sm leading-relaxed italic">
+                                "{{ $reference->testimonial }}"
+                            </p>
+                        </div>
+
+                        <!-- Contact Info -->
+                        <div class="pt-4 border-t border-slate-700 space-y-2">
+                            <div class="flex items-center gap-2 text-sm text-slate-400">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                </svg>
+                                <a href="mailto:{{ $reference->email }}" class="hover:text-purple-400 transition-colors">
+                                    {{ $reference->email }}
+                                </a>
+                            </div>
+                            @if($reference->phone)
+                            <div class="flex items-center gap-2 text-sm text-slate-400">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                                </svg>
+                                <span>{{ $reference->phone }}</span>
+                            </div>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+            @else
+            <div class="text-center py-12">
+                <p class="text-slate-400">No character references available at the moment.</p>
             </div>
             @endif
         </div>

@@ -17,7 +17,6 @@ class Education extends Model
         'description',
         'grade',
         'achievements',
-        'order',
     ];
 
     protected $casts = [

@@ -14,7 +14,6 @@ class Achievement extends Model
         'date',
         'icon',
         'url',
-        'order',
     ];
 
     protected $casts = [
