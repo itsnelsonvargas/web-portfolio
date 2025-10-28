@@ -11,14 +11,22 @@ COPY package*.json ./
 # Install dependencies
 RUN npm ci
 
-# Copy source files needed for build
+# Copy necessary files for Vite build
 COPY vite.config.js ./
 COPY tailwind.config.js ./
 COPY resources ./resources
+
+# Copy public directory (needed for Vite, but build folder will be ignored)
 COPY public ./public
 
-# Build assets
-RUN npm run build
+# Remove any existing build artifacts
+RUN rm -rf public/build public/hot
+
+# Build assets with verbose logging
+RUN echo "Building frontend assets..." \
+    && npm run build \
+    && echo "Build complete. Contents of public/build:" \
+    && ls -la public/build/ || echo "ERROR: Build directory not created!"
 
 # Stage 2: PHP dependencies
 FROM composer:2 AS backend
@@ -74,6 +82,12 @@ COPY --from=backend /app /var/www/html
 
 # Copy built assets from frontend stage
 COPY --from=frontend /app/public/build /var/www/html/public/build
+
+# Verify build assets were copied
+RUN echo "Verifying build assets..." \
+    && ls -la /var/www/html/public/build/ \
+    && cat /var/www/html/public/build/manifest.json \
+    || echo "WARNING: Build assets missing!"
 
 # Create necessary directories
 RUN mkdir -p \
