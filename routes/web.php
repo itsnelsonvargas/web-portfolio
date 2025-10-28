@@ -10,6 +10,11 @@ Route::get('/health', function () {
     return response('healthy', 200)->header('Content-Type', 'text/plain');
 });
 
+// Test route to verify routing works
+Route::get('/test', function () {
+    return response()->json(['message' => 'Routes are working!', 'time' => now()]);
+});
+
 // TEMPORARY SEEDER ROUTE - DELETE AFTER USE!
 Route::get('/run-seeder-secret-12345', function() {
     try {
