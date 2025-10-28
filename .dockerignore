@@ -37,10 +37,11 @@ phpunit.xml
 /storage/framework/views
 /bootstrap/cache/*
 
-# Build artifacts
+# Build artifacts (these will be rebuilt in Docker)
 /public/hot
 /public/storage
 /public/build
+!/public/build/.gitkeep
 
 # Vendor (will be installed in container)
 /vendor

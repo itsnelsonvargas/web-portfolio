@@ -11,15 +11,22 @@ COPY package*.json ./
 # Install dependencies
 RUN npm ci
 
-# Copy source files needed for build
+# Copy necessary files for Vite build
 COPY vite.config.js ./
-COPY postcss.config.js ./
 COPY tailwind.config.js ./
 COPY resources ./resources
+
+# Copy public directory (needed for Vite, but build folder will be ignored)
 COPY public ./public
 
-# Build assets
-RUN npm run build
+# Remove any existing build artifacts
+RUN rm -rf public/build public/hot
+
+# Build assets with verbose logging
+RUN echo "Building frontend assets..." \
+    && npm run build \
+    && echo "Build complete. Contents of public/build:" \
+    && ls -la public/build/ || echo "ERROR: Build directory not created!"
 
 # Stage 2: PHP dependencies
 FROM composer:2 AS backend
@@ -76,6 +83,12 @@ COPY --from=backend /app /var/www/html
 # Copy built assets from frontend stage
 COPY --from=frontend /app/public/build /var/www/html/public/build
 
+# Verify build assets were copied
+RUN echo "Verifying build assets..." \
+    && ls -la /var/www/html/public/build/ \
+    && cat /var/www/html/public/build/manifest.json \
+    || echo "WARNING: Build assets missing!"
+
 # Create necessary directories
 RUN mkdir -p \
     /var/www/html/storage/framework/sessions \
@@ -84,7 +97,8 @@ RUN mkdir -p \
     /var/www/html/storage/logs \
     /var/www/html/bootstrap/cache \
     /var/www/html/database \
-    /run/nginx
+    /run/nginx \
+    /var/log/supervisor
 
 # Set permissions
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache /var/www/html/database \
@@ -108,13 +122,10 @@ RUN echo "opcache.enable=1" >> /usr/local/etc/php/conf.d/opcache.ini \
 # Expose port (Render will use this)
 EXPOSE 8080
 
-# Switch to www-data user
-USER www-data
-
 # Health check
 HEALTHCHECK --interval=30s --timeout=3s --start-period=40s \
     CMD curl -f http://localhost:8080/health || exit 1
 
-# Start supervisor
+# Start supervisor (runs as root, but processes run as www-data)
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
