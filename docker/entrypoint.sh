@@ -29,6 +29,15 @@ fi
 echo "[3/7] Running database migrations..."
 if php artisan migrate --force --no-interaction; then
     echo "Migrations completed successfully"
+
+    # Run seeders only if database is empty (check if projects table has data)
+    PROJECT_COUNT=$(php artisan tinker --execute="echo \App\Models\Project::count();")
+    if [ "$PROJECT_COUNT" -eq "0" ]; then
+        echo "Database is empty, running seeders..."
+        php artisan db:seed --force
+    else
+        echo "Database already has data, skipping seeders"
+    fi
 else
     echo "WARNING: Migrations failed, but continuing..."
 fi
