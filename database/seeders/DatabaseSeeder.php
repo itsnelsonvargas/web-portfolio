@@ -215,30 +215,30 @@ class DatabaseSeeder extends Seeder
         \App\Models\Achievement::create([
             'title' => 'Designated Safety and Evacuation Officer (SEO)',
             'type' => 'achievement',
-            'issuer' => 'epartment of Social Welfare and Development',
+            'issuer' => 'Department of Social Welfare and Development',
             'description' => 'Contributed to 50+ open source projects with over 1000 stars combined.',
             'date' => '2024-01-01',
             'icon' => '⭐',
-            'url' => 'https://github.com',
-        ]);
-
-        \App\Models\Achievement::create([
-            'title' => 'Google Cloud Professional',
-            'type' => 'certificate',
-            'issuer' => 'Google Cloud',
-            'description' => 'Certified in designing, developing, and managing solutions on Google Cloud Platform.',
-            'date' => '2023-03-22',
-            'icon' => '☁️',
             'url' => '#',
         ]);
 
         \App\Models\Achievement::create([
-            'title' => 'Hackathon Winner',
-            'type' => 'award',
-            'issuer' => 'Code Masters Hackathon 2022',
-            'description' => 'Led team to victory building a real-time collaboration tool in 48 hours.',
-            'date' => '2022-09-15',
-            'icon' => '💻',
+            'title' => 'Certified Six Sigma Yellow Belt',
+            'type' => 'certificate',
+            'issuer' => 'Prof. Dr. Marcelo Machado  Fernandes',
+            'description' => 'A professional certification focused on foundational knowledge of Six Sigma principles for process improvement.',
+            'date' => '2024-04-27',
+            'icon' => '📜',
+            'url' => '#',
+        ]);
+
+        \App\Models\Achievement::create([
+            'title' => 'Civil Service Eligibility - Professional Level',
+            'type' => 'certificate',
+            'issuer' => 'Civil Service Commission',
+            'description' => 'Passed the Civil Service Examination for Professional Level, demonstrating knowledge in public administration and governance.',
+            'date' => '2019-09-04',
+            'icon' => '📜',
             'url' => null,
         ]);
 
@@ -250,19 +250,19 @@ class DatabaseSeeder extends Seeder
             'relationship' => 'Collegue',
             'phone' => '0966-640-9778',
             'email' => 'lgdeaño@dswd.gov.ph',
-            'testimonial' => 'I had the pleasure of supervising this outstanding developer for over three years. Their technical expertise, dedication, and problem-solving abilities consistently exceeded expectations. They demonstrate strong leadership skills and are an invaluable asset to any team.',
+            'testimonial' => '',
             'image' => '',
         ]);
 
         \App\Models\CharacterReference::create([
             'name' => 'Engr. John Louise Noel Baloloy ',
-            'position' => 'Engineering Instructor',
+            'position' => 'Mechanical Engineer',
             'company' => 'Partido State University',
             'relationship' => 'Collegue',
             'phone' => '0906-319-4627',
-            'email' => 'michael.chen@digitalsolutions.com',
-            'testimonial' => 'Working with this developer was a true pleasure. They consistently delivered high-quality code on time and showed excellent communication skills throughout multiple complex projects. Their ability to translate business requirements into technical solutions is exceptional.',
-            'image' => 'https://ui-avatars.com/api/?name=Michael+Chen&size=200&background=10b981&color=fff',
+            'email' => 'johnlouisenoel.baloloy@parsu.edu.ph',
+            'testimonial' => 'I’ve had the privilege of working with Sir Nelson, and I can confidently say he is one of the most reliable and detail-oriented developers/instructors I’ve met.',
+            'image' => 'https://ui-avatars.com/api/?name=John+Louise+Noel+Baloloy&size=200&background=10b981&color=fff',
         ]);
 
         \App\Models\CharacterReference::create([
