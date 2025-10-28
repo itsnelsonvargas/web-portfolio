@@ -12,12 +12,7 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware): void {
         // Trust all proxies (safe on Render.com)
-        $middleware->trustProxies(at: '*', headers: [
-            'X-Forwarded-For',
-            'X-Forwarded-Host',
-            'X-Forwarded-Port',
-            'X-Forwarded-Proto',
-        ]);
+        $middleware->trustProxies(at: '*');
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
