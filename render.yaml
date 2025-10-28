@@ -1,0 +1,49 @@
+services:
+  - type: web
+    name: web-portfolio
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: APP_NAME
+        value: Web Portfolio
+      - key: APP_ENV
+        value: production
+      - key: APP_KEY
+        generateValue: true
+      - key: APP_DEBUG
+        value: false
+      - key: APP_URL
+        value: https://web-portfolio.onrender.com
+      - key: DB_CONNECTION
+        value: sqlite
+      - key: SESSION_DRIVER
+        value: database
+      - key: CACHE_STORE
+        value: database
+      - key: QUEUE_CONNECTION
+        value: database
+      - key: LOG_CHANNEL
+        value: stack
+      - key: LOG_LEVEL
+        value: error
+      - key: PORTFOLIO_NAME
+        value: Nelson Vargas
+      - key: PORTFOLIO_TITLE
+        value: Web Developer
+      - key: PORTFOLIO_BIO
+        value: Passionate web developer with 5+ years of experience building modern web applications. Specialized in Laravel and Vue.js.
+      - key: PORTFOLIO_EMAIL
+        value: itsnelsonvargas@gmail.com
+      - key: PORTFOLIO_PHONE
+        value: 0908.260.1453
+      - key: PORTFOLIO_LOCATION
+        value: Quezon City, Philippines
+      - key: PORTFOLIO_PROFILE_IMAGE
+        value: https://ui-avatars.com/api/?name=Nelson+Vargas&size=400
+      - key: PORTFOLIO_RESUME_URL
+        value: https://www.canva.com/design/DAGtyKG958Y/KpGNkYhAltA6NPCv0UywLA/view
+      - key: PORTFOLIO_SOCIAL_GITHUB
+        value: GitHub|https://github.com/itsnelsonvargas
+      - key: PORTFOLIO_SOCIAL_LINKEDIN
+        value: LinkedIn|https://www.linkedin.com/in/nelsonvargas
