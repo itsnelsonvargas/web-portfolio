@@ -4,6 +4,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\SeminarController;
 
+// Health check endpoint for Docker/Render
+Route::get('/health', function () {
+    return response('healthy', 200)->header('Content-Type', 'text/plain');
+});
+
 Route::get('/', [PortfolioController::class, 'index'])->name('portfolio.index');
 Route::post('/contact', [PortfolioController::class, 'contact'])->name('contact.submit');
 
