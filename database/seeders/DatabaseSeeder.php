@@ -22,9 +22,9 @@ class DatabaseSeeder extends Seeder
             'title' => 'Tara, Basa! Digital Portal v1',
             'description' => 'A full-featured e-commerce platform with shopping cart, payment integration, and admin dashboard. Built with Laravel and Vue.js.',
             'image' => 'https://via.placeholder.com/600x400/3b82f6/ffffff?text=E-Commerce',
-            'demo_url' => 'https://example.com/demo',
-            'github_url' => 'https://github.com/username/ecommerce',
-            'technologies' => ['Laravel', 'Bootstrap', 'MySQL', 'Stripe'],
+            'demo_url' => 'https://tbtp-staging.dswd.gov.ph',
+            'github_url' => '',
+            'technologies' => ['Laravel', 'Blade', 'Bootstrap', 'MySQL', 'jQuery'],
             'featured' => true,
         ]);
 
@@ -32,19 +32,19 @@ class DatabaseSeeder extends Seeder
             'title' => 'Tara, Basa! Digital Portal v2',
             'description' => 'A collaborative task management application with real-time updates, team collaboration features, and project tracking.',
             'image' => 'https://via.placeholder.com/600x400/10b981/ffffff?text=Task+Manager',
-            'demo_url' => 'https://example.com/tasks',
-            'github_url' => 'https://github.com/username/task-app',
-            'technologies' => ['Laravel', 'Vue.js', 'MySQL', 'Socket.io', 'Material-UI'],
+            'demo_url' => '',
+            'github_url' => '',
+            'technologies' => ['Laravel', 'Vue.js', 'MySQL', 'Tailwind CSS'],
             'featured' => true,
         ]);
 
         \App\Models\Project::create([
-            'title' => 'e-commer website',
+            'title' => 'e-commerce website',
             'description' => 'A content management system specifically designed for portfolios and creative professionals. Easy to customize and extend.',
             'image' => 'https://via.placeholder.com/600x400/8b5cf6/ffffff?text=Portfolio+CMS',
-            'demo_url' => 'https://example.com/cms',
-            'github_url' => 'https://github.com/username/portfolio-cms',
-            'technologies' => ['Laravel', 'Blade', 'Tailwind CSS', 'PostgreSQL'],
+            'demo_url' => '',
+            'github_url' => 'https://github.com/itsnelsonvargas/eGrocery',
+            'technologies' => ['Laravel', 'Blade', 'Bootstrap','jQuery', 'MySQL'],
             'featured' => false,
         ]);
 
