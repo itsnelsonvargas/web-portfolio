@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\Project::create([
             'title' => 'Tara, Basa! Digital Portal v1',
             'description' => 'A full-featured e-commerce platform with shopping cart, payment integration, and admin dashboard. Built with Laravel and Vue.js.',
-            'image' => 'https://placehold.co/600x400/3b82f6/ffffff/png?text=Tara+Basa+v1',
+            'image' => 'https://via.placeholder.com/600x400/3b82f6/ffffff?text=E-Commerce',
             'demo_url' => 'https://tbtp-staging.dswd.gov.ph',
             'github_url' => '',
             'technologies' => ['Laravel', 'Blade', 'Bootstrap', 'MySQL', 'jQuery'],
@@ -31,7 +31,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\Project::create([
             'title' => 'Tara, Basa! Digital Portal v2',
             'description' => 'A collaborative task management application with real-time updates, team collaboration features, and project tracking.',
-            'image' => 'https://placehold.co/600x400/10b981/ffffff/png?text=Tara+Basa+v2',
+            'image' => 'https://via.placeholder.com/600x400/10b981/ffffff?text=Task+Manager',
             'demo_url' => '',
             'github_url' => '',
             'technologies' => ['Laravel', 'Vue.js', 'MySQL', 'Tailwind CSS'],
@@ -41,7 +41,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\Project::create([
             'title' => 'e-commerce website',
             'description' => 'A content management system specifically designed for portfolios and creative professionals. Easy to customize and extend.',
-            'image' => 'https://placehold.co/600x400/8b5cf6/ffffff/png?text=E-Commerce',
+            'image' => 'https://via.placeholder.com/600x400/8b5cf6/ffffff?text=Portfolio+CMS',
             'demo_url' => '',
             'github_url' => 'https://github.com/itsnelsonvargas/eGrocery',
             'technologies' => ['Laravel', 'Blade', 'Bootstrap','jQuery', 'MySQL'],
@@ -250,7 +250,7 @@ class DatabaseSeeder extends Seeder
             'relationship' => 'Collegue',
             'phone' => '0966-640-9778',
             'email' => 'lgdeaño@dswd.gov.ph',
-            'testimonial' => 'As a Statistician, I handle report generation and budget-related tasks for the department. Nelson has been a reliable support, assisting in data gathering, report preparation, and the CY 2025 budget. He consistently demonstrates efficiency, adaptability, and professionalism in handling multiple tasks across our program divisions.',
+            'testimonial' => 'As a Statistician, I handle reports and budget tasks. Nelson reliably supports data gathering, report preparation, and the CY 2025 budget, consistently demonstrating efficiency, adaptability, and professionalism.'
             'image' => 'https://ui-avatars.com/api/?name=Leonard+Deano&size=200&background=8b5cf6&color=fff',
         ]);
 

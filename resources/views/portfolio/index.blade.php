@@ -527,10 +527,15 @@
                 @endphp
                 @foreach($categories as $category => $categorySkills)
                 <div class="relative w-full">
-                    <!-- Category Title - Centered -->
-                    <h3 class="text-3xl md:text-4xl font-black text-white text-center mb-8">
-                        <span class="text-blue-400">//</span> {{ $category }}
-                    </h3>
+                    <!-- Category Title - Centered with Badge Design -->
+                    <div class="flex justify-center mb-8">
+                        <div class="relative inline-block">
+                            <h3 class="text-3xl md:text-4xl font-black bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent px-8 py-3">
+                                {{ $category }}
+                            </h3>
+                            <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent rounded-full"></div>
+                        </div>
+                    </div>
 
                     <!-- Scrolling Container - Full Width -->
                     <div class="relative overflow-hidden py-4 w-full">
