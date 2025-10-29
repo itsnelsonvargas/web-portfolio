@@ -250,7 +250,7 @@ class DatabaseSeeder extends Seeder
             'relationship' => 'Collegue',
             'phone' => '0966-640-9778',
             'email' => 'lgdeaño@dswd.gov.ph',
-            'testimonial' => 'As a Statistician, I handle reports and budget tasks. Nelson reliably supports data gathering, report preparation, and the CY 2025 budget, consistently demonstrating efficiency, adaptability, and professionalism.'
+            'testimonial' => 'As a Statistician, I handle reports and budget tasks. Nelson reliably supports data gathering, report preparation, and the CY 2025 budget, consistently demonstrating efficiency, adaptability, and professionalism.',
             'image' => 'https://ui-avatars.com/api/?name=Leonard+Deano&size=200&background=8b5cf6&color=fff',
         ]);
 
