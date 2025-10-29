@@ -50,21 +50,21 @@ class DatabaseSeeder extends Seeder
 
         // Seed Skills - Balanced distribution
         // Backend
-        \App\Models\Skill::create(['name' => 'PHP', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg', 'category' => 'Backend', 'proficiency' => 95]);
+        \App\Models\Skill::create(['name' => 'PHP', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg', 'category' => 'Backend', 'proficiency' => 85]);
         \App\Models\Skill::create(['name' => 'Laravel', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg', 'category' => 'Backend', 'proficiency' => 90]);
-        \App\Models\Skill::create(['name' => 'Redis', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg', 'category' => 'Backend', 'proficiency' => 80]);
+        \App\Models\Skill::create(['name' => 'Redis', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg', 'category' => 'Backend', 'proficiency' => 70]);
 
         // Frontend
         \App\Models\Skill::create(['name' => 'JavaScript', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg', 'category' => 'Frontend', 'proficiency' => 90]);
-        \App\Models\Skill::create(['name' => 'Vue.js', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg', 'category' => 'Frontend', 'proficiency' => 85]);
+        \App\Models\Skill::create(['name' => 'Vue.js', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg', 'category' => 'Frontend', 'proficiency' => 75]);
         \App\Models\Skill::create(['name' => 'HTML/CSS', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg', 'category' => 'Frontend', 'proficiency' => 95]);
         \App\Models\Skill::create(['name' => 'Tailwind CSS', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg', 'category' => 'Frontend', 'proficiency' => 90]);
-        \App\Models\Skill::create(['name' => 'Bootstrap', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg', 'category' => 'Frontend', 'proficiency' => 85]);
+        \App\Models\Skill::create(['name' => 'Bootstrap', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg', 'category' => 'Frontend', 'proficiency' => 95]);
 
         // Database
         \App\Models\Skill::create(['name' => 'MySQL', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg', 'category' => 'Database', 'proficiency' => 85]);
         \App\Models\Skill::create(['name' => 'SQLite', 'logo_url' => '', 'category' => 'Database', 'proficiency' => 90]);
-        \App\Models\Skill::create(['name' => 'MariaDB', 'logo_url' => '', 'category' => 'Database', 'proficiency' => 90]);
+        \App\Models\Skill::create(['name' => 'MariaDB', 'logo_url' => '', 'category' => 'Database', 'proficiency' => 95]);
 
         // DevOps
         \App\Models\Skill::create(['name' => 'Git', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg', 'category' => 'DevOps', 'proficiency' => 85]);
@@ -75,24 +75,24 @@ class DatabaseSeeder extends Seeder
         // Tools
         \App\Models\Skill::create(['name' => 'VS Code', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg', 'category' => 'Tools', 'proficiency' => 95]);
         \App\Models\Skill::create(['name' => 'Sublime Text', 'logo_url' => '', 'category' => 'Tools', 'proficiency' => 85]);
-        \App\Models\Skill::create(['name' => 'JCreator', 'logo_url' => '', 'category' => 'Tools', 'proficiency' => 75]);
+        \App\Models\Skill::create(['name' => 'JCreator', 'logo_url' => '', 'category' => 'Tools', 'proficiency' => 85]);
         \App\Models\Skill::create(['name' => 'PyCharm', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pycharm/pycharm-original.svg', 'category' => 'Tools', 'proficiency' => 80]);
         \App\Models\Skill::create(['name' => 'Visual Studio', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg', 'category' => 'Tools', 'proficiency' => 85]);
         \App\Models\Skill::create(['name' => 'XAMPP', 'logo_url' => '', 'category' => 'Tools', 'proficiency' => 90]);
         \App\Models\Skill::create(['name' => 'Navicat', 'logo_url' => '', 'category' => 'Tools', 'proficiency' => 80]);
         \App\Models\Skill::create(['name' => 'MySQL Workbench', 'logo_url' => '', 'category' => 'Tools', 'proficiency' => 85]);
-        \App\Models\Skill::create(['name' => 'Trello', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/trello/trello-plain.svg', 'category' => 'Tools', 'proficiency' => 80]);
-        \App\Models\Skill::create(['name' => 'ClickUp', 'logo_url' => '', 'category' => 'Tools', 'proficiency' => 85]);
+        \App\Models\Skill::create(['name' => 'Trello', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/trello/trello-plain.svg', 'category' => 'Tools', 'proficiency' => 90]);
+        \App\Models\Skill::create(['name' => 'ClickUp', 'logo_url' => '', 'category' => 'Tools', 'proficiency' => 90]);
         \App\Models\Skill::create(['name' => 'Postman', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg', 'category' => 'Tools', 'proficiency' => 90]);
         \App\Models\Skill::create(['name' => 'Notepad++', 'logo_url' => '', 'category' => 'Tools', 'proficiency' => 85]);
         \App\Models\Skill::create(['name' => 'Android Studio', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg', 'category' => 'Tools', 'proficiency' => 75]);
 
         // Programming Languages
-        \App\Models\Skill::create(['name' => 'Java', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg', 'category' => 'Programming Languages', 'proficiency' => 80]);
-        \App\Models\Skill::create(['name' => 'Python', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg', 'category' => 'Programming Languages', 'proficiency' => 85]);
+        \App\Models\Skill::create(['name' => 'Java', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg', 'category' => 'Programming Languages', 'proficiency' => 85]);
+        \App\Models\Skill::create(['name' => 'Python', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg', 'category' => 'Programming Languages', 'proficiency' => 90]);
         \App\Models\Skill::create(['name' => 'C#', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg', 'category' => 'Programming Languages', 'proficiency' => 75]);
         \App\Models\Skill::create(['name' => 'C++', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg', 'category' => 'Programming Languages', 'proficiency' => 70]);
-        \App\Models\Skill::create(['name' => 'VB.NET', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg', 'category' => 'Programming Languages', 'proficiency' => 65]);
+        \App\Models\Skill::create(['name' => 'VB.NET', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg', 'category' => 'Programming Languages', 'proficiency' => 95]);
 
         // Social links are now in .env file, not database
 
