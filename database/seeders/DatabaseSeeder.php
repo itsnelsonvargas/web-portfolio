@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\Project::create([
             'title' => 'Tara, Basa! Digital Portal v1',
             'description' => 'A full-featured e-commerce platform with shopping cart, payment integration, and admin dashboard. Built with Laravel and Vue.js.',
-            'image' => 'https://via.placeholder.com/600x400/3b82f6/ffffff?text=E-Commerce',
+            'image' => 'https://placehold.co/600x400/3b82f6/ffffff/png?text=Tara+Basa+v1',
             'demo_url' => 'https://tbtp-staging.dswd.gov.ph',
             'github_url' => '',
             'technologies' => ['Laravel', 'Blade', 'Bootstrap', 'MySQL', 'jQuery'],
@@ -31,7 +31,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\Project::create([
             'title' => 'Tara, Basa! Digital Portal v2',
             'description' => 'A collaborative task management application with real-time updates, team collaboration features, and project tracking.',
-            'image' => 'https://via.placeholder.com/600x400/10b981/ffffff?text=Task+Manager',
+            'image' => 'https://placehold.co/600x400/10b981/ffffff/png?text=Tara+Basa+v2',
             'demo_url' => '',
             'github_url' => '',
             'technologies' => ['Laravel', 'Vue.js', 'MySQL', 'Tailwind CSS'],
@@ -41,7 +41,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\Project::create([
             'title' => 'e-commerce website',
             'description' => 'A content management system specifically designed for portfolios and creative professionals. Easy to customize and extend.',
-            'image' => 'https://via.placeholder.com/600x400/8b5cf6/ffffff?text=Portfolio+CMS',
+            'image' => 'https://placehold.co/600x400/8b5cf6/ffffff/png?text=E-Commerce',
             'demo_url' => '',
             'github_url' => 'https://github.com/itsnelsonvargas/eGrocery',
             'technologies' => ['Laravel', 'Blade', 'Bootstrap','jQuery', 'MySQL'],
