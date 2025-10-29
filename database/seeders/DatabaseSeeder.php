@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
         // Seed Projects
         \App\Models\Project::create([
             'title' => 'Tara, Basa! Digital Portal v1',
-            'description' => 'A full-featured e-commerce platform with shopping cart, payment integration, and admin dashboard. Built with Laravel and Vue.js.',
+            'description' => 'A digital portal for the beneficiaries of the DSWD Tara, Basa! Tutoring Program, designed for use by Tutors, Youth Development Workers, and program administrators. It features an API-first architecture, enabling seamless integration with mobile applications.',
             'image' => 'https://via.placeholder.com/600x400/3b82f6/ffffff?text=E-Commerce',
             'demo_url' => 'https://tbtp-staging.dswd.gov.ph',
             'github_url' => '',
@@ -29,8 +29,8 @@ class DatabaseSeeder extends Seeder
         ]);
 
         \App\Models\Project::create([
-            'title' => 'Tara, Basa! Digital Portal v2',
-            'description' => 'A collaborative task management application with real-time updates, team collaboration features, and project tracking.',
+            'title' => 'Tara, Basa! Digital Portal v2 [Ongoing]',
+            'description' => 'Version 2 of the Digital Portal, redesigned for enhanced API connectivity, improved performance, and shorter page reload times.',
             'image' => 'https://via.placeholder.com/600x400/10b981/ffffff?text=Task+Manager',
             'demo_url' => '',
             'github_url' => '',
