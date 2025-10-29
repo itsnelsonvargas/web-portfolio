@@ -22,9 +22,9 @@ class DatabaseSeeder extends Seeder
             'title' => 'Tara, Basa! Digital Portal v1',
             'description' => 'A full-featured e-commerce platform with shopping cart, payment integration, and admin dashboard. Built with Laravel and Vue.js.',
             'image' => 'https://via.placeholder.com/600x400/3b82f6/ffffff?text=E-Commerce',
-            'demo_url' => 'https://example.com/demo',
-            'github_url' => 'https://github.com/username/ecommerce',
-            'technologies' => ['Laravel', 'Bootstrap', 'MySQL', 'Stripe'],
+            'demo_url' => 'https://tbtp-staging.dswd.gov.ph',
+            'github_url' => '',
+            'technologies' => ['Laravel', 'Blade', 'Bootstrap', 'MySQL', 'jQuery'],
             'featured' => true,
         ]);
 
@@ -32,39 +32,39 @@ class DatabaseSeeder extends Seeder
             'title' => 'Tara, Basa! Digital Portal v2',
             'description' => 'A collaborative task management application with real-time updates, team collaboration features, and project tracking.',
             'image' => 'https://via.placeholder.com/600x400/10b981/ffffff?text=Task+Manager',
-            'demo_url' => 'https://example.com/tasks',
-            'github_url' => 'https://github.com/username/task-app',
-            'technologies' => ['Laravel', 'Vue.js', 'MySQL', 'Socket.io', 'Material-UI'],
+            'demo_url' => '',
+            'github_url' => '',
+            'technologies' => ['Laravel', 'Vue.js', 'MySQL', 'Tailwind CSS'],
             'featured' => true,
         ]);
 
         \App\Models\Project::create([
-            'title' => 'e-commer website',
+            'title' => 'e-commerce website',
             'description' => 'A content management system specifically designed for portfolios and creative professionals. Easy to customize and extend.',
             'image' => 'https://via.placeholder.com/600x400/8b5cf6/ffffff?text=Portfolio+CMS',
-            'demo_url' => 'https://example.com/cms',
-            'github_url' => 'https://github.com/username/portfolio-cms',
-            'technologies' => ['Laravel', 'Blade', 'Tailwind CSS', 'PostgreSQL'],
+            'demo_url' => '',
+            'github_url' => 'https://github.com/itsnelsonvargas/eGrocery',
+            'technologies' => ['Laravel', 'Blade', 'Bootstrap','jQuery', 'MySQL'],
             'featured' => false,
         ]);
 
         // Seed Skills - Balanced distribution
         // Backend
-        \App\Models\Skill::create(['name' => 'PHP', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg', 'category' => 'Backend', 'proficiency' => 95]);
+        \App\Models\Skill::create(['name' => 'PHP', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg', 'category' => 'Backend', 'proficiency' => 85]);
         \App\Models\Skill::create(['name' => 'Laravel', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg', 'category' => 'Backend', 'proficiency' => 90]);
-        \App\Models\Skill::create(['name' => 'Redis', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg', 'category' => 'Backend', 'proficiency' => 80]);
+        \App\Models\Skill::create(['name' => 'Redis', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg', 'category' => 'Backend', 'proficiency' => 70]);
 
         // Frontend
         \App\Models\Skill::create(['name' => 'JavaScript', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg', 'category' => 'Frontend', 'proficiency' => 90]);
-        \App\Models\Skill::create(['name' => 'Vue.js', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg', 'category' => 'Frontend', 'proficiency' => 85]);
+        \App\Models\Skill::create(['name' => 'Vue.js', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg', 'category' => 'Frontend', 'proficiency' => 75]);
         \App\Models\Skill::create(['name' => 'HTML/CSS', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg', 'category' => 'Frontend', 'proficiency' => 95]);
         \App\Models\Skill::create(['name' => 'Tailwind CSS', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg', 'category' => 'Frontend', 'proficiency' => 90]);
-        \App\Models\Skill::create(['name' => 'Bootstrap', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg', 'category' => 'Frontend', 'proficiency' => 85]);
+        \App\Models\Skill::create(['name' => 'Bootstrap', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg', 'category' => 'Frontend', 'proficiency' => 95]);
 
         // Database
         \App\Models\Skill::create(['name' => 'MySQL', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg', 'category' => 'Database', 'proficiency' => 85]);
         \App\Models\Skill::create(['name' => 'SQLite', 'logo_url' => '', 'category' => 'Database', 'proficiency' => 90]);
-        \App\Models\Skill::create(['name' => 'MariaDB', 'logo_url' => '', 'category' => 'Database', 'proficiency' => 90]);
+        \App\Models\Skill::create(['name' => 'MariaDB', 'logo_url' => '', 'category' => 'Database', 'proficiency' => 95]);
 
         // DevOps
         \App\Models\Skill::create(['name' => 'Git', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg', 'category' => 'DevOps', 'proficiency' => 85]);
@@ -75,24 +75,24 @@ class DatabaseSeeder extends Seeder
         // Tools
         \App\Models\Skill::create(['name' => 'VS Code', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg', 'category' => 'Tools', 'proficiency' => 95]);
         \App\Models\Skill::create(['name' => 'Sublime Text', 'logo_url' => '', 'category' => 'Tools', 'proficiency' => 85]);
-        \App\Models\Skill::create(['name' => 'JCreator', 'logo_url' => '', 'category' => 'Tools', 'proficiency' => 75]);
+        \App\Models\Skill::create(['name' => 'JCreator', 'logo_url' => '', 'category' => 'Tools', 'proficiency' => 85]);
         \App\Models\Skill::create(['name' => 'PyCharm', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pycharm/pycharm-original.svg', 'category' => 'Tools', 'proficiency' => 80]);
         \App\Models\Skill::create(['name' => 'Visual Studio', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg', 'category' => 'Tools', 'proficiency' => 85]);
         \App\Models\Skill::create(['name' => 'XAMPP', 'logo_url' => '', 'category' => 'Tools', 'proficiency' => 90]);
         \App\Models\Skill::create(['name' => 'Navicat', 'logo_url' => '', 'category' => 'Tools', 'proficiency' => 80]);
         \App\Models\Skill::create(['name' => 'MySQL Workbench', 'logo_url' => '', 'category' => 'Tools', 'proficiency' => 85]);
-        \App\Models\Skill::create(['name' => 'Trello', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/trello/trello-plain.svg', 'category' => 'Tools', 'proficiency' => 80]);
-        \App\Models\Skill::create(['name' => 'ClickUp', 'logo_url' => '', 'category' => 'Tools', 'proficiency' => 85]);
+        \App\Models\Skill::create(['name' => 'Trello', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/trello/trello-plain.svg', 'category' => 'Tools', 'proficiency' => 90]);
+        \App\Models\Skill::create(['name' => 'ClickUp', 'logo_url' => '', 'category' => 'Tools', 'proficiency' => 90]);
         \App\Models\Skill::create(['name' => 'Postman', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg', 'category' => 'Tools', 'proficiency' => 90]);
         \App\Models\Skill::create(['name' => 'Notepad++', 'logo_url' => '', 'category' => 'Tools', 'proficiency' => 85]);
         \App\Models\Skill::create(['name' => 'Android Studio', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg', 'category' => 'Tools', 'proficiency' => 75]);
 
         // Programming Languages
-        \App\Models\Skill::create(['name' => 'Java', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg', 'category' => 'Programming Languages', 'proficiency' => 80]);
-        \App\Models\Skill::create(['name' => 'Python', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg', 'category' => 'Programming Languages', 'proficiency' => 85]);
+        \App\Models\Skill::create(['name' => 'Java', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg', 'category' => 'Programming Languages', 'proficiency' => 85]);
+        \App\Models\Skill::create(['name' => 'Python', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg', 'category' => 'Programming Languages', 'proficiency' => 90]);
         \App\Models\Skill::create(['name' => 'C#', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg', 'category' => 'Programming Languages', 'proficiency' => 75]);
         \App\Models\Skill::create(['name' => 'C++', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg', 'category' => 'Programming Languages', 'proficiency' => 70]);
-        \App\Models\Skill::create(['name' => 'VB.NET', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg', 'category' => 'Programming Languages', 'proficiency' => 65]);
+        \App\Models\Skill::create(['name' => 'VB.NET', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg', 'category' => 'Programming Languages', 'proficiency' => 95]);
 
         // Social links are now in .env file, not database
 
@@ -206,7 +206,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'Quick Response Team (QRT) Lead',
             'type' => 'achievement',
             'issuer' => 'Department of Social Welfare and Development',
-            'description' => 'Official certification demonstrating advanced Laravel framework knowledge and best practices.',
+            'description' => 'DSWD Special Order No. 2434 series of 2025. Official certification demonstrating advanced Laravel framework knowledge and best practices.',
             'date' => '2022-05-10',
             'icon' => '📜',
             'url' => '#',
@@ -216,7 +216,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'Designated Safety and Evacuation Officer (SEO)',
             'type' => 'achievement',
             'issuer' => 'Department of Social Welfare and Development',
-            'description' => 'Contributed to 50+ open source projects with over 1000 stars combined.',
+            'description' => 'Provided safety and evacuation training to staff, ensuring preparedness for emergencies in the workplace.',
             'date' => '2024-01-01',
             'icon' => '⭐',
             'url' => '#',
@@ -250,8 +250,8 @@ class DatabaseSeeder extends Seeder
             'relationship' => 'Collegue',
             'phone' => '0966-640-9778',
             'email' => 'lgdeaño@dswd.gov.ph',
-            'testimonial' => '',
-            'image' => '',
+            'testimonial' => 'As a Statistician, I handle report generation and budget-related tasks for the department. Nelson has been a reliable support, assisting in data gathering, report preparation, and the CY 2025 budget. He consistently demonstrates efficiency, adaptability, and professionalism in handling multiple tasks across our program divisions.',
+            'image' => 'https://ui-avatars.com/api/?name=Leonard+Deano&size=200&background=8b5cf6&color=fff',
         ]);
 
         \App\Models\CharacterReference::create([
@@ -265,15 +265,5 @@ class DatabaseSeeder extends Seeder
             'image' => 'https://ui-avatars.com/api/?name=John+Louise+Noel+Baloloy&size=200&background=10b981&color=fff',
         ]);
 
-        \App\Models\CharacterReference::create([
-            'name' => 'Emily Rodriguez',
-            'position' => 'IT Officer II',
-            'company' => '',
-            'relationship' => 'Former Supervisor',
-            'phone' => '+1 (555) 456-7890',
-            'email' => 'emily.rodriguez@startupstudio.com',
-            'testimonial' => 'As a team lead, I was impressed by their quick learning ability and enthusiasm for new technologies. They consistently took initiative, mentored junior developers, and contributed innovative solutions to challenging problems. Highly recommended!',
-            'image' => 'https://ui-avatars.com/api/?name=Emily+Rodriguez&size=200&background=8b5cf6&color=fff',
-        ]);
     }
 }

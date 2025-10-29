@@ -305,8 +305,7 @@
 
                         <!-- Profile Image Container -->
                         <div class="relative transform group-hover:scale-105 transition-transform duration-500">
-                            <img src="{{ $profile->profile_image }}" alt="{{ $profile->name }}" class="relative w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 object-cover rounded-2xl shadow-2xl border-4 border-slate-700">
-
+                            <img src="{{ $profile->profile_image }}" alt="{{ $profile->name }}" class="relative w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 object-contain rounded-2xl shadow-2xl border-4 border-slate-700">
                             <!-- Accent corners with glow -->
                             <div class="absolute -top-3 -right-3 w-20 h-20 bg-gradient-to-br from-blue-600 to-cyan-500 rounded-tr-2xl shadow-lg shadow-blue-600/50"></div>
                             <div class="absolute -bottom-3 -left-3 w-20 h-20 bg-gradient-to-br from-slate-700 to-slate-800 rounded-bl-2xl shadow-lg"></div>
