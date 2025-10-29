@@ -681,9 +681,9 @@
             </div>
 
             @if(count($characterReferences) > 0)
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            <div class="flex flex-wrap justify-center gap-8 max-w-7xl mx-auto">
                 @foreach($characterReferences as $reference)
-                <div class="group bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl border border-slate-700 hover:border-purple-500 transition-all duration-300 overflow-hidden">
+                <div class="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.33rem)] group bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl border border-slate-700 hover:border-purple-500 transition-all duration-300 overflow-hidden">
                     <div class="p-6">
                         <!-- Profile Header -->
                         <div class="flex items-start gap-4 mb-4">
