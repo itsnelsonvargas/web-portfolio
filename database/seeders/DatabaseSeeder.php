@@ -206,7 +206,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'Quick Response Team (QRT) Lead',
             'type' => 'achievement',
             'issuer' => 'Department of Social Welfare and Development',
-            'description' => 'Official certification demonstrating advanced Laravel framework knowledge and best practices.',
+            'description' => 'DSWD Special Order No. 2434 series of 2025. Official certification demonstrating advanced Laravel framework knowledge and best practices.',
             'date' => '2022-05-10',
             'icon' => '📜',
             'url' => '#',
@@ -216,7 +216,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'Designated Safety and Evacuation Officer (SEO)',
             'type' => 'achievement',
             'issuer' => 'Department of Social Welfare and Development',
-            'description' => 'Contributed to 50+ open source projects with over 1000 stars combined.',
+            'description' => 'Provided safety and evacuation training to staff, ensuring preparedness for emergencies in the workplace.',
             'date' => '2024-01-01',
             'icon' => '⭐',
             'url' => '#',
@@ -250,8 +250,8 @@ class DatabaseSeeder extends Seeder
             'relationship' => 'Collegue',
             'phone' => '0966-640-9778',
             'email' => 'lgdeaño@dswd.gov.ph',
-            'testimonial' => '',
-            'image' => '',
+            'testimonial' => 'As a Statistician, I handle report generation and budget-related tasks for the department. Nelson has been a reliable support, assisting in data gathering, report preparation, and the CY 2025 budget. He consistently demonstrates efficiency, adaptability, and professionalism in handling multiple tasks across our program divisions.',
+            'image' => 'https://ui-avatars.com/api/?name=Leonard+Deano&size=200&background=8b5cf6&color=fff',
         ]);
 
         \App\Models\CharacterReference::create([
@@ -265,15 +265,5 @@ class DatabaseSeeder extends Seeder
             'image' => 'https://ui-avatars.com/api/?name=John+Louise+Noel+Baloloy&size=200&background=10b981&color=fff',
         ]);
 
-        \App\Models\CharacterReference::create([
-            'name' => 'Emily Rodriguez',
-            'position' => 'IT Officer II',
-            'company' => '',
-            'relationship' => 'Former Supervisor',
-            'phone' => '+1 (555) 456-7890',
-            'email' => 'emily.rodriguez@startupstudio.com',
-            'testimonial' => 'As a team lead, I was impressed by their quick learning ability and enthusiasm for new technologies. They consistently took initiative, mentored junior developers, and contributed innovative solutions to challenging problems. Highly recommended!',
-            'image' => 'https://ui-avatars.com/api/?name=Emily+Rodriguez&size=200&background=8b5cf6&color=fff',
-        ]);
     }
 }
