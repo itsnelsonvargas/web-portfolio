@@ -524,6 +524,7 @@
             <div class="space-y-16">
                 @php
                     $categories = $skills->groupBy('category');
+                    $staticCategories = ['Frontend', 'Backend', 'DevOps', 'Tools', 'Programming Languages'];
                 @endphp
                 @foreach($categories as $category => $categorySkills)
                 <div class="relative w-full">
@@ -537,7 +538,36 @@
                         </div>
                     </div>
 
-                    <!-- Scrolling Container - Full Width -->
+                    @if(in_array($category, $staticCategories))
+                    <!-- Static Grid Layout for Frontend, Backend, DevOps, Tools, Programming Languages -->
+                    <div class="container mx-auto px-4">
+                        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 justify-items-center">
+                            @foreach($categorySkills as $skill)
+                            <div class="skill-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl border-2 border-slate-700 hover:border-blue-500 transition-all duration-300 p-4 w-48">
+                                <div class="flex flex-col items-center gap-3">
+                                    <div class="w-14 h-14 flex items-center justify-center bg-white rounded-lg p-2 shadow-lg">
+                                        @if($skill->logo_url)
+                                        <img src="{{ $skill->logo_url }}" alt="{{ $skill->name }}" class="w-full h-full object-contain">
+                                        @else
+                                        <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-500 to-cyan-500 rounded text-white font-black text-lg">
+                                            {{ strtoupper(substr($skill->name, 0, 2)) }}
+                                        </div>
+                                        @endif
+                                    </div>
+                                    <div class="text-center w-full">
+                                        <div class="font-bold text-slate-200 text-base mb-2">{{ $skill->name }}</div>
+                                        <div class="w-full bg-slate-800 rounded-full h-1.5 overflow-hidden mb-1.5">
+                                            <div class="skill-bar bg-gradient-to-r from-blue-600 to-cyan-500 h-1.5 rounded-full" data-width="{{ $skill->proficiency }}" style="width: 0%"></div>
+                                        </div>
+                                        <span class="text-blue-400 font-bold text-xs">{{ $skill->proficiency }}%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+                    @else
+                    <!-- Scrolling Container - Full Width for other categories -->
                     <div class="relative overflow-hidden py-4 w-full">
                         <div class="scroll-container flex {{ $category === 'Database' ? 'gap-24' : 'gap-6' }} animate-scroll">
                             @foreach($categorySkills as $skill)
@@ -587,6 +617,7 @@
                             @endforeach
                         </div>
                     </div>
+                    @endif
                 </div>
                 @endforeach
             </div>
