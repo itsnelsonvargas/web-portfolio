@@ -528,10 +528,15 @@
                 @endphp
                 @foreach($categories as $category => $categorySkills)
                 <div class="relative w-full">
-                    <!-- Category Title - Centered -->
-                    <h3 class="text-3xl md:text-4xl font-black text-white text-center mb-8">
-                        <span class="text-blue-400">//</span> {{ $category }}
-                    </h3>
+                    <!-- Category Title - Centered with Badge Design -->
+                    <div class="flex justify-center mb-8">
+                        <div class="relative inline-block">
+                            <h3 class="text-3xl md:text-4xl font-black bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent px-8 py-3">
+                                {{ $category }}
+                            </h3>
+                            <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent rounded-full"></div>
+                        </div>
+                    </div>
 
                     @if(in_array($category, $staticCategories))
                     <!-- Static Grid Layout for Frontend, Backend, DevOps, Tools, Programming Languages -->
@@ -707,9 +712,9 @@
             </div>
 
             @if(count($characterReferences) > 0)
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            <div class="flex flex-wrap justify-center gap-8 max-w-7xl mx-auto">
                 @foreach($characterReferences as $reference)
-                <div class="group bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl border border-slate-700 hover:border-purple-500 transition-all duration-300 overflow-hidden">
+                <div class="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.33rem)] group bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl border border-slate-700 hover:border-purple-500 transition-all duration-300 overflow-hidden">
                     <div class="p-6">
                         <!-- Profile Header -->
                         <div class="flex items-start gap-4 mb-4">
