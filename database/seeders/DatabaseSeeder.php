@@ -94,6 +94,17 @@ class DatabaseSeeder extends Seeder
         \App\Models\Skill::create(['name' => 'C++', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg', 'category' => 'Programming Languages', 'proficiency' => 70]);
         \App\Models\Skill::create(['name' => 'VB.NET', 'logo_url' => 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg', 'category' => 'Programming Languages', 'proficiency' => 95]);
 
+        // AI
+        \App\Models\Skill::create(['name' => 'ChatGPT (OpenAI)', 'logo_url' => '', 'category' => 'AI', 'proficiency' => 0]);
+        \App\Models\Skill::create(['name' => 'Claude (Anthropic)', 'logo_url' => '', 'category' => 'AI', 'proficiency' => 0]);
+        \App\Models\Skill::create(['name' => 'Google Gemini', 'logo_url' => '', 'category' => 'AI', 'proficiency' => 0]);
+        \App\Models\Skill::create(['name' => 'Microsoft Copilot', 'logo_url' => '', 'category' => 'AI', 'proficiency' => 0]);
+        \App\Models\Skill::create(['name' => 'GitHub Copilot', 'logo_url' => '', 'category' => 'AI', 'proficiency' => 0]);
+        \App\Models\Skill::create(['name' => 'Trae', 'logo_url' => '', 'category' => 'AI', 'proficiency' => 0]);
+        \App\Models\Skill::create(['name' => 'Cursor', 'logo_url' => '', 'category' => 'AI', 'proficiency' => 0]);
+        \App\Models\Skill::create(['name' => 'ElevenLabs', 'logo_url' => '', 'category' => 'AI', 'proficiency' => 0]);
+        \App\Models\Skill::create(['name' => 'groq', 'logo_url' => '', 'category' => 'AI', 'proficiency' => 0]);
+
         // Social links are now in .env file, not database
 
         // Seed Experiences
