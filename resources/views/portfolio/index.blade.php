@@ -556,7 +556,7 @@
                     @if($category === 'AI')
                     <!-- AI Section - No Percentage Bars -->
                     <div class="container mx-auto px-4">
-                        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 justify-items-center">
+                        <div class="flex flex-wrap justify-center gap-6">
                             @foreach($categorySkills as $skill)
                             <div class="skill-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl border-2 border-slate-700 hover:border-blue-500 transition-all duration-300 p-4 w-48">
                                 <div class="flex flex-col items-center gap-3">
@@ -580,7 +580,7 @@
                     @elseif(in_array($category, $staticCategories))
                     <!-- Static Grid Layout for Frontend, Backend, DevOps, Tools, Programming Languages, Database -->
                     <div class="container mx-auto px-4">
-                        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 justify-items-center">
+                        <div class="flex flex-wrap justify-center gap-6">
                             @foreach($categorySkills as $skill)
                             <div class="skill-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl border-2 border-slate-700 hover:border-blue-500 transition-all duration-300 p-4 w-48">
                                 <div class="flex flex-col items-center gap-3">
