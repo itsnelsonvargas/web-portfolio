@@ -524,7 +524,22 @@
             <div class="space-y-16">
                 @php
                     $categories = $skills->groupBy('category');
-                    $staticCategories = ['Frontend', 'Backend', 'DevOps', 'Tools', 'Programming Languages'];
+                    $staticCategories = ['Frontend', 'Backend', 'DevOps', 'Tools', 'Programming Languages', 'Database'];
+                    // Define category order to ensure AI appears after Programming Languages
+                    $categoryOrder = ['Frontend', 'Backend', 'Database', 'DevOps', 'Tools', 'Programming Languages', 'AI'];
+                    $orderedCategories = [];
+                    foreach ($categoryOrder as $cat) {
+                        if (isset($categories[$cat])) {
+                            $orderedCategories[$cat] = $categories[$cat];
+                        }
+                    }
+                    // Add any remaining categories not in the order list
+                    foreach ($categories as $cat => $skills) {
+                        if (!isset($orderedCategories[$cat])) {
+                            $orderedCategories[$cat] = $skills;
+                        }
+                    }
+                    $categories = $orderedCategories;
                 @endphp
                 @foreach($categories as $category => $categorySkills)
                 <div class="relative w-full">
@@ -538,8 +553,32 @@
                         </div>
                     </div>
 
-                    @if(in_array($category, $staticCategories))
-                    <!-- Static Grid Layout for Frontend, Backend, DevOps, Tools, Programming Languages -->
+                    @if($category === 'AI')
+                    <!-- AI Section - No Percentage Bars -->
+                    <div class="container mx-auto px-4">
+                        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 justify-items-center">
+                            @foreach($categorySkills as $skill)
+                            <div class="skill-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl border-2 border-slate-700 hover:border-blue-500 transition-all duration-300 p-4 w-48">
+                                <div class="flex flex-col items-center gap-3">
+                                    <div class="w-14 h-14 flex items-center justify-center bg-white rounded-lg p-2 shadow-lg">
+                                        @if($skill->logo_url)
+                                        <img src="{{ $skill->logo_url }}" alt="{{ $skill->name }}" class="w-full h-full object-contain">
+                                        @else
+                                        <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-500 to-cyan-500 rounded text-white font-black text-lg">
+                                            {{ strtoupper(substr($skill->name, 0, 2)) }}
+                                        </div>
+                                        @endif
+                                    </div>
+                                    <div class="text-center w-full">
+                                        <div class="font-bold text-slate-200 text-base">{{ $skill->name }}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+                    @elseif(in_array($category, $staticCategories))
+                    <!-- Static Grid Layout for Frontend, Backend, DevOps, Tools, Programming Languages, Database -->
                     <div class="container mx-auto px-4">
                         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 justify-items-center">
                             @foreach($categorySkills as $skill)
