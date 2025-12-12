@@ -26,12 +26,23 @@ class TrainingController extends Controller
             });
         }
 
-        // Sort functionality
-        $sortBy = $request->get('sort_by', 'created_at');
-        $sortDir = $request->get('sort_dir', 'desc');
-        $query->orderBy($sortBy, $sortDir);
+        // Hide completed trainings filter
+        if ($request->boolean('hide_completed')) {
+            $query->whereNull('ended_at');
+        }
 
-        $trainings = $query->paginate(15)->withQueryString();
+        // Sort functionality
+        $sortBy = $request->get('sort_by', 'started_at');
+        $sortDir = $request->get('sort_dir', 'desc');
+
+        // Handle sorting by started_at (nulls last)
+        if ($sortBy === 'started_at') {
+            $query->orderByRaw('started_at IS NULL ASC, started_at ' . $sortDir);
+        } else {
+            $query->orderBy($sortBy, $sortDir);
+        }
+
+        $trainings = $query->get();
 
         return view('admin.trainings.index', compact('trainings'));
     }
@@ -97,6 +108,8 @@ class TrainingController extends Controller
             'title' => ['required', 'string', 'max:255'],
             'description' => ['nullable', 'string'],
             'organization' => ['nullable', 'string', 'max:255'],
+            'started_at' => ['nullable', 'date'],
+            'ended_at' => ['nullable', 'date', 'after_or_equal:started_at'],
             'acquired_at' => ['nullable', 'date'],
             'credential_id' => ['nullable', 'string', 'max:255'],
             'link' => ['nullable', 'url'],
