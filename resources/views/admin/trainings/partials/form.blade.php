@@ -8,8 +8,12 @@
         <input type="text" name="organization" value="{{ old('organization', $training->organization ?? '') }}" class="w-full rounded-lg border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-900">
     </div>
     <div>
-        <label class="block text-sm font-medium mb-1">Date acquired</label>
-        <input type="date" name="acquired_at" value="{{ old('acquired_at', optional($training->acquired_at ?? null)->toDateString()) }}" class="w-full rounded-lg border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-900">
+        <label class="block text-sm font-medium mb-1">Start Date</label>
+        <input type="date" name="started_at" value="{{ old('started_at', optional($training->started_at ?? null)->toDateString()) }}" class="w-full rounded-lg border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-900">
+    </div>
+    <div>
+        <label class="block text-sm font-medium mb-1">End Date</label>
+        <input type="date" name="ended_at" value="{{ old('ended_at', optional($training->ended_at ?? null)->toDateString()) }}" class="w-full rounded-lg border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-900">
     </div>
     <div>
         <label class="block text-sm font-medium mb-1">Credential ID</label>

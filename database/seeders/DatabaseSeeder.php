@@ -202,6 +202,79 @@ class DatabaseSeeder extends Seeder
             ],
         ]);
 
+        // Seed Trainings
+        \App\Models\Training::create([
+            'title' => 'Laravel Framework Certification',
+            'description' => 'Comprehensive certification covering Laravel framework development, including MVC architecture, Eloquent ORM, and advanced features.',
+            'organization' => 'Laravel',
+            'started_at' => '2024-01-15',
+            'ended_at' => '2024-03-15',
+            'acquired_at' => '2024-03-15',
+            'credential_id' => 'LARAVEL-2024-001',
+            'link' => 'https://laravel.com/certification',
+            'tags' => 'Laravel,PHP,Framework,Certification',
+        ]);
+
+        \App\Models\Training::create([
+            'title' => 'Advanced PHP Development',
+            'description' => 'Advanced PHP concepts including object-oriented programming, design patterns, and modern development practices.',
+            'organization' => 'PHP Institute',
+            'started_at' => '2023-09-01',
+            'ended_at' => '2023-11-20',
+            'acquired_at' => '2023-11-20',
+            'credential_id' => 'PHP-ADV-2023-045',
+            'link' => 'https://php.net/certification',
+            'tags' => 'PHP,Advanced,OOP,Design Patterns',
+        ]);
+
+        \App\Models\Training::create([
+            'title' => 'JavaScript Mastery Course',
+            'description' => 'Complete JavaScript course covering ES6+, asynchronous programming, and modern JavaScript frameworks.',
+            'organization' => 'JavaScript Institute',
+            'started_at' => '2023-10-01',
+            'ended_at' => '2024-01-10',
+            'acquired_at' => '2024-01-10',
+            'credential_id' => 'JS-MASTER-2024-089',
+            'link' => 'https://javascript.info/certification',
+            'tags' => 'JavaScript,ES6,Async,Frameworks',
+        ]);
+
+        \App\Models\Training::create([
+            'title' => 'Vue.js Developer Certification',
+            'description' => 'Official Vue.js certification covering component development, Vue Router, and state management with Vuex.',
+            'organization' => 'Vue.js',
+            'started_at' => '2023-07-01',
+            'ended_at' => '2023-09-05',
+            'acquired_at' => '2023-09-05',
+            'credential_id' => 'VUE-CERT-2023-112',
+            'link' => 'https://vuejs.org/certification',
+            'tags' => 'Vue.js,JavaScript,Frontend,Certification',
+        ]);
+
+        \App\Models\Training::create([
+            'title' => 'Database Design & Administration',
+            'description' => 'Comprehensive course on database design, normalization, SQL optimization, and MySQL administration.',
+            'organization' => 'Database Academy',
+            'started_at' => '2023-05-01',
+            'ended_at' => '2023-07-18',
+            'acquired_at' => '2023-07-18',
+            'credential_id' => 'DB-ADMIN-2023-067',
+            'link' => 'https://mysql.com/certification',
+            'tags' => 'MySQL,Database,SQL,Administration',
+        ]);
+
+        \App\Models\Training::create([
+            'title' => 'Tailwind CSS Professional',
+            'description' => 'Advanced Tailwind CSS course covering responsive design, custom configurations, and component development.',
+            'organization' => 'Tailwind Labs',
+            'started_at' => '2024-01-01',
+            'ended_at' => '2024-02-28',
+            'acquired_at' => '2024-02-28',
+            'credential_id' => 'TAILWIND-PRO-2024-034',
+            'link' => 'https://tailwindcss.com/certification',
+            'tags' => 'Tailwind CSS,CSS,Frontend,Responsive',
+        ]);
+
         // Seed Achievements
         \App\Models\Achievement::create([
             'title' => 'Electronic Data Processing Specialist',

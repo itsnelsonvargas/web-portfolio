@@ -13,6 +13,8 @@ class Training extends Model
         'title',
         'description',
         'organization',
+        'started_at',
+        'ended_at',
         'acquired_at',
         'credential_id',
         'link',
@@ -20,6 +22,8 @@ class Training extends Model
     ];
 
     protected $casts = [
+        'started_at' => 'date',
+        'ended_at' => 'date',
         'acquired_at' => 'date',
     ];
 
