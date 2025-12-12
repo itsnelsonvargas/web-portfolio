@@ -7,6 +7,30 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## Quick setup
+
+1) Copy env and generate key
+```bash
+cp .env.example .env
+php artisan key:generate
+```
+
+2) Set admin dashboard credentials in `.env` before seeding:
+```
+ADMIN_NAME=Site Admin
+ADMIN_EMAIL=admin@example.com
+ADMIN_PASSWORD=password
+```
+Then run:
+```bash
+php artisan migrate --seed
+```
+
+3) Serve locally
+```bash
+php artisan serve
+```
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
