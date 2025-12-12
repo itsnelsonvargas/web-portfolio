@@ -10,9 +10,28 @@ use Illuminate\Support\Facades\DB;
 
 class TrainingController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $trainings = Training::latest()->paginate(10);
+        $query = Training::query()->withCount('uploads');
+
+        // Search functionality
+        if ($request->filled('search')) {
+            $search = $request->search;
+            $query->where(function ($q) use ($search) {
+                $q->where('title', 'like', "%{$search}%")
+                  ->orWhere('organization', 'like', "%{$search}%")
+                  ->orWhere('description', 'like', "%{$search}%")
+                  ->orWhere('credential_id', 'like', "%{$search}%")
+                  ->orWhere('tags', 'like', "%{$search}%");
+            });
+        }
+
+        // Sort functionality
+        $sortBy = $request->get('sort_by', 'created_at');
+        $sortDir = $request->get('sort_dir', 'desc');
+        $query->orderBy($sortBy, $sortDir);
+
+        $trainings = $query->paginate(15)->withQueryString();
 
         return view('admin.trainings.index', compact('trainings'));
     }
