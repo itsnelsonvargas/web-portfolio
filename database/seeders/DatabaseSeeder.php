@@ -15,6 +15,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        // Admin user
+        User::firstOrCreate(
+            ['email' => env('ADMIN_EMAIL', 'admin@example.com')],
+            [
+                'name' => env('ADMIN_NAME', 'Site Admin'),
+                'password' => bcrypt(env('ADMIN_PASSWORD', 'password')),
+                'is_admin' => true,
+            ]
+        );
+
         // Profile data is now in .env file, not database
 
         // Seed Projects
