@@ -15,17 +15,23 @@ class PortfolioController extends Controller
 {
     public function index()
     {
-        // Build profile from .env instead of database
-        $profile = (object) [
-            'name' => env('PORTFOLIO_NAME', 'John Doe'),
-            'title' => env('PORTFOLIO_TITLE', 'Full Stack Web Developer'),
-            'bio' => env('PORTFOLIO_BIO', 'Passionate web developer'),
-            'email' => env('PORTFOLIO_EMAIL', 'hello@example.com'),
-            'phone' => env('PORTFOLIO_PHONE', '+1 (555) 123-4567'),
-            'location' => env('PORTFOLIO_LOCATION', 'San Francisco, CA'),
-            'profile_image' =>env('APP_URL') . env('PORTFOLIO_PROFILE_IMAGE', 'https://ui-avatars.com/api/?name=Nelson+Vargas&size=400'),
-            'resume_url' => env('PORTFOLIO_RESUME_URL', '#'),
-        ];
+        $profile = Profile::first();
+
+        if (! $profile) {
+            // Fallback to .env if no profile is stored yet
+            $profile = (object) [
+                'name' => env('PORTFOLIO_NAME', 'John Doe'),
+                'title' => env('PORTFOLIO_TITLE', 'Full Stack Web Developer'),
+                'bio' => env('PORTFOLIO_BIO', 'Passionate web developer'),
+                'email' => env('PORTFOLIO_EMAIL', 'hello@example.com'),
+                'phone' => env('PORTFOLIO_PHONE', '+1 (555) 123-4567'),
+                'location' => env('PORTFOLIO_LOCATION', 'San Francisco, CA'),
+                'profile_image' => env('PORTFOLIO_PROFILE_IMAGE', 'https://ui-avatars.com/api/?name=Portfolio&size=400'),
+                'resume_url' => env('PORTFOLIO_RESUME_URL', '#'),
+            ];
+        } else {
+            $profile->profile_image = $profile->profileImageUrl() ?? env('PORTFOLIO_PROFILE_IMAGE', 'https://ui-avatars.com/api/?name=Portfolio&size=400');
+        }
         // Parse social links from env
         $socialLinks = collect([
             env('PORTFOLIO_SOCIAL_GITHUB'),
