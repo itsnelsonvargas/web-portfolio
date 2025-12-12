@@ -208,7 +208,7 @@ class DatabaseSeeder extends Seeder
             'type' => 'certificate',
             'issuer' => 'Department of Comunications and Information Technology',
             'description' => 'Reached',
-            'date' => '',
+            'date' => null,
             'icon' => '🏆',
             'url' => '#',
         ]);
