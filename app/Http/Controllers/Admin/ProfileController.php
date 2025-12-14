@@ -22,6 +22,8 @@ class ProfileController extends Controller
             'phone' => env('PORTFOLIO_PHONE'),
             'location' => env('PORTFOLIO_LOCATION'),
             'resume_url' => env('PORTFOLIO_RESUME_URL'),
+            'large_scale_projects' => env('LARGE_SCALE_PROJECTS'),
+            'years_of_experience' => env('YEARS_OF_EXPERIENCE'),
         ];
 
         return view('admin.profile.edit', compact('profile', 'envDefaults'));
@@ -37,6 +39,8 @@ class ProfileController extends Controller
             'phone' => ['nullable', 'string', 'max:50'],
             'location' => ['nullable', 'string', 'max:255'],
             'resume_url' => ['nullable', 'url'],
+            'large_scale_projects' => ['nullable', 'integer', 'min:0'],
+            'years_of_experience' => ['nullable', 'integer', 'min:0'],
             'profile_image' => ['nullable', 'image', 'max:4096'],
         ]);
 

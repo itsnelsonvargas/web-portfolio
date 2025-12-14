@@ -16,6 +16,8 @@ class Profile extends Model
         'location',
         'profile_image',
         'resume_url',
+        'large_scale_projects',
+        'years_of_experience',
     ];
 
     public function profileImageUrl(): ?string
