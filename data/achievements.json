@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "title": "Electronic Data Processing Specialist",
+        "type": "certificate",
+        "issuer": "Department of Comunications and Information Technology",
+        "description": "Reached",
+        "date": null,
+        "icon": "\ud83c\udfc6",
+        "url": "#",
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 2,
+        "title": "Philippine Air Force reservist",
+        "type": "achievement",
+        "issuer": "Philippine Air Force",
+        "description": "Trained and certified as a reservist in the Philippine Air Force, demonstrating commitment to national service and discipline.",
+        "date": "2021-07-21",
+        "icon": "\ud83e\udd47",
+        "url": null,
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 3,
+        "title": "Quick Response Team (QRT) Lead",
+        "type": "achievement",
+        "issuer": "Department of Social Welfare and Development",
+        "description": "DSWD Special Order No. 2434 series of 2025. Official certification demonstrating advanced Laravel framework knowledge and best practices.",
+        "date": "2022-05-10",
+        "icon": "\ud83d\udcdc",
+        "url": "#",
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 4,
+        "title": "Designated Safety and Evacuation Officer (SEO)",
+        "type": "achievement",
+        "issuer": "Department of Social Welfare and Development",
+        "description": "Provided safety and evacuation training to staff, ensuring preparedness for emergencies in the workplace.",
+        "date": "2024-01-01",
+        "icon": "\u2b50",
+        "url": "#",
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 5,
+        "title": "Certified Six Sigma Yellow Belt",
+        "type": "certificate",
+        "issuer": "Prof. Dr. Marcelo Machado  Fernandes",
+        "description": "A professional certification focused on foundational knowledge of Six Sigma principles for process improvement.",
+        "date": "2024-04-27",
+        "icon": "\ud83d\udcdc",
+        "url": "#",
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 6,
+        "title": "Civil Service Eligibility - Professional Level",
+        "type": "certificate",
+        "issuer": "Civil Service Commission",
+        "description": "Passed the Civil Service Examination for Professional Level, demonstrating knowledge in public administration and governance.",
+        "date": "2019-09-04",
+        "icon": "\ud83d\udcdc",
+        "url": null,
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    }
+]

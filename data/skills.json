@@ -1,0 +1,380 @@
+[
+    {
+        "id": 1,
+        "name": "PHP",
+        "category": "Backend",
+        "proficiency": 85,
+        "logo_url": "https:\/\/cdn.jsdelivr.net\/gh\/devicons\/devicon\/icons\/php\/php-original.svg",
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 2,
+        "name": "Laravel",
+        "category": "Backend",
+        "proficiency": 90,
+        "logo_url": "https:\/\/cdn.jsdelivr.net\/gh\/devicons\/devicon\/icons\/laravel\/laravel-original.svg",
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 3,
+        "name": "Redis",
+        "category": "Backend",
+        "proficiency": 70,
+        "logo_url": "https:\/\/cdn.jsdelivr.net\/gh\/devicons\/devicon\/icons\/redis\/redis-original.svg",
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 4,
+        "name": "JavaScript",
+        "category": "Frontend",
+        "proficiency": 90,
+        "logo_url": "https:\/\/cdn.jsdelivr.net\/gh\/devicons\/devicon\/icons\/javascript\/javascript-original.svg",
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 5,
+        "name": "Vue.js",
+        "category": "Frontend",
+        "proficiency": 75,
+        "logo_url": "https:\/\/cdn.jsdelivr.net\/gh\/devicons\/devicon\/icons\/vuejs\/vuejs-original.svg",
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 6,
+        "name": "HTML\/CSS",
+        "category": "Frontend",
+        "proficiency": 95,
+        "logo_url": "https:\/\/cdn.jsdelivr.net\/gh\/devicons\/devicon\/icons\/html5\/html5-original.svg",
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 7,
+        "name": "Tailwind CSS",
+        "category": "Frontend",
+        "proficiency": 90,
+        "logo_url": "https:\/\/cdn.jsdelivr.net\/gh\/devicons\/devicon\/icons\/tailwindcss\/tailwindcss-original.svg",
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 8,
+        "name": "Bootstrap",
+        "category": "Frontend",
+        "proficiency": 95,
+        "logo_url": "https:\/\/cdn.jsdelivr.net\/gh\/devicons\/devicon\/icons\/bootstrap\/bootstrap-original.svg",
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 9,
+        "name": "MySQL",
+        "category": "Database",
+        "proficiency": 85,
+        "logo_url": "https:\/\/cdn.jsdelivr.net\/gh\/devicons\/devicon\/icons\/mysql\/mysql-original.svg",
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 10,
+        "name": "SQLite",
+        "category": "Database",
+        "proficiency": 90,
+        "logo_url": "",
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 11,
+        "name": "MariaDB",
+        "category": "Database",
+        "proficiency": 95,
+        "logo_url": "",
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 12,
+        "name": "Git",
+        "category": "DevOps",
+        "proficiency": 85,
+        "logo_url": "https:\/\/cdn.jsdelivr.net\/gh\/devicons\/devicon\/icons\/git\/git-original.svg",
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 13,
+        "name": "GitHub",
+        "category": "DevOps",
+        "proficiency": 85,
+        "logo_url": "https:\/\/cdn.jsdelivr.net\/gh\/devicons\/devicon\/icons\/github\/github-original.svg",
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 14,
+        "name": "GitLab",
+        "category": "DevOps",
+        "proficiency": 80,
+        "logo_url": "https:\/\/cdn.jsdelivr.net\/gh\/devicons\/devicon\/icons\/gitlab\/gitlab-original.svg",
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 15,
+        "name": "Linux",
+        "category": "DevOps",
+        "proficiency": 80,
+        "logo_url": "https:\/\/cdn.jsdelivr.net\/gh\/devicons\/devicon\/icons\/linux\/linux-original.svg",
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 16,
+        "name": "VS Code",
+        "category": "Tools",
+        "proficiency": 95,
+        "logo_url": "https:\/\/cdn.jsdelivr.net\/gh\/devicons\/devicon\/icons\/vscode\/vscode-original.svg",
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 17,
+        "name": "Sublime Text",
+        "category": "Tools",
+        "proficiency": 85,
+        "logo_url": "",
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 18,
+        "name": "JCreator",
+        "category": "Tools",
+        "proficiency": 85,
+        "logo_url": "",
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 19,
+        "name": "PyCharm",
+        "category": "Tools",
+        "proficiency": 80,
+        "logo_url": "https:\/\/cdn.jsdelivr.net\/gh\/devicons\/devicon\/icons\/pycharm\/pycharm-original.svg",
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 20,
+        "name": "Visual Studio",
+        "category": "Tools",
+        "proficiency": 85,
+        "logo_url": "https:\/\/cdn.jsdelivr.net\/gh\/devicons\/devicon\/icons\/visualstudio\/visualstudio-plain.svg",
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 21,
+        "name": "XAMPP",
+        "category": "Tools",
+        "proficiency": 90,
+        "logo_url": "",
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 22,
+        "name": "Navicat",
+        "category": "Tools",
+        "proficiency": 80,
+        "logo_url": "",
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 23,
+        "name": "MySQL Workbench",
+        "category": "Tools",
+        "proficiency": 85,
+        "logo_url": "",
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 24,
+        "name": "Trello",
+        "category": "Tools",
+        "proficiency": 90,
+        "logo_url": "https:\/\/cdn.jsdelivr.net\/gh\/devicons\/devicon\/icons\/trello\/trello-plain.svg",
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 25,
+        "name": "ClickUp",
+        "category": "Tools",
+        "proficiency": 90,
+        "logo_url": "",
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 26,
+        "name": "Postman",
+        "category": "Tools",
+        "proficiency": 90,
+        "logo_url": "https:\/\/cdn.jsdelivr.net\/gh\/devicons\/devicon\/icons\/postman\/postman-original.svg",
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 27,
+        "name": "Notepad++",
+        "category": "Tools",
+        "proficiency": 85,
+        "logo_url": "",
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 28,
+        "name": "Android Studio",
+        "category": "Tools",
+        "proficiency": 75,
+        "logo_url": "https:\/\/cdn.jsdelivr.net\/gh\/devicons\/devicon\/icons\/androidstudio\/androidstudio-original.svg",
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 29,
+        "name": "Java",
+        "category": "Programming Languages",
+        "proficiency": 85,
+        "logo_url": "https:\/\/cdn.jsdelivr.net\/gh\/devicons\/devicon\/icons\/java\/java-original.svg",
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 30,
+        "name": "Python",
+        "category": "Programming Languages",
+        "proficiency": 90,
+        "logo_url": "https:\/\/cdn.jsdelivr.net\/gh\/devicons\/devicon\/icons\/python\/python-original.svg",
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 31,
+        "name": "C#",
+        "category": "Programming Languages",
+        "proficiency": 75,
+        "logo_url": "https:\/\/cdn.jsdelivr.net\/gh\/devicons\/devicon\/icons\/csharp\/csharp-original.svg",
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 32,
+        "name": "C++",
+        "category": "Programming Languages",
+        "proficiency": 70,
+        "logo_url": "https:\/\/cdn.jsdelivr.net\/gh\/devicons\/devicon\/icons\/cplusplus\/cplusplus-original.svg",
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 33,
+        "name": "VB.NET",
+        "category": "Programming Languages",
+        "proficiency": 95,
+        "logo_url": "https:\/\/cdn.jsdelivr.net\/gh\/devicons\/devicon\/icons\/dot-net\/dot-net-original.svg",
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 34,
+        "name": "ChatGPT (OpenAI)",
+        "category": "AI",
+        "proficiency": 0,
+        "logo_url": "",
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 35,
+        "name": "Claude (Anthropic)",
+        "category": "AI",
+        "proficiency": 0,
+        "logo_url": "",
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 36,
+        "name": "Google Gemini",
+        "category": "AI",
+        "proficiency": 0,
+        "logo_url": "",
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 37,
+        "name": "Microsoft Copilot",
+        "category": "AI",
+        "proficiency": 0,
+        "logo_url": "",
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 38,
+        "name": "GitHub Copilot",
+        "category": "AI",
+        "proficiency": 0,
+        "logo_url": "",
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 39,
+        "name": "Trae",
+        "category": "AI",
+        "proficiency": 0,
+        "logo_url": "",
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 40,
+        "name": "Cursor",
+        "category": "AI",
+        "proficiency": 0,
+        "logo_url": "",
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 41,
+        "name": "ElevenLabs",
+        "category": "AI",
+        "proficiency": 0,
+        "logo_url": "",
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 42,
+        "name": "groq",
+        "category": "AI",
+        "proficiency": 0,
+        "logo_url": "",
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    }
+]

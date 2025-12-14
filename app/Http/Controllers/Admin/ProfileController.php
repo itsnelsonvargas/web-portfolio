@@ -3,16 +3,15 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Profile;
-use App\Models\Upload;
+use App\Services\FileDataService;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 
 class ProfileController extends Controller
 {
     public function edit()
     {
-        $profile = Profile::first();
+        $fileDataService = new FileDataService();
+        $profile = $fileDataService->first('profile.json');
 
         $envDefaults = [
             'name' => env('PORTFOLIO_NAME'),
@@ -44,32 +43,31 @@ class ProfileController extends Controller
             'profile_image' => ['nullable', 'image', 'max:4096'],
         ]);
 
-        $profile = Profile::first() ?? new Profile();
+        $fileDataService = new FileDataService();
 
+        // Get current profile data
+        $currentProfile = $fileDataService->first('profile.json') ?? [];
+
+        // Handle profile image upload if provided
         if ($request->hasFile('profile_image')) {
+            // Store the uploaded file
             $path = $request->file('profile_image')->store('profile', 'public');
-
-            Upload::create([
-                'category' => 'profile_image',
-                'original_name' => $request->file('profile_image')->getClientOriginalName(),
-                'path' => $path,
-                'disk' => 'public',
-                'mime_type' => $request->file('profile_image')->getMimeType(),
-                'size' => $request->file('profile_image')->getSize(),
-                'extension' => $request->file('profile_image')->getClientOriginalExtension(),
-                'meta' => ['type' => 'profile_image'],
-            ]);
-
-            // Delete old file if stored locally
-            if ($profile->profile_image && ! str_starts_with($profile->profile_image, ['http://', 'https://'])) {
-                Storage::disk('public')->delete($profile->profile_image);
-            }
-
-            $profile->profile_image = $path;
+            $validated['profile_image'] = $path;
         }
 
-        $profile->fill($validated);
-        $profile->save();
+        // Merge current data with validated data
+        $updatedProfile = array_merge($currentProfile, $validated);
+
+        // Ensure we have an ID
+        if (!isset($updatedProfile['id'])) {
+            $updatedProfile['id'] = 1;
+        }
+
+        // Update timestamps
+        $updatedProfile['updated_at'] = now()->toISOString();
+
+        // Save to JSON file
+        $fileDataService->write('profile.json', [$updatedProfile]);
 
         return redirect()->route('admin.profile.edit')->with('status', 'Profile updated successfully.');
     }
