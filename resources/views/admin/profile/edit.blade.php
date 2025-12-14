@@ -8,32 +8,32 @@
                 <div class="space-y-4 md:col-span-2">
                     <div>
                         <label class="block text-sm font-medium mb-1">Full name</label>
-                        <input type="text" name="name" value="{{ old('name', $profile->name ?? '') }}" class="w-full rounded-lg border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-900" required>
+                        <input type="text" name="name" value="{{ old('name', $profile->name ?? $envDefaults['name'] ?? '') }}" class="w-full rounded-lg border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-900" required>
                     </div>
                     <div>
                         <label class="block text-sm font-medium mb-1">Title</label>
-                        <input type="text" name="title" value="{{ old('title', $profile->title ?? '') }}" class="w-full rounded-lg border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-900" required>
+                        <input type="text" name="title" value="{{ old('title', $profile->title ?? $envDefaults['title'] ?? '') }}" class="w-full rounded-lg border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-900" required>
                     </div>
                 </div>
                 <div class="md:col-span-2">
                     <label class="block text-sm font-medium mb-1">Bio</label>
-                    <textarea name="bio" rows="4" class="w-full rounded-lg border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-900" required>{{ old('bio', $profile->bio ?? '') }}</textarea>
+                    <textarea name="bio" rows="4" class="w-full rounded-lg border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-900" required>{{ old('bio', $profile->bio ?? $envDefaults['bio'] ?? '') }}</textarea>
                 </div>
                 <div>
                     <label class="block text-sm font-medium mb-1">Email</label>
-                    <input type="email" name="email" value="{{ old('email', $profile->email ?? '') }}" class="w-full rounded-lg border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-900" required>
+                    <input type="email" name="email" value="{{ old('email', $profile->email ?? $envDefaults['email'] ?? '') }}" class="w-full rounded-lg border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-900" required>
                 </div>
                 <div>
                     <label class="block text-sm font-medium mb-1">Phone</label>
-                    <input type="text" name="phone" value="{{ old('phone', $profile->phone ?? '') }}" class="w-full rounded-lg border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-900">
+                    <input type="text" name="phone" value="{{ old('phone', $profile->phone ?? $envDefaults['phone'] ?? '') }}" class="w-full rounded-lg border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-900">
                 </div>
                 <div>
                     <label class="block text-sm font-medium mb-1">Location</label>
-                    <input type="text" name="location" value="{{ old('location', $profile->location ?? '') }}" class="w-full rounded-lg border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-900">
+                    <input type="text" name="location" value="{{ old('location', $profile->location ?? $envDefaults['location'] ?? '') }}" class="w-full rounded-lg border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-900">
                 </div>
                 <div>
                     <label class="block text-sm font-medium mb-1">Resume URL</label>
-                    <input type="url" name="resume_url" value="{{ old('resume_url', $profile->resume_url ?? '') }}" class="w-full rounded-lg border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-900">
+                    <input type="url" name="resume_url" value="{{ old('resume_url', $profile->resume_url ?? $envDefaults['resume_url'] ?? '') }}" class="w-full rounded-lg border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-900">
                 </div>
                 <div class="md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
                     <div>
