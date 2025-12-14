@@ -14,7 +14,17 @@ class ProfileController extends Controller
     {
         $profile = Profile::first();
 
-        return view('admin.profile.edit', compact('profile'));
+        $envDefaults = [
+            'name' => env('PORTFOLIO_NAME'),
+            'title' => env('PORTFOLIO_TITLE'),
+            'bio' => env('PORTFOLIO_BIO'),
+            'email' => env('PORTFOLIO_EMAIL'),
+            'phone' => env('PORTFOLIO_PHONE'),
+            'location' => env('PORTFOLIO_LOCATION'),
+            'resume_url' => env('PORTFOLIO_RESUME_URL'),
+        ];
+
+        return view('admin.profile.edit', compact('profile', 'envDefaults'));
     }
 
     public function update(Request $request)
