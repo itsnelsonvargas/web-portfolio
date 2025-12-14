@@ -46,11 +46,10 @@ class PortfolioController extends Controller
             return null;
         })->filter();
 
-        // About me from .env instead
+        // About me from database
         $about = (object) [
-            'large_scale_projects' => env('LARGE_SCALE_PROJECTS', '0'),
-            'years_of_experience' => env('YEARS_OF_EXPERIENCE', '1'),
-
+            'large_scale_projects' => $profile->large_scale_projects ?? env('LARGE_SCALE_PROJECTS', '0'),
+            'years_of_experience' => $profile->years_of_experience ?? env('YEARS_OF_EXPERIENCE', '1'),
         ];
 
         // Keep database queries for projects, skills, and achievements

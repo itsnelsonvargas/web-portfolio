@@ -35,6 +35,16 @@
                     <label class="block text-sm font-medium mb-1">Resume URL</label>
                     <input type="url" name="resume_url" value="{{ old('resume_url', $profile->resume_url ?? $envDefaults['resume_url'] ?? '') }}" class="w-full rounded-lg border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-900">
                 </div>
+                <div>
+                    <label class="block text-sm font-medium mb-1">Large Scale Projects</label>
+                    <input type="number" name="large_scale_projects" value="{{ old('large_scale_projects', $profile->large_scale_projects ?? $envDefaults['large_scale_projects'] ?? 0) }}" min="0" class="w-full rounded-lg border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-900">
+                    <p class="text-xs text-slate-500 mt-1">Number of large-scale projects completed</p>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-1">Years of Experience</label>
+                    <input type="number" name="years_of_experience" value="{{ old('years_of_experience', $profile->years_of_experience ?? $envDefaults['years_of_experience'] ?? 0) }}" min="0" class="w-full rounded-lg border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-900">
+                    <p class="text-xs text-slate-500 mt-1">Total years of professional experience</p>
+                </div>
                 <div class="md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
                     <div>
                         <label class="block text-sm font-medium mb-1">Profile photo</label>
