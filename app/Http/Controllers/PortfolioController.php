@@ -2,63 +2,62 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Profile;
-use App\Models\Project;
-use App\Models\Skill;
-use App\Models\SocialLink;
-use App\Models\ContactMessage;
-use App\Models\Achievement;
-use App\Models\CharacterReference;
+use App\Services\FileDataService;
 use Illuminate\Http\Request;
 
 class PortfolioController extends Controller
 {
     public function index()
     {
-        $profile = Profile::first();
+        $fileDataService = new FileDataService();
 
-        if (! $profile) {
-            // Fallback to .env if no profile is stored yet
-            $profile = (object) [
-                'name' => env('PORTFOLIO_NAME', 'John Doe'),
-                'title' => env('PORTFOLIO_TITLE', 'Full Stack Web Developer'),
-                'bio' => env('PORTFOLIO_BIO', 'Passionate web developer'),
-                'email' => env('PORTFOLIO_EMAIL', 'hello@example.com'),
-                'phone' => env('PORTFOLIO_PHONE', '+1 (555) 123-4567'),
-                'location' => env('PORTFOLIO_LOCATION', 'San Francisco, CA'),
-                'profile_image' => env('PORTFOLIO_PROFILE_IMAGE', 'https://ui-avatars.com/api/?name=Portfolio&size=400'),
-                'resume_url' => env('PORTFOLIO_RESUME_URL', '#'),
-            ];
-        } else {
-            $profile->profile_image = $profile->profileImageUrl() ?? env('PORTFOLIO_PROFILE_IMAGE', 'https://ui-avatars.com/api/?name=Portfolio&size=400');
-        }
-        // Parse social links from env
-        $socialLinks = collect([
-            env('PORTFOLIO_SOCIAL_GITHUB'),
-            env('PORTFOLIO_SOCIAL_LINKEDIN'),
-            env('PORTFOLIO_SOCIAL_FACEBOOK'),
-            env('PORTFOLIO_SOCIAL_EMAIL'),
-        ])->filter()->map(function($social) {
-            if (str_contains($social, '|')) {
-                [$platform, $url] = explode('|', $social, 2);
-                return (object) ['platform' => $platform, 'url' => $url];
-            }
-            return null;
-        })->filter();
-
-        // About me from database
-        $about = (object) [
-            'large_scale_projects' => $profile->large_scale_projects ?? env('LARGE_SCALE_PROJECTS', '0'),
-            'years_of_experience' => $profile->years_of_experience ?? env('YEARS_OF_EXPERIENCE', '1'),
+        // Load profile from JSON file
+        $profileData = $fileDataService->first('profile.json');
+        $profile = $profileData ? (object) $profileData : (object) [
+            'name' => env('PORTFOLIO_NAME', 'John Doe'),
+            'title' => env('PORTFOLIO_TITLE', 'Full Stack Web Developer'),
+            'bio' => env('PORTFOLIO_BIO', 'Passionate web developer'),
+            'email' => env('PORTFOLIO_EMAIL', 'hello@example.com'),
+            'phone' => env('PORTFOLIO_PHONE', '+1 (555) 123-4567'),
+            'location' => env('PORTFOLIO_LOCATION', 'San Francisco, CA'),
+            'profile_image' => env('PORTFOLIO_PROFILE_IMAGE', 'https://ui-avatars.com/api/?name=Portfolio&size=400'),
+            'resume_url' => env('PORTFOLIO_RESUME_URL', '#'),
+            'large_scale_projects' => env('LARGE_SCALE_PROJECTS', 0),
+            'years_of_experience' => env('YEARS_OF_EXPERIENCE', 1),
         ];
 
-        // Keep database queries for projects, skills, and achievements
-        $projects = Project::all();
-        $skills = Skill::all();
-        $achievements = Achievement::all();
-        $characterReferences = CharacterReference::all();
+        // Load projects from JSON file
+        $projects = $fileDataService->read('projects.json')->map(function ($project) {
+            return (object) $project;
+        });
 
-        // Load seminars from public/seminars folder
+        // Load skills from JSON file
+        $skills = $fileDataService->read('skills.json')->map(function ($skill) {
+            return (object) $skill;
+        });
+
+        // Load achievements from JSON file
+        $achievements = $fileDataService->read('achievements.json')->map(function ($achievement) {
+            return (object) $achievement;
+        });
+
+        // Load character references from JSON file
+        $characterReferences = $fileDataService->read('references.json')->map(function ($reference) {
+            return (object) $reference;
+        });
+
+        // Load social links from JSON file
+        $socialLinks = $fileDataService->read('social_links.json')->map(function ($link) {
+            return (object) $link;
+        });
+
+        // About me data from profile
+        $about = (object) [
+            'large_scale_projects' => $profile->large_scale_projects ?? 0,
+            'years_of_experience' => $profile->years_of_experience ?? 1,
+        ];
+
+        // Load seminars from public/seminars folder (already working)
         $seminars = $this->getSeminars();
 
         return view('portfolio.index', compact('profile', 'projects', 'skills', 'socialLinks', 'achievements', 'about', 'seminars', 'characterReferences'));

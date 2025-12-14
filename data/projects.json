@@ -1,0 +1,55 @@
+[
+    {
+        "id": 1,
+        "title": "Tara, Basa! Digital Portal v1",
+        "description": "A digital portal for the beneficiaries of the DSWD Tara, Basa! Tutoring Program, designed for use by Tutors, Youth Development Workers, and program administrators. It features an API-first architecture, enabling seamless integration with mobile applications.",
+        "image": "https:\/\/via.placeholder.com\/600x400\/3b82f6\/ffffff?text=E-Commerce",
+        "demo_url": "https:\/\/tbtp-staging.dswd.gov.ph",
+        "github_url": "",
+        "technologies": [
+            "Laravel",
+            "Blade",
+            "Bootstrap",
+            "MySQL",
+            "jQuery"
+        ],
+        "featured": true,
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 2,
+        "title": "Tara, Basa! Digital Portal v2 [Ongoing]",
+        "description": "Version 2 of the Digital Portal, redesigned for enhanced API connectivity, improved performance, and shorter page reload times.",
+        "image": "https:\/\/via.placeholder.com\/600x400\/10b981\/ffffff?text=Task+Manager",
+        "demo_url": "",
+        "github_url": "",
+        "technologies": [
+            "Laravel",
+            "Vue.js",
+            "MySQL",
+            "Tailwind CSS"
+        ],
+        "featured": true,
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 3,
+        "title": "e-commerce website",
+        "description": "A content management system specifically designed for portfolios and creative professionals. Easy to customize and extend.",
+        "image": "https:\/\/via.placeholder.com\/600x400\/8b5cf6\/ffffff?text=Portfolio+CMS",
+        "demo_url": "",
+        "github_url": "https:\/\/github.com\/itsnelsonvargas\/eGrocery",
+        "technologies": [
+            "Laravel",
+            "Blade",
+            "Bootstrap",
+            "jQuery",
+            "MySQL"
+        ],
+        "featured": false,
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    }
+]

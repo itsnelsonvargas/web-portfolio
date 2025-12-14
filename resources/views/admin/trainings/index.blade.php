@@ -1,18 +1,23 @@
 @php($title = 'Trainings & Certificates')
 <x-admin-layout :title="$title">
     <div class="space-y-6">
-        <!-- Header with Search and Add Button -->
+        <!-- File-Based Storage Notice -->
+        <div class="bg-amber-50 border border-amber-200 text-amber-800 px-4 py-3 rounded-lg">
+            <div class="flex items-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+                </svg>
+                <strong>File-Based Storage</strong>
+            </div>
+            <p class="text-sm mt-1">Training creation/editing is disabled. To modify trainings, edit the <code>data/trainings.json</code> file directly. See <code>FILE_EDITING_GUIDE.md</code> for instructions.</p>
+        </div>
+
+        <!-- Header with Search (no Add Button) -->
         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div>
                 <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100">Trainings & Certificates</h2>
-                <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Manage all your certifications, seminars, and webinars</p>
+                <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">View all your certifications, seminars, and webinars</p>
             </div>
-            <a href="{{ route('admin.trainings.create') }}" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-colors">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
-                </svg>
-                Add New Training
-            </a>
         </div>
 
         <!-- Search and Filter Bar -->
@@ -125,7 +130,14 @@
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-slate-200 dark:divide-slate-700">
-                        @forelse ($trainings as $training)
+                        @if($trainings->isEmpty())
+                            <tr>
+                                <td colspan="5" class="px-6 py-16 text-center">
+                                    <div class="text-slate-500">No trainings found in the database.</div>
+                                </td>
+                            </tr>
+                        @else
+                        @foreach ($trainings as $training)
                             <tr class="hover:bg-slate-50/50 dark:hover:bg-slate-800/30 transition-all duration-200 group">
                                 <!-- Title & Status -->
                                 <td class="px-6 py-5">
@@ -147,7 +159,7 @@
                                                 <h3 class="font-semibold text-slate-900 dark:text-slate-100 text-sm leading-tight">{{ $training->title }}</h3>
                                                 @if($training->ended_at && $training->started_at)
                                                     <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300">
-                                                        {{ $training->started_at->diffInDays($training->ended_at) }} days
+                                                        {{ \Carbon\Carbon::parse($training->started_at)->diffInDays(\Carbon\Carbon::parse($training->ended_at)) }} days
                                                     </span>
                                                 @elseif($training->started_at && !$training->ended_at)
                                                     <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300">
@@ -173,23 +185,23 @@
                                         @if($training->started_at && $training->ended_at)
                                             <div class="space-y-1">
                                                 <div class="flex items-center gap-2">
-                                                    <span class="text-green-600 dark:text-green-400 font-medium">{{ $training->started_at->format('M j, Y') }}</span>
+                                                    <span class="text-green-600 dark:text-green-400 font-medium">{{ \Carbon\Carbon::parse($training->started_at)->format('M j, Y') }}</span>
                                                     <span class="text-slate-400">→</span>
-                                                    <span class="text-slate-600 dark:text-slate-400">{{ $training->ended_at->format('M j, Y') }}</span>
+                                                    <span class="text-slate-600 dark:text-slate-400">{{ \Carbon\Carbon::parse($training->ended_at)->format('M j, Y') }}</span>
                                                 </div>
                                                 <div class="text-xs text-slate-500 dark:text-slate-400">
-                                                    {{ $training->started_at->diffInDays($training->ended_at) }} days
+                                                    {{ \Carbon\Carbon::parse($training->started_at)->diffInDays(\Carbon\Carbon::parse($training->ended_at)) }} days
                                                 </div>
                                             </div>
                                         @elseif($training->started_at && !$training->ended_at)
                                             <div class="space-y-1">
                                                 <div class="flex items-center gap-2">
-                                                    <span class="text-blue-600 dark:text-blue-400 font-medium">{{ $training->started_at->format('M j, Y') }}</span>
+                                                    <span class="text-blue-600 dark:text-blue-400 font-medium">{{ \Carbon\Carbon::parse($training->started_at)->format('M j, Y') }}</span>
                                                     <span class="text-slate-400">→</span>
                                                     <span class="text-blue-600 dark:text-blue-400 animate-pulse">Ongoing</span>
                                                 </div>
                                                 <div class="text-xs text-slate-500 dark:text-slate-400">
-                                                    {{ $training->started_at->diffForHumans() }}
+                                                    {{ \Carbon\Carbon::parse($training->started_at)->diffForHumans() }}
                                                 </div>
                                             </div>
                                         @else
@@ -247,76 +259,18 @@
 
                                 <!-- Actions -->
                                 <td class="px-6 py-5">
-                                    <div class="flex items-center justify-end gap-1">
-                                        <a href="{{ route('admin.trainings.edit', $training) }}"
-                                           class="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-medium text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/30 rounded-md transition-all duration-200 group/btn"
-                                           title="Edit training">
-                                            <svg class="w-3.5 h-3.5 group-hover/btn:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                                    <div class="flex items-center justify-end">
+                                        <span class="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-medium text-slate-400 dark:text-slate-500 bg-slate-100 dark:bg-slate-800 rounded-md cursor-not-allowed">
+                                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
                                             </svg>
-                                            <span class="hidden sm:inline">Edit</span>
-                                        </a>
-
-                                        <form action="{{ route('admin.trainings.destroy', $training) }}" method="POST" class="inline"
-                                              onsubmit="return confirm('Are you sure you want to delete this training? This action cannot be undone.');">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit"
-                                                    class="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-medium text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/30 rounded-md transition-all duration-200 group/btn"
-                                                    title="Delete training">
-                                                <svg class="w-3.5 h-3.5 group-hover/btn:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
-                                                </svg>
-                                                <span class="hidden sm:inline">Delete</span>
-                                            </button>
-                                        </form>
+                                            <span class="hidden sm:inline">Read Only</span>
+                                        </span>
                                     </div>
                                 </td>
                             </tr>
-                        @empty
-                            <tr>
-                                <td colspan="5" class="px-6 py-16 text-center">
-                                    <div class="flex flex-col items-center gap-4">
-                                        <div class="w-16 h-16 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center">
-                                            <svg class="w-8 h-8 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-                                            </svg>
-                                        </div>
-                                        <div class="text-center">
-                                            <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-1">
-                                                @if(request('search'))
-                                                    No trainings found
-                                                @else
-                                                    No trainings yet
-                                                @endif
-                                            </h3>
-                                            <p class="text-sm text-slate-500 dark:text-slate-400 max-w-sm">
-                                                @if(request('search'))
-                                                    Try adjusting your search terms or clear the filter to see all trainings.
-                                                @else
-                                                    Start building your professional development portfolio by adding your first training or certification.
-                                                @endif
-                                            </p>
-                                        </div>
-                                        @if(!request('search'))
-                                            <a href="{{ route('admin.trainings.create') }}" class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-500 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-blue-600 transition-all duration-200 shadow-lg hover:shadow-xl">
-                                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
-                                                </svg>
-                                                Add Your First Training
-                                            </a>
-                                        @else
-                                            <a href="{{ route('admin.trainings.index') }}" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600 font-medium transition-colors">
-                                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                                                </svg>
-                                                Clear Search
-                                            </a>
-                                        @endif
-                                    </div>
-                                </td>
-                            </tr>
-                        @endforelse
+                        @endforeach
+                        @endif
                     </tbody>
                 </table>
             </div>
