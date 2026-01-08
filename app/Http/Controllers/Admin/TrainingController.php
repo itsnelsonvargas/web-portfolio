@@ -87,6 +87,4 @@ class TrainingController extends Controller
         // For now, disable file operations since we're using file-based storage
         return redirect()->route('admin.trainings.index')->with('error', 'File operations are disabled in file-based mode.');
     }
-
 }
-
