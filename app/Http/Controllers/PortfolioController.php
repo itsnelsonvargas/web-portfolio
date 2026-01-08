@@ -101,7 +101,7 @@ class PortfolioController extends Controller
         }
 
         // Sort by most recent using stored timestamp
-        usort($seminars, function($a, $b) {
+        usort($seminars, function ($a, $b) {
             return $b['modified_time'] - $a['modified_time'];
         });
 
