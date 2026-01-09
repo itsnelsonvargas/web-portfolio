@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -20,30 +21,26 @@ class AuthController extends Controller
             'password' => ['required'],
         ]);
 
-        $remember = $request->boolean('remember');
+        $adminEmail = env('ADMIN_EMAIL');
+        $adminPassword = env('ADMIN_PASSWORD');
 
-        if (! Auth::attempt($credentials, $remember)) {
+        if ($credentials['email'] !== $adminEmail || $credentials['password'] !== $adminPassword) {
             return back()->withErrors([
                 'email' => 'Invalid credentials.',
             ])->withInput();
         }
 
+        // Create a session for the admin user
+        $request->session()->put('admin_authenticated', true);
+        $request->session()->put('admin_email', $adminEmail);
         $request->session()->regenerate();
-
-        if (! $request->user()->is_admin) {
-            Auth::logout();
-
-            return back()->withErrors([
-                'email' => 'You do not have admin access.',
-            ]);
-        }
 
         return redirect()->intended(route('admin.dashboard'));
     }
 
     public function logout(Request $request)
     {
-        Auth::logout();
+        $request->session()->forget(['admin_authenticated', 'admin_email']);
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
