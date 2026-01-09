@@ -10,9 +10,7 @@ class EnsureAdmin
 {
     public function handle(Request $request, Closure $next): Response
     {
-        $user = $request->user();
-
-        if (! $user || ! $user->is_admin) {
+        if (!$request->session()->has('admin_authenticated')) {
             abort(403, 'Unauthorized');
         }
 

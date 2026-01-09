@@ -27,7 +27,7 @@ Route::middleware('guest')->group(function () {
 Route::post('/admin/logout', [AuthController::class, 'logout'])->middleware('auth')->name('admin.logout');
 
 // Admin dashboard + content management
-Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(function () {
+Route::prefix('admin')->name('admin.')->middleware(['admin'])->group(function () {
     Route::get('/', DashboardController::class)->name('dashboard');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
