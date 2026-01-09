@@ -422,7 +422,7 @@
 
                     <!-- Date -->
                     @if($achievement->date)
-                    <p class="text-slate-500 text-sm mb-3">{{ $achievement->date->format('F Y') }}</p>
+                    <p class="text-slate-500 text-sm mb-3">{{ \Carbon\Carbon::parse($achievement->date)->format('F Y') }}</p>
                     @endif
 
                     <!-- Description -->
