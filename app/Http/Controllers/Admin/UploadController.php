@@ -53,4 +53,3 @@ class UploadController extends Controller
         return back()->with('status', 'File deleted.');
     }
 }
-
