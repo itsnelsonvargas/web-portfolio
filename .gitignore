@@ -30,6 +30,14 @@ Thumbs.db
 # Ignore compiled views
 /storage/framework/views/*.php
 
+# Ignore session files (safe to delete, Laravel recreates them)
+/storage/framework/sessions/*
+
+# Ignore cache files (safe to delete)
+/storage/framework/cache/*
+/storage/framework/cache/data/*
+/bootstrap/cache/*
+
 # Ignore database files
 /database/*.sqlite
 /database/*.sqlite-journal
