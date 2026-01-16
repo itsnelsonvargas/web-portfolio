@@ -3,8 +3,8 @@
         "id": 1,
         "title": "Tara, Basa! Digital Portal v1",
         "description": "A digital portal for the beneficiaries of the DSWD Tara, Basa! Tutoring Program, designed for use by Tutors, Youth Development Workers, and program administrators. It features an API-first architecture, enabling seamless integration with mobile applications.",
-        "image": "https:\/\/via.placeholder.com\/600x400\/3b82f6\/ffffff?text=E-Commerce",
-        "demo_url": "https:\/\/tbtp-staging.dswd.gov.ph",
+        "image": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop",
+        "demo_url": "",
         "github_url": "",
         "technologies": [
             "Laravel",
@@ -21,7 +21,7 @@
         "id": 2,
         "title": "Tara, Basa! Digital Portal v2 [Ongoing]",
         "description": "Version 2 of the Digital Portal, redesigned for enhanced API connectivity, improved performance, and shorter page reload times.",
-        "image": "https:\/\/via.placeholder.com\/600x400\/10b981\/ffffff?text=Task+Manager",
+        "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
         "demo_url": "",
         "github_url": "",
         "technologies": [
@@ -38,7 +38,7 @@
         "id": 3,
         "title": "e-commerce website",
         "description": "A content management system specifically designed for portfolios and creative professionals. Easy to customize and extend.",
-        "image": "https:\/\/via.placeholder.com\/600x400\/8b5cf6\/ffffff?text=Portfolio+CMS",
+        "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop",
         "demo_url": "",
         "github_url": "https:\/\/github.com\/itsnelsonvargas\/eGrocery",
         "technologies": [
