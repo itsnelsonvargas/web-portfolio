@@ -524,7 +524,7 @@
             <div class="space-y-16">
                 @php
                     $categories = $skills->groupBy('category');
-                    $staticCategories = ['Frontend', 'Backend', 'DevOps', 'Tools', 'Programming Languages', 'Database'];
+                    $staticCategories = ['Frontend', 'Backend', 'DevOps', 'Tools', 'Programming Languages', 'Database', 'Penetration Testing'];
                     // Define category order to ensure AI appears after Programming Languages
                     $categoryOrder = ['Frontend', 'Backend', 'Database', 'DevOps', 'Tools', 'Programming Languages', 'AI'];
                     $orderedCategories = [];
