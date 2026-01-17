@@ -1,14 +1,13 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PortfolioController;
-use App\Http\Controllers\SeminarController;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\PasswordController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\TrainingController;
 use App\Http\Controllers\Admin\UploadController;
-use App\Http\Controllers\Admin\PasswordController;
+use App\Http\Controllers\PortfolioController;
+use Illuminate\Support\Facades\Route;
 
 // Health check endpoint for Docker/Render
 Route::get('/health', function () {
@@ -50,7 +49,7 @@ Route::prefix('admin')->name('admin.')->middleware(['admin'])->group(function ()
 });
 
 // TEMPORARY SEEDER ROUTE - DELETE AFTER USE!
-Route::get('/reset-db', function() {
+Route::get('/reset-db', function () {
     try {
         // Reset database and run seeders
         Artisan::call('migrate:fresh', ['--force' => true, '--seed' => true]);
@@ -67,12 +66,12 @@ Route::get('/reset-db', function() {
                 'education' => \App\Models\Education::count(),
                 'achievements' => \App\Models\Achievement::count(),
                 'references' => \App\Models\CharacterReference::count(),
-            ]
+            ],
         ]);
     } catch (\Exception $e) {
         return response()->json([
             'status' => 'error',
-            'message' => $e->getMessage()
+            'message' => $e->getMessage(),
         ], 500);
     }
 });

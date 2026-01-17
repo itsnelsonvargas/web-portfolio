@@ -2,9 +2,9 @@
 
 namespace App\Services;
 
+use Carbon\Carbon;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Cache;
-use Carbon\Carbon;
 
 class FileDataService
 {
@@ -20,9 +20,9 @@ class FileDataService
      */
     public function read(string $filename): Collection
     {
-        $filePath = $this->dataPath . '/' . $filename;
+        $filePath = $this->dataPath.'/'.$filename;
 
-        if (!file_exists($filePath)) {
+        if (! file_exists($filePath)) {
             return collect();
         }
 
@@ -41,18 +41,18 @@ class FileDataService
      */
     public function write(string $filename, $data): bool
     {
-        $filePath = $this->dataPath . '/' . $filename;
+        $filePath = $this->dataPath.'/'.$filename;
 
         // Ensure directory exists
         $directory = dirname($filePath);
-        if (!is_dir($directory)) {
+        if (! is_dir($directory)) {
             mkdir($directory, 0755, true);
         }
 
         // Convert to array if it's a single object
         if (is_object($data)) {
             $data = [$data];
-        } elseif (!is_array($data)) {
+        } elseif (! is_array($data)) {
             $data = [$data];
         }
 
@@ -95,6 +95,7 @@ class FileDataService
                 $record = array_merge($record, $data);
                 $updated = true;
             }
+
             return $record;
         });
 
@@ -113,7 +114,7 @@ class FileDataService
         $records = $this->read($filename)->toArray();
 
         // Generate ID if not provided
-        if (!isset($data['id'])) {
+        if (! isset($data['id'])) {
             $maxId = collect($records)->max('id') ?? 0;
             $data['id'] = $maxId + 1;
         }
@@ -164,6 +165,7 @@ class FileDataService
                     }
                 }
             }
+
             return $item;
         });
     }
@@ -173,7 +175,7 @@ class FileDataService
      */
     private function isAssociativeArray($array): bool
     {
-        if (!is_array($array)) {
+        if (! is_array($array)) {
             return false;
         }
 
@@ -186,7 +188,7 @@ class FileDataService
      */
     public function getFilePath(string $filename): string
     {
-        return $this->dataPath . '/' . $filename;
+        return $this->dataPath.'/'.$filename;
     }
 
     /**
