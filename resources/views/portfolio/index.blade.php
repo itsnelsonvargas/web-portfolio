@@ -316,6 +316,104 @@
             transform: translateY(-5px);
             box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
         }
+
+        /* Skeleton Loading States */
+        @keyframes skeleton-loading {
+            0% {
+                background-position: -200px 0;
+            }
+            100% {
+                background-position: calc(200px + 100%) 0;
+            }
+        }
+
+        .skeleton {
+            background: linear-gradient(90deg, #374151 25%, #4b5563 37%, #374151 63%);
+            background-size: 400px 100%;
+            animation: skeleton-loading 1.4s ease-in-out infinite;
+        }
+
+        .skeleton-text {
+            background: linear-gradient(90deg, #374151 25%, #4b5563 37%, #374151 63%);
+            background-size: 400px 100%;
+            animation: skeleton-loading 1.4s ease-in-out infinite;
+        }
+
+        .image-skeleton {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .image-skeleton::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, rgba(71, 85, 105, 0.8) 25%, rgba(100, 116, 139, 0.8) 37%, rgba(71, 85, 105, 0.8) 63%);
+            background-size: 400px 100%;
+            animation: skeleton-loading 1.4s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        .image-loaded .image-skeleton::before {
+            display: none;
+        }
+
+        /* Profile image skeleton */
+        .profile-image-skeleton {
+            width: 18rem;
+            height: 18rem;
+            background: linear-gradient(90deg, rgba(71, 85, 105, 0.6) 25%, rgba(100, 116, 139, 0.6) 37%, rgba(71, 85, 105, 0.6) 63%);
+            background-size: 400px 100%;
+            animation: skeleton-loading 1.4s ease-in-out infinite;
+            border-radius: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .profile-image-skeleton {
+                width: 20rem;
+                height: 20rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .profile-image-skeleton {
+                width: 24rem;
+                height: 24rem;
+            }
+        }
+
+        /* Project image skeleton */
+        .project-image-skeleton {
+            width: 100%;
+            height: 14rem;
+            background: linear-gradient(90deg, rgba(71, 85, 105, 0.8) 25%, rgba(100, 116, 139, 0.8) 37%, rgba(71, 85, 105, 0.8) 63%);
+            background-size: 400px 100%;
+            animation: skeleton-loading 1.4s ease-in-out infinite;
+            border-radius: 0.5rem;
+        }
+
+        /* Skill logo skeleton */
+        .skill-logo-skeleton {
+            width: 3.5rem;
+            height: 3.5rem;
+            background: linear-gradient(90deg, #374151 25%, #4b5563 37%, #374151 63%);
+            background-size: 400px 100%;
+            animation: skeleton-loading 1.4s ease-in-out infinite;
+            border-radius: 0.5rem;
+        }
+
+        /* Character reference skeleton */
+        .reference-image-skeleton {
+            width: 4rem;
+            height: 4rem;
+            background: linear-gradient(90deg, rgba(168, 85, 247, 0.3) 25%, rgba(147, 51, 234, 0.3) 37%, rgba(168, 85, 247, 0.3) 63%);
+            background-size: 400px 100%;
+            animation: skeleton-loading 1.4s ease-in-out infinite;
+            border-radius: 50%;
+        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -440,8 +538,10 @@
                         <div class="absolute -inset-6 bg-gradient-to-tr from-slate-800 via-slate-700 to-slate-800 rounded-2xl border border-slate-600 transform -rotate-3 group-hover:-rotate-6 transition-transform duration-500"></div>
 
                         <!-- Profile Image Container -->
-                        <div class="relative transform group-hover:scale-105 transition-transform duration-500">
-                            <img src="{{ $profile->profile_image }}" alt="{{ $profile->name }}" class="relative w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 object-contain rounded-2xl shadow-2xl border-4 border-slate-700">
+                        <div class="relative transform group-hover:scale-105 transition-transform duration-500 image-container">
+                            <!-- Skeleton loader -->
+                            <div class="profile-image-skeleton absolute inset-0 z-0"></div>
+                            <img src="{{ $profile->profile_image }}" alt="{{ $profile->name }}" class="relative w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 object-contain rounded-2xl shadow-2xl border-4 border-slate-700 lazy-load opacity-0 transition-opacity duration-300 z-10">
                             <!-- Accent corners with glow -->
                             <div class="absolute -top-3 -right-3 w-20 h-20 bg-gradient-to-br from-blue-600 to-cyan-500 rounded-tr-2xl shadow-lg shadow-blue-600/50"></div>
                             <div class="absolute -bottom-3 -left-3 w-20 h-20 bg-gradient-to-br from-slate-700 to-slate-800 rounded-bl-2xl shadow-lg"></div>
@@ -602,8 +702,10 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 @foreach($projects as $project)
                 <div class="group project-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl border-2 border-slate-700 hover:border-blue-500 overflow-hidden transition-all duration-300 transform hover:-translate-y-3">
-                    <div class="relative overflow-hidden h-56">
-                        <img src="{{ $project->image }}" alt="{{ $project->title }}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="relative overflow-hidden h-56 image-container">
+                        <!-- Skeleton loader -->
+                        <div class="project-image-skeleton absolute inset-0 z-0"></div>
+                        <img src="{{ $project->image }}" alt="{{ $project->title }}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 lazy-load opacity-0 transition-opacity duration-300 z-10">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent opacity-60"></div>
                         <div class="absolute top-4 right-4 bg-blue-600/90 backdrop-blur-sm px-3 py-1 rounded-full">
                             <span class="text-white text-xs font-bold uppercase">Featured</span>
@@ -696,9 +798,11 @@
                             @foreach($categorySkills as $skill)
                             <div class="skill-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl border-2 border-slate-700 hover:border-blue-500 transition-all duration-300 p-4 w-48">
                                 <div class="flex flex-col items-center gap-3">
-                                    <div class="w-14 h-14 flex items-center justify-center bg-white rounded-lg p-2 shadow-lg">
+                                    <div class="w-14 h-14 flex items-center justify-center bg-white rounded-lg p-2 shadow-lg image-container">
                                         @if($skill->logo_url)
-                                        <img src="{{ $skill->logo_url }}" alt="{{ $skill->name }}" class="w-full h-full object-contain">
+                                        <!-- Skeleton loader -->
+                                        <div class="skill-logo-skeleton absolute inset-0 z-0"></div>
+                                        <img src="{{ $skill->logo_url }}" alt="{{ $skill->name }}" class="w-full h-full object-contain lazy-load opacity-0 transition-opacity duration-300 z-10 relative">
                                         @else
                                         <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-500 to-cyan-500 rounded text-white font-black text-lg">
                                             {{ strtoupper(substr($skill->name, 0, 2)) }}
@@ -720,9 +824,11 @@
                             @foreach($categorySkills as $skill)
                             <div class="skill-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl border-2 border-slate-700 hover:border-blue-500 transition-all duration-300 p-4 w-48">
                                 <div class="flex flex-col items-center gap-3">
-                                    <div class="w-14 h-14 flex items-center justify-center bg-white rounded-lg p-2 shadow-lg">
+                                    <div class="w-14 h-14 flex items-center justify-center bg-white rounded-lg p-2 shadow-lg image-container">
                                         @if($skill->logo_url)
-                                        <img src="{{ $skill->logo_url }}" alt="{{ $skill->name }}" class="w-full h-full object-contain">
+                                        <!-- Skeleton loader -->
+                                        <div class="skill-logo-skeleton absolute inset-0 z-0"></div>
+                                        <img src="{{ $skill->logo_url }}" alt="{{ $skill->name }}" class="w-full h-full object-contain lazy-load opacity-0 transition-opacity duration-300 z-10 relative">
                                         @else
                                         <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-500 to-cyan-500 rounded text-white font-black text-lg">
                                             {{ strtoupper(substr($skill->name, 0, 2)) }}
@@ -748,9 +854,11 @@
                             @foreach($categorySkills as $skill)
                             <div class="skill-card flex-shrink-0 bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl border-2 border-slate-700 hover:border-blue-500 transition-all duration-300 p-4 w-48">
                                 <div class="flex flex-col items-center gap-3">
-                                    <div class="w-14 h-14 flex items-center justify-center bg-white rounded-lg p-2 shadow-lg">
+                                    <div class="w-14 h-14 flex items-center justify-center bg-white rounded-lg p-2 shadow-lg image-container">
                                         @if($skill->logo_url)
-                                        <img src="{{ $skill->logo_url }}" alt="{{ $skill->name }}" class="w-full h-full object-contain">
+                                        <!-- Skeleton loader -->
+                                        <div class="skill-logo-skeleton absolute inset-0 z-0"></div>
+                                        <img src="{{ $skill->logo_url }}" alt="{{ $skill->name }}" class="w-full h-full object-contain lazy-load opacity-0 transition-opacity duration-300 z-10 relative">
                                         @else
                                         <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-500 to-cyan-500 rounded text-white font-black text-lg">
                                             {{ strtoupper(substr($skill->name, 0, 2)) }}
@@ -771,9 +879,11 @@
                             @foreach($categorySkills as $skill)
                             <div class="skill-card flex-shrink-0 bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl border-2 border-slate-700 hover:border-blue-500 transition-all duration-300 p-4 w-48">
                                 <div class="flex flex-col items-center gap-3">
-                                    <div class="w-14 h-14 flex items-center justify-center bg-white rounded-lg p-2 shadow-lg">
+                                    <div class="w-14 h-14 flex items-center justify-center bg-white rounded-lg p-2 shadow-lg image-container">
                                         @if($skill->logo_url)
-                                        <img src="{{ $skill->logo_url }}" alt="{{ $skill->name }}" class="w-full h-full object-contain">
+                                        <!-- Skeleton loader -->
+                                        <div class="skill-logo-skeleton absolute inset-0 z-0"></div>
+                                        <img src="{{ $skill->logo_url }}" alt="{{ $skill->name }}" class="w-full h-full object-contain lazy-load opacity-0 transition-opacity duration-300 z-10 relative">
                                         @else
                                         <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-500 to-cyan-500 rounded text-white font-black text-lg">
                                             {{ strtoupper(substr($skill->name, 0, 2)) }}
@@ -893,9 +1003,11 @@
                     <div class="p-6">
                         <!-- Profile Header -->
                         <div class="flex items-start gap-4 mb-4">
-                            <div class="flex-shrink-0">
+                            <div class="flex-shrink-0 image-container">
                                 @if($reference->image)
-                                <img src="{{ $reference->image }}" alt="{{ $reference->name }}" class="w-16 h-16 rounded-full border-2 border-purple-500/50">
+                                <!-- Skeleton loader -->
+                                <div class="reference-image-skeleton absolute inset-0 z-0"></div>
+                                <img src="{{ $reference->image }}" alt="{{ $reference->name }}" class="w-16 h-16 rounded-full border-2 border-purple-500/50 lazy-load opacity-0 transition-opacity duration-300 z-10 relative">
                                 @else
                                 <div class="w-16 h-16 rounded-full bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center text-white text-xl font-bold">
                                     {{ substr($reference->name, 0, 1) }}
@@ -1173,6 +1285,44 @@
         scrollBtn.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
+
+        // Image Loading States
+        function handleImageLoading() {
+            // Handle all images with loading states
+            const images = document.querySelectorAll('.lazy-load');
+
+            images.forEach(img => {
+                const container = img.closest('.image-container');
+                const skeleton = container?.querySelector('.image-skeleton');
+
+                if (img.complete && img.naturalHeight !== 0) {
+                    // Image already loaded
+                    container?.classList.add('image-loaded');
+                    skeleton?.classList.add('hidden');
+                } else {
+                    // Image still loading
+                    img.addEventListener('load', function() {
+                        container?.classList.add('image-loaded');
+                        skeleton?.classList.add('hidden');
+                        img.classList.remove('opacity-0');
+                        img.classList.add('opacity-100');
+                    });
+
+                    img.addEventListener('error', function() {
+                        // Hide skeleton on error and show fallback
+                        skeleton?.classList.add('hidden');
+                        img.classList.remove('opacity-0');
+                        img.classList.add('opacity-100');
+                    });
+                }
+            });
+        }
+
+        // Initialize image loading on page load
+        document.addEventListener('DOMContentLoaded', handleImageLoading);
+
+        // Handle images that load after DOM ready (for dynamically added content)
+        window.addEventListener('load', handleImageLoading);
     </script>
 </body>
 </html>
