@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ContactMessage;
 use App\Services\FileDataService;
 use Illuminate\Http\Request;
 
