@@ -3,7 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ $profile->name }} - {{ $profile->title }}</title>
+    
+    <!-- Primary Meta Tags -->
+    <title>{{ $profile->name }} - {{ $profile->title }} | Portfolio</title>
+    <meta name="title" content="{{ $profile->name }} - {{ $profile->title }} | Portfolio">
+    <meta name="description" content="{{ Str::limit(strip_tags($profile->bio ?? 'Professional web developer portfolio showcasing projects, skills, and expertise.'), 160) }}">
+    <meta name="keywords" content="{{ $profile->title }}, web developer, portfolio, {{ collect($skills)->pluck('name')->take(10)->implode(', ') }}, {{ $profile->location ?? '' }}, freelance developer, software developer">
+    <meta name="author" content="{{ $profile->name }}">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <link rel="canonical" href="{{ url()->current() }}">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:title" content="{{ $profile->name }} - {{ $profile->title }} | Portfolio">
+    <meta property="og:description" content="{{ Str::limit(strip_tags($profile->bio ?? 'Professional web developer portfolio showcasing projects, skills, and expertise.'), 160) }}">
+    <meta property="og:image" content="{{ $profile->profile_image ? (str_starts_with($profile->profile_image, 'http') ? $profile->profile_image : url($profile->profile_image)) : url('/images/portfolio-image.JPG') }}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="{{ $profile->name }} - {{ $profile->title }}">
+    <meta property="og:site_name" content="{{ $profile->name }} Portfolio">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ url()->current() }}">
+    <meta name="twitter:title" content="{{ $profile->name }} - {{ $profile->title }} | Portfolio">
+    <meta name="twitter:description" content="{{ Str::limit(strip_tags($profile->bio ?? 'Professional web developer portfolio showcasing projects, skills, and expertise.'), 160) }}">
+    <meta name="twitter:image" content="{{ $profile->profile_image ? (str_starts_with($profile->profile_image, 'http') ? $profile->profile_image : url($profile->profile_image)) : url('/images/portfolio-image.JPG') }}">
+    <meta name="twitter:image:alt" content="{{ $profile->name }} - {{ $profile->title }}">
+    @if(collect($socialLinks)->where('platform', 'like', '%twitter%')->first())
+    <meta name="twitter:creator" content="{{ collect($socialLinks)->where('platform', 'like', '%twitter%')->first()->url }}">
+    @endif
+    
+    <!-- Additional SEO -->
+    <meta name="theme-color" content="#0f172a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- Structured Data (JSON-LD) -->
+    @php
+        $personSchema = [
+            '@context' => 'https://schema.org',
+            '@type' => 'Person',
+            'name' => $profile->name,
+            'jobTitle' => $profile->title,
+            'description' => strip_tags($profile->bio ?? ''),
+            'email' => $profile->email,
+            'url' => url()->current(),
+        ];
+        
+        if ($profile->phone ?? null) {
+            $personSchema['telephone'] = $profile->phone;
+        }
+        
+        if ($profile->location ?? null) {
+            $personSchema['address'] = [
+                '@type' => 'PostalAddress',
+                'addressLocality' => $profile->location,
+            ];
+        }
+        
+        $profileImage = $profile->profile_image ?? null;
+        if ($profileImage) {
+            $personSchema['image'] = str_starts_with($profileImage, 'http') ? $profileImage : url($profileImage);
+        } else {
+            $personSchema['image'] = url('/images/portfolio-image.JPG');
+        }
+        
+        if (count($socialLinks) > 0) {
+            $personSchema['sameAs'] = $socialLinks->pluck('url')->toArray();
+        }
+        
+        if ($skills->count() > 0) {
+            $personSchema['knowsAbout'] = $skills->take(20)->pluck('name')->toArray();
+        }
+        
+        $websiteSchema = [
+            '@context' => 'https://schema.org',
+            '@type' => 'WebSite',
+            'name' => $profile->name . ' Portfolio',
+            'url' => url()->current(),
+            'author' => [
+                '@type' => 'Person',
+                'name' => $profile->name,
+            ],
+            'description' => Str::limit(strip_tags($profile->bio ?? 'Professional web developer portfolio'), 160),
+        ];
+        
+        $projectListSchema = null;
+        if ($projects->count() > 0) {
+            $items = [];
+            foreach ($projects->take(10) as $index => $project) {
+                $item = [
+                    '@type' => 'CreativeWork',
+                    'name' => $project->title ?? '',
+                    'description' => strip_tags($project->description ?? ''),
+                ];
+                
+                if ($project->demo_url ?? null) {
+                    $item['url'] = $project->demo_url;
+                }
+                
+                if ($project->image ?? null) {
+                    $item['image'] = str_starts_with($project->image, 'http') ? $project->image : url($project->image);
+                }
+                
+                $items[] = [
+                    '@type' => 'ListItem',
+                    'position' => $index + 1,
+                    'item' => $item,
+                ];
+            }
+            
+            $projectListSchema = [
+                '@context' => 'https://schema.org',
+                '@type' => 'ItemList',
+                'itemListElement' => $items,
+            ];
+        }
+    @endphp
+    
+    <script type="application/ld+json">
+    {!! json_encode($personSchema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}
+    </script>
+    
+    <script type="application/ld+json">
+    {!! json_encode($websiteSchema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}
+    </script>
+    
+    @if($projectListSchema)
+    <script type="application/ld+json">
+    {!! json_encode($projectListSchema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}
+    </script>
+    @endif
+    
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <style>
         @keyframes fadeInUp {
