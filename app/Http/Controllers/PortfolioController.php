@@ -9,7 +9,7 @@ class PortfolioController extends Controller
 {
     public function index()
     {
-        $fileDataService = new FileDataService();
+        $fileDataService = new FileDataService;
 
         // Load profile from JSON file
         $profileData = $fileDataService->first('profile.json');
@@ -71,24 +71,24 @@ class PortfolioController extends Controller
         $seminars = [];
         $seminarPath = public_path('seminars');
 
-        if (!is_dir($seminarPath)) {
+        if (! is_dir($seminarPath)) {
             return $seminars;
         }
 
         $files = array_diff(scandir($seminarPath), ['.', '..', '.gitkeep']);
 
         foreach ($files as $filename) {
-            $filePath = $seminarPath . '/' . $filename;
+            $filePath = $seminarPath.'/'.$filename;
 
             // Skip .gitkeep and other hidden files
-            if (is_file($filePath) && !str_starts_with($filename, '.')) {
+            if (is_file($filePath) && ! str_starts_with($filename, '.')) {
                 $extension = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
                 $type = $this->getFileType($extension);
                 $badgeClass = $this->getBadgeClass($extension);
 
                 $seminars[] = [
                     'name' => pathinfo($filename, PATHINFO_FILENAME),
-                    'url' => asset('seminars/' . rawurlencode($filename)),
+                    'url' => asset('seminars/'.rawurlencode($filename)),
                     'date' => date('M Y', filemtime($filePath)),
                     'type' => $type,
                     'badge_class' => $badgeClass,

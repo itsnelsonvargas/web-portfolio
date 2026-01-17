@@ -10,7 +10,7 @@ class ProfileController extends Controller
 {
     public function edit()
     {
-        $fileDataService = new FileDataService();
+        $fileDataService = new FileDataService;
         $profile = $fileDataService->first('profile.json');
 
         $envDefaults = [
@@ -43,7 +43,7 @@ class ProfileController extends Controller
             'profile_image' => ['nullable', 'image', 'max:4096'],
         ]);
 
-        $fileDataService = new FileDataService();
+        $fileDataService = new FileDataService;
 
         // Get current profile data
         $currentProfile = $fileDataService->first('profile.json') ?? [];
@@ -59,7 +59,7 @@ class ProfileController extends Controller
         $updatedProfile = array_merge($currentProfile, $validated);
 
         // Ensure we have an ID
-        if (!isset($updatedProfile['id'])) {
+        if (! isset($updatedProfile['id'])) {
             $updatedProfile['id'] = 1;
         }
 

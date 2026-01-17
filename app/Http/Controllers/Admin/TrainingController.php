@@ -10,7 +10,7 @@ class TrainingController extends Controller
 {
     public function index(Request $request)
     {
-        $fileDataService = new FileDataService();
+        $fileDataService = new FileDataService;
         $trainings = $fileDataService->read('trainings.json');
 
         // Apply search if provided
@@ -37,6 +37,7 @@ class TrainingController extends Controller
             $obj = (object) $training;
             // Add uploads_count for compatibility
             $obj->uploads_count = isset($training['files']) ? count($training['files']) : 0;
+
             return $obj;
         });
 
@@ -57,10 +58,10 @@ class TrainingController extends Controller
 
     public function edit($id)
     {
-        $fileDataService = new FileDataService();
+        $fileDataService = new FileDataService;
         $training = $fileDataService->find('trainings.json', $id);
 
-        if (!$training) {
+        if (! $training) {
             return redirect()->route('admin.trainings.index')->with('error', 'Training not found.');
         }
 
