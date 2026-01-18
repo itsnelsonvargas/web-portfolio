@@ -1,0 +1,98 @@
+[
+    {
+        "id": 1,
+        "title": "Electronic Data Processing Specialist",
+        "type": "certificate",
+        "issuer": "Department of Comunications and Information Technology",
+        "description": "Reached",
+        "date": null,
+        "icon": "\ud83c\udfc6",
+        "url": "#",
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 2,
+        "title": "Philippine Air Force reservist",
+        "type": "achievement",
+        "issuer": "Philippine Air Force",
+        "description": "Trained and certified as a reservist in the Philippine Air Force, demonstrating commitment to national service and discipline.",
+        "date": "2021-07-21",
+        "icon": "\u2708\uFE0F",
+        "url": null,
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 3,
+        "title": "Quick Response Team (QRT) Lead",
+        "type": "Designation",
+        "issuer": "Department of Social Welfare and Development",
+        "description": "DSWD Special Order No. 2434 series of 2025. Official certification demonstrating advanced Laravel framework knowledge and best practices.",
+        "date": "2022-05-10",
+        "icon": "\uD83D\uDEA8",
+        "url": "#",
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 4,
+        "title": "Designated Safety and Evacuation Officer (SEO)",
+        "type": "Designation",
+        "issuer": "Department of Social Welfare and Development",
+        "description": "Provided safety and evacuation training to staff, ensuring preparedness for emergencies in the workplace.",
+        "date": "2024-01-01",
+        "icon": "\uD83E\uDDBA",
+        "url": "#",
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 5,
+        "title": "Certified Six Sigma Yellow Belt",
+        "type": "certificate",
+        "issuer": "Prof. Dr. Marcelo Machado  Fernandes",
+        "description": "A professional certification focused on foundational knowledge of Six Sigma principles for process improvement.",
+        "date": "2024-04-27",
+        "icon": "\uD83E\uDD4B",
+        "url": "#",
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 6,
+        "title": "Civil Service Eligibility - Professional Level",
+        "type": "certificate",
+        "issuer": "Civil Service Commission",
+        "description": "Passed the Civil Service Examination for Professional Level, demonstrating knowledge in public administration and governance.",
+        "date": "2019-09-04",
+        "icon": "\ud83d\udcdc",
+        "url": null,
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 7,
+        "title": "DSWD Contingency Plan for Earthquake (Office focal)",
+        "type": "Designation",
+        "issuer": "Department of Social Welfare and Development",
+        "description": "Trained and oriented by the DSWD Buildings and Grounds Management Office (BGMD) to act as the designated office implementer and focal person",
+        "date": "2019-09-04",
+        "icon": "\u26D1\uFE0F",
+        "url": null,
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    },
+    {
+        "id": 7,
+        "title": "Compliance Officer for Data Privacy",
+        "type": "Designation",
+        "issuer": "Department of Social Welfare and Development",
+        "description": "Designated as the Compliance Officer for Data Privacy, ensuring adherence to data protection policies, safeguarding sensitive information, and maintaining compliance with relevant laws and regulations",
+        "date": "2025",
+        "icon": "\uD83D\uDEE1\uFE0F",
+        "url": null,
+        "created_at": "2025-12-12T17:06:41.000000Z",
+        "updated_at": "2025-12-12T17:06:41.000000Z"
+    }
+]

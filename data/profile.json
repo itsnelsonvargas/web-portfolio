@@ -1,0 +1,15 @@
+{
+    "id": 1,
+    "name": "Nelson Vargas",
+    "title": "Web Developer",
+    "bio": "Passionate web developer with 6+ years of experience building modern web applications",
+    "email": "itsnelsonvargas@gmail.com",
+    "phone": "0908.260.1453",
+    "location": "Quezon City, Philippines",
+    "profile_image": "/images/portfolio-image.JPG",
+    "resume_url": "https:\/\/www.canva.com\/design\/DAGtyKG958Y\/KpGNkYhAltA6NPCv0UywLA\/view",
+    "created_at": "2025-12-14T11:34:55.000000Z",
+    "updated_at": "2025-12-14T12:43:06.000000Z",
+    "large_scale_projects": 4,
+    "years_of_experience": 6
+}
