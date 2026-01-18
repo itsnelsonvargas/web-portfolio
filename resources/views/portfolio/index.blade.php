@@ -317,6 +317,28 @@
             box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
         }
 
+        /* Loading states */
+        .image-loading {
+            background: linear-gradient(90deg, #374151 25%, #4b5563 50%, #374151 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        /* Image fade-in effect */
+        .image-fade-in {
+            opacity: 0;
+            transition: opacity 0.3s ease-in;
+        }
+
+        .image-fade-in.loaded {
+            opacity: 1;
+        }
+
     </style>
 </head>
 <body class="bg-gray-50">
@@ -332,11 +354,20 @@
                     <a href="#about" class="text-slate-300 hover:text-white transition-colors duration-200 font-medium text-sm uppercase tracking-wide">
                         About
                     </a>
+                    <a href="#achievements" class="text-slate-300 hover:text-white transition-colors duration-200 font-medium text-sm uppercase tracking-wide">
+                        Achievements
+                    </a>
                     <a href="#projects" class="text-slate-300 hover:text-white transition-colors duration-200 font-medium text-sm uppercase tracking-wide">
                         Projects
                     </a>
                     <a href="#skills" class="text-slate-300 hover:text-white transition-colors duration-200 font-medium text-sm uppercase tracking-wide">
                         Skills
+                    </a>
+                    <a href="#seminars" class="text-slate-300 hover:text-white transition-colors duration-200 font-medium text-sm uppercase tracking-wide">
+                        Seminars
+                    </a>
+                    <a href="#references" class="text-slate-300 hover:text-white transition-colors duration-200 font-medium text-sm uppercase tracking-wide">
+                        References
                     </a>
                     <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md transition-colors duration-200 font-medium text-sm uppercase tracking-wide">
                         Contact
@@ -353,8 +384,11 @@
             <div class="hidden md:hidden mt-4 space-y-2" id="mobile-menu">
                 <a href="#home" class="block py-2 text-slate-300 hover:text-white hover:bg-slate-800 px-4 rounded transition">Home</a>
                 <a href="#about" class="block py-2 text-slate-300 hover:text-white hover:bg-slate-800 px-4 rounded transition">About</a>
+                <a href="#achievements" class="block py-2 text-slate-300 hover:text-white hover:bg-slate-800 px-4 rounded transition">Achievements</a>
                 <a href="#projects" class="block py-2 text-slate-300 hover:text-white hover:bg-slate-800 px-4 rounded transition">Projects</a>
                 <a href="#skills" class="block py-2 text-slate-300 hover:text-white hover:bg-slate-800 px-4 rounded transition">Skills</a>
+                <a href="#seminars" class="block py-2 text-slate-300 hover:text-white hover:bg-slate-800 px-4 rounded transition">Seminars</a>
+                <a href="#references" class="block py-2 text-slate-300 hover:text-white hover:bg-slate-800 px-4 rounded transition">References</a>
                 <a href="#contact" class="block py-2 text-slate-300 hover:text-white hover:bg-slate-800 px-4 rounded transition">Contact</a>
             </div>
         </div>
@@ -442,7 +476,7 @@
 
                         <!-- Profile Image Container -->
                         <div class="relative transform group-hover:scale-105 transition-transform duration-500">
-                            <img src="{{ $profile->profile_image }}" alt="{{ $profile->name }}" class="w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 object-contain rounded-2xl shadow-2xl border-4 border-slate-700">
+                            <img src="{{ $profile->profile_image }}" alt="{{ $profile->name }}" class="w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 object-contain rounded-2xl shadow-2xl border-4 border-slate-700" onerror="this.src='https://ui-avatars.com/api/?name={{ urlencode($profile->name) }}&size=400&background=1e293b&color=60a5fa&format=png'" loading="lazy">
                             <!-- Accent corners with glow -->
                             <div class="absolute -top-3 -right-3 w-20 h-20 bg-gradient-to-br from-blue-600 to-cyan-500 rounded-tr-2xl shadow-lg shadow-blue-600/50"></div>
                             <div class="absolute -bottom-3 -left-3 w-20 h-20 bg-gradient-to-br from-slate-700 to-slate-800 rounded-bl-2xl shadow-lg"></div>
@@ -604,7 +638,7 @@
                 @foreach($projects as $project)
                 <div class="group project-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl border-2 border-slate-700 hover:border-blue-500 overflow-hidden transition-all duration-300 transform hover:-translate-y-3">
                     <div class="relative overflow-hidden h-56">
-                        <img src="{{ $project->image }}" alt="{{ $project->title }}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <img src="{{ $project->image }}" alt="{{ $project->title }}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://via.placeholder.com/800x600/1e293b/64748b?text={{ urlencode(str_replace(' ', '+', $project->title)) }}'" loading="lazy">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent opacity-60"></div>
                         <div class="absolute top-4 right-4 bg-blue-600/90 backdrop-blur-sm px-3 py-1 rounded-full">
                             <span class="text-white text-xs font-bold uppercase">Featured</span>
@@ -699,12 +733,11 @@
                                 <div class="flex flex-col items-center gap-3">
                                     <div class="w-14 h-14 flex items-center justify-center bg-white rounded-lg p-2 shadow-lg">
                                         @if($skill->logo_url)
-                                        <img src="{{ $skill->logo_url }}" alt="{{ $skill->name }}" class="w-full h-full object-contain">
-                                        @else
-                                        <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-500 to-cyan-500 rounded text-white font-black text-lg">
+                                        <img src="{{ $skill->logo_url }}" alt="{{ $skill->name }}" class="w-full h-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" loading="lazy">
+                                        @endif
+                                        <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-500 to-cyan-500 rounded text-white font-black text-lg {{ $skill->logo_url ? 'hidden' : '' }}">
                                             {{ strtoupper(substr($skill->name, 0, 2)) }}
                                         </div>
-                                        @endif
                                     </div>
                                     <div class="text-center w-full">
                                         <div class="font-bold text-slate-200 text-base">{{ $skill->name }}</div>
@@ -723,12 +756,11 @@
                                 <div class="flex flex-col items-center gap-3">
                                     <div class="w-14 h-14 flex items-center justify-center bg-white rounded-lg p-2 shadow-lg">
                                         @if($skill->logo_url)
-                                        <img src="{{ $skill->logo_url }}" alt="{{ $skill->name }}" class="w-full h-full object-contain">
-                                        @else
-                                        <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-500 to-cyan-500 rounded text-white font-black text-lg">
+                                        <img src="{{ $skill->logo_url }}" alt="{{ $skill->name }}" class="w-full h-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" loading="lazy">
+                                        @endif
+                                        <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-500 to-cyan-500 rounded text-white font-black text-lg {{ $skill->logo_url ? 'hidden' : '' }}">
                                             {{ strtoupper(substr($skill->name, 0, 2)) }}
                                         </div>
-                                        @endif
                                     </div>
                                     <div class="text-center w-full">
                                         <div class="font-bold text-slate-200 text-base mb-2">{{ $skill->name }}</div>
@@ -751,12 +783,11 @@
                                 <div class="flex flex-col items-center gap-3">
                                     <div class="w-14 h-14 flex items-center justify-center bg-white rounded-lg p-2 shadow-lg">
                                         @if($skill->logo_url)
-                                        <img src="{{ $skill->logo_url }}" alt="{{ $skill->name }}" class="w-full h-full object-contain">
-                                        @else
-                                        <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-500 to-cyan-500 rounded text-white font-black text-lg">
+                                        <img src="{{ $skill->logo_url }}" alt="{{ $skill->name }}" class="w-full h-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" loading="lazy">
+                                        @endif
+                                        <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-500 to-cyan-500 rounded text-white font-black text-lg {{ $skill->logo_url ? 'hidden' : '' }}">
                                             {{ strtoupper(substr($skill->name, 0, 2)) }}
                                         </div>
-                                        @endif
                                     </div>
                                     <div class="text-center w-full">
                                         <div class="font-bold text-slate-200 text-base mb-2">{{ $skill->name }}</div>
@@ -774,12 +805,11 @@
                                 <div class="flex flex-col items-center gap-3">
                                     <div class="w-14 h-14 flex items-center justify-center bg-white rounded-lg p-2 shadow-lg">
                                         @if($skill->logo_url)
-                                        <img src="{{ $skill->logo_url }}" alt="{{ $skill->name }}" class="w-full h-full object-contain">
-                                        @else
-                                        <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-500 to-cyan-500 rounded text-white font-black text-lg">
+                                        <img src="{{ $skill->logo_url }}" alt="{{ $skill->name }}" class="w-full h-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" loading="lazy">
+                                        @endif
+                                        <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-500 to-cyan-500 rounded text-white font-black text-lg {{ $skill->logo_url ? 'hidden' : '' }}">
                                             {{ strtoupper(substr($skill->name, 0, 2)) }}
                                         </div>
-                                        @endif
                                     </div>
                                     <div class="text-center w-full">
                                         <div class="font-bold text-slate-200 text-base mb-2">{{ $skill->name }}</div>
@@ -824,7 +854,14 @@
                         <div class="relative flex-shrink-0 bg-gradient-to-br from-purple-600 to-pink-600" style="height: 50%; overflow: hidden; position: relative;">
                             @if($seminar['is_image'])
                                 <!-- Display actual image -->
-                                <img src="{{ $seminar['url'] }}" alt="{{ $seminar['name'] }}" style="width: 130%; height: 130%; object-fit: cover; display: block; transform: scale(1.0); transform-origin: top left; margin-left: -15%; margin-top: -15%;">
+                                <img src="{{ $seminar['url'] }}" alt="{{ $seminar['name'] }}" style="width: 130%; height: 130%; object-fit: cover; display: block; transform: scale(1.0); transform-origin: top left; margin-left: -15%; margin-top: -15%;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" loading="lazy">
+                                <!-- Fallback icon when image fails -->
+                                <div style="display: none; width: 100%; height: 100%; padding: 1rem; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+                                    <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.1);"></div>
+                                    <svg style="width: 1.5rem; height: 1.5rem; color: white; position: relative; z-index: 10;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                    </svg>
+                                </div>
                             @elseif($seminar['extension'] === 'pdf')
                                 <!-- Embed PDF preview -->
                                 <div style="width: 100%; height: 100%; overflow: hidden; position: relative;">
@@ -896,12 +933,11 @@
                         <div class="flex items-start gap-4 mb-4">
                             <div class="flex-shrink-0">
                                 @if($reference->image)
-                                <img src="{{ $reference->image }}" alt="{{ $reference->name }}" class="w-16 h-16 rounded-full border-2 border-purple-500/50">
-                                @else
-                                <div class="w-16 h-16 rounded-full bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center text-white text-xl font-bold">
+                                <img src="{{ $reference->image }}" alt="{{ $reference->name }}" class="w-16 h-16 rounded-full border-2 border-purple-500/50" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" loading="lazy">
+                                @endif
+                                <div class="w-16 h-16 rounded-full bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center text-white text-xl font-bold {{ $reference->image ? 'hidden' : '' }}">
                                     {{ substr($reference->name, 0, 1) }}
                                 </div>
-                                @endif
                             </div>
                             <div class="flex-1 min-w-0">
                                 <h3 class="text-lg font-bold text-white mb-1">{{ $reference->name }}</h3>
