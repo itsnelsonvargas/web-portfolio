@@ -48,30 +48,3 @@ Route::prefix('admin')->name('admin.')->middleware(['admin'])->group(function ()
     Route::post('/password', [PasswordController::class, 'update'])->name('password.update');
 });
 
-// TEMPORARY SEEDER ROUTE - DELETE AFTER USE!
-Route::get('/reset-db', function () {
-    try {
-        // Reset database and run seeders
-        Artisan::call('migrate:fresh', ['--force' => true, '--seed' => true]);
-        $output = Artisan::output();
-
-        return response()->json([
-            'status' => 'success',
-            'message' => 'Database reset and seeded successfully!',
-            'output' => $output,
-            'counts' => [
-                'projects' => \App\Models\Project::count(),
-                'skills' => \App\Models\Skill::count(),
-                'experiences' => \App\Models\Experience::count(),
-                'education' => \App\Models\Education::count(),
-                'achievements' => \App\Models\Achievement::count(),
-                'references' => \App\Models\CharacterReference::count(),
-            ],
-        ]);
-    } catch (\Exception $e) {
-        return response()->json([
-            'status' => 'error',
-            'message' => $e->getMessage(),
-        ], 500);
-    }
-});
