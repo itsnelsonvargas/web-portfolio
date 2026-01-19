@@ -3,16 +3,47 @@ services:
     name: web-portfolio
     env: docker
     dockerfilePath: ./Dockerfile
+    buildCommand: |
+      echo "Starting Render build process..."
+      composer install --optimize-autoloader --no-dev --no-scripts --no-interaction --prefer-dist
+      npm ci --only=production && npm run build
+      composer run-script post-autoload-dump --no-interaction
+      php artisan key:generate --no-interaction --force
+      php artisan config:cache --no-ansi --no-interaction
+      php artisan route:cache --no-ansi --no-interaction
+      php artisan view:cache --no-ansi --no-interaction
+      echo "Build process completed successfully"
     envVars:
       - key: APP_ENV
         value: production
+      - key: APP_DEBUG
+        value: false
       - key: APP_KEY
         generateValue: true
-      - key: DB_CONNECTION
-        value: sqlite
+      - key: APP_URL
+        fromService:
+          type: web
+          name: web-portfolio
+          property: host
       - key: CACHE_DRIVER
         value: file
       - key: SESSION_DRIVER
         value: file
       - key: QUEUE_CONNECTION
         value: sync
+      - key: SESSION_LIFETIME
+        value: 120
+      - key: MAIL_MAILER
+        value: log
+      - key: ADMIN_EMAIL
+        value: admin@yourportfolio.com
+      - key: ADMIN_PASSWORD
+        value: changeme123!
+      - key: GOOGLE_ANALYTICS_ID
+        value: G-L0RHNJ2SQB
+      - key: LOG_CHANNEL
+        value: stderr
+      - key: LOG_LEVEL
+        value: error
+      - key: FILESYSTEM_DISK
+        value: local
