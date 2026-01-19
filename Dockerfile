@@ -24,8 +24,8 @@ WORKDIR /var/www/html
 # Copy composer files first for better caching
 COPY composer.json composer.lock ./
 
-# Install PHP dependencies
-RUN composer install --optimize-autoloader --no-dev
+# Install PHP dependencies (skip scripts since artisan isn't available yet)
+RUN composer install --optimize-autoloader --no-dev --no-scripts
 
 # Copy package files and install Node dependencies
 COPY package.json package-lock.json ./
@@ -33,6 +33,9 @@ RUN npm install
 
 # Copy the rest of the application
 COPY . .
+
+# Run composer scripts now that artisan is available
+RUN composer run-script post-autoload-dump
 
 # Build frontend assets
 RUN npm run build
@@ -42,7 +45,6 @@ RUN chown -R www-data:www-data /var/www/html \
     && chmod -R 755 /var/www/html \
     && chmod -R 775 /var/www/html/storage \
     && chmod -R 775 /var/www/html/bootstrap/cache \
-    && chmod -R 775 /var/www/html/storage/framework/views \
     && chmod -R 755 /var/www/html/data
 
 # Create .env file if it doesn't exist
@@ -54,7 +56,7 @@ RUN php artisan key:generate --no-interaction || true
 # Clear and cache config
 RUN php artisan config:cache \
     && php artisan route:cache \
-    && php artisan view:cache || true
+    && php artisan view:cache
 
 # Enable Apache mod_rewrite
 RUN a2enmod rewrite
