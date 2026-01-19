@@ -11,11 +11,9 @@ RUN apt-get update && apt-get install -y \
     libzip-dev \
     zip \
     unzip \
-    postgresql-client \
-    libpq-dev \
     nodejs \
     npm \
-    && docker-php-ext-install pdo_pgsql mbstring exif pcntl bcmath gd zip
+    && docker-php-ext-install mbstring exif pcntl bcmath gd zip
 
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
@@ -43,7 +41,8 @@ RUN npm run build
 RUN chown -R www-data:www-data /var/www/html \
     && chmod -R 755 /var/www/html \
     && chmod -R 775 /var/www/html/storage \
-    && chmod -R 775 /var/www/html/bootstrap/cache
+    && chmod -R 775 /var/www/html/bootstrap/cache \
+    && chmod -R 755 /var/www/html/data
 
 # Create .env file if it doesn't exist
 RUN cp .env.example .env || true
