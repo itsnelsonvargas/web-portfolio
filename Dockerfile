@@ -24,8 +24,8 @@ WORKDIR /var/www/html
 # Copy composer files first for better caching
 COPY composer.json composer.lock ./
 
-# Install PHP dependencies
-RUN composer install --optimize-autoloader --no-dev
+# Install PHP dependencies (without running scripts)
+RUN composer install --optimize-autoloader --no-dev --no-scripts
 
 # Copy package files and install Node dependencies
 COPY package.json package-lock.json ./
@@ -33,6 +33,9 @@ RUN npm install
 
 # Copy the rest of the application
 COPY . .
+
+# Run composer post-install scripts now that all files are available
+RUN composer run-script post-autoload-dump
 
 # Build frontend assets
 RUN npm run build
