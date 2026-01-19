@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ContactMessage;
 use App\Services\FileDataService;
 use Illuminate\Http\Request;
 
@@ -168,8 +167,15 @@ class PortfolioController extends Controller
             'message' => 'required',
         ]);
 
-        // Save to database for your records
-        ContactMessage::create($validated);
+        // Save to JSON file instead of database
+        $fileDataService = new FileDataService;
+
+        $contactData = array_merge($validated, [
+            'is_read' => false,
+            'submitted_at' => now()->toISOString(),
+        ]);
+
+        $fileDataService->create('contacts.json', $contactData);
 
         return back()->with('success', 'Thank you for your message! I will get back to you soon.');
     }
