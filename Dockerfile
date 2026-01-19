@@ -13,9 +13,7 @@ RUN apt-get update && apt-get install -y \
     unzip \
     nodejs \
     npm \
-    sqlite3 \
-    libsqlite3-dev \
-    && docker-php-ext-install pdo pdo_sqlite mbstring exif pcntl bcmath gd zip
+    && docker-php-ext-install mbstring exif pcntl bcmath gd zip
 
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
@@ -55,15 +53,10 @@ RUN cp .env.example .env 2>/dev/null || echo "No .env.example found"
 # Generate application key if not set
 RUN php artisan key:generate --no-interaction --force
 
-# Create SQLite database file and set permissions
-RUN mkdir -p database && \
-    touch database/database.sqlite && \
-    chmod 664 database/database.sqlite && \
-    chown www-data:www-data database/database.sqlite && \
-    chown -R www-data:www-data database
-
-# Run migrations and seeders (with error handling)
-RUN php artisan migrate --force --no-interaction --seed || echo "Migration completed with warnings"
+# Ensure data directory exists and has proper permissions
+RUN mkdir -p data && \
+    chown -R www-data:www-data data && \
+    chmod -R 755 data
 
 # Clear and cache config
 RUN php artisan config:cache \

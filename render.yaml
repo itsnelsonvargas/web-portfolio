@@ -9,7 +9,6 @@ services:
       npm ci --only=production && npm run build
       composer run-script post-autoload-dump --no-interaction
       php artisan key:generate --no-interaction --force
-      php artisan migrate --force --no-interaction --seed
       php artisan config:cache --no-ansi --no-interaction
       php artisan route:cache --no-ansi --no-interaction
       php artisan view:cache --no-ansi --no-interaction
@@ -26,10 +25,6 @@ services:
           type: web
           name: web-portfolio
           property: host
-      - key: DB_CONNECTION
-        value: sqlite
-      - key: DB_DATABASE
-        value: /var/www/html/database/database.sqlite
       - key: CACHE_DRIVER
         value: file
       - key: SESSION_DRIVER
