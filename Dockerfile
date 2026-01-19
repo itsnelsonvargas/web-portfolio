@@ -53,6 +53,15 @@ RUN cp .env.example .env || true
 # Generate application key if not set
 RUN php artisan key:generate --no-interaction || true
 
+# Create SQLite database file and set permissions
+RUN touch database/database.sqlite \
+    && chmod 664 database/database.sqlite \
+    && chown www-data:www-data database/database.sqlite
+
+# Run migrations and seeders
+RUN php artisan migrate --force --no-interaction || true
+RUN php artisan db:seed --force --no-interaction || true
+
 # Clear and cache config
 RUN php artisan config:cache \
     && php artisan route:cache \
