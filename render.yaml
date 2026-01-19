@@ -4,15 +4,16 @@ services:
     env: docker
     dockerfilePath: ./Dockerfile
     buildCommand: |
-      composer install --optimize-autoloader --no-dev --no-scripts
-      npm install && npm run build
-      composer run-script post-autoload-dump
-      php artisan key:generate --no-interaction
-      php artisan migrate --force --no-interaction
-      php artisan db:seed --force --no-interaction
-      php artisan config:cache --no-ansi
-      php artisan route:cache --no-ansi
-      php artisan view:cache --no-ansi
+      echo "Starting Render build process..."
+      composer install --optimize-autoloader --no-dev --no-scripts --no-interaction --prefer-dist
+      npm ci --only=production && npm run build
+      composer run-script post-autoload-dump --no-interaction
+      php artisan key:generate --no-interaction --force
+      php artisan migrate --force --no-interaction --seed
+      php artisan config:cache --no-ansi --no-interaction
+      php artisan route:cache --no-ansi --no-interaction
+      php artisan view:cache --no-ansi --no-interaction
+      echo "Build process completed successfully"
     envVars:
       - key: APP_ENV
         value: production
@@ -45,3 +46,9 @@ services:
         value: changeme123!
       - key: GOOGLE_ANALYTICS_ID
         value: G-L0RHNJ2SQB
+      - key: LOG_CHANNEL
+        value: stderr
+      - key: LOG_LEVEL
+        value: error
+      - key: FILESYSTEM_DISK
+        value: local

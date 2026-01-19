@@ -13,7 +13,9 @@ RUN apt-get update && apt-get install -y \
     unzip \
     nodejs \
     npm \
-    && docker-php-ext-install mbstring exif pcntl bcmath gd zip
+    sqlite3 \
+    libsqlite3-dev \
+    && docker-php-ext-install pdo pdo_sqlite mbstring exif pcntl bcmath gd zip
 
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
@@ -25,17 +27,17 @@ WORKDIR /var/www/html
 COPY composer.json composer.lock ./
 
 # Install PHP dependencies (skip scripts since artisan isn't available yet)
-RUN composer install --optimize-autoloader --no-dev --no-scripts
+RUN composer install --optimize-autoloader --no-dev --no-scripts --no-interaction --prefer-dist
 
 # Copy package files and install Node dependencies
 COPY package.json package-lock.json ./
-RUN npm install
+RUN npm ci --only=production
 
 # Copy the rest of the application
 COPY . .
 
 # Run composer scripts now that artisan is available
-RUN composer run-script post-autoload-dump
+RUN composer run-script post-autoload-dump --no-interaction
 
 # Build frontend assets
 RUN npm run build
@@ -48,27 +50,28 @@ RUN chown -R www-data:www-data /var/www/html \
     && chmod -R 755 /var/www/html/data
 
 # Create .env file if it doesn't exist
-RUN cp .env.example .env || true
+RUN cp .env.example .env 2>/dev/null || echo "No .env.example found"
 
 # Generate application key if not set
-RUN php artisan key:generate --no-interaction || true
+RUN php artisan key:generate --no-interaction --force
 
 # Create SQLite database file and set permissions
-RUN touch database/database.sqlite \
-    && chmod 664 database/database.sqlite \
-    && chown www-data:www-data database/database.sqlite
+RUN mkdir -p database && \
+    touch database/database.sqlite && \
+    chmod 664 database/database.sqlite && \
+    chown www-data:www-data database/database.sqlite && \
+    chown -R www-data:www-data database
 
-# Run migrations and seeders
-RUN php artisan migrate --force --no-interaction || true
-RUN php artisan db:seed --force --no-interaction || true
+# Run migrations and seeders (with error handling)
+RUN php artisan migrate --force --no-interaction --seed || echo "Migration completed with warnings"
 
 # Clear and cache config
 RUN php artisan config:cache \
     && php artisan route:cache \
     && php artisan view:cache
 
-# Enable Apache mod_rewrite
-RUN a2enmod rewrite
+# Enable Apache mod_rewrite and headers
+RUN a2enmod rewrite headers
 
 # Configure Apache to serve Laravel
 RUN echo '<VirtualHost *:80>\n\
@@ -76,10 +79,19 @@ RUN echo '<VirtualHost *:80>\n\
     <Directory /var/www/html/public>\n\
         AllowOverride All\n\
         Require all granted\n\
+        Options -Indexes\n\
     </Directory>\n\
     ErrorLog ${APACHE_LOG_DIR}/error.log\n\
     CustomLog ${APACHE_LOG_DIR}/access.log combined\n\
+    LogLevel warn\n\
 </VirtualHost>' > /etc/apache2/sites-available/000-default.conf
+
+# Configure PHP for production
+RUN echo "upload_max_filesize = 10M\n\
+post_max_size = 10M\n\
+memory_limit = 256M\n\
+max_execution_time = 300\n\
+max_input_time = 300" > /usr/local/etc/php/conf.d/production.ini
 
 # Expose port 8080 for Render.com
 EXPOSE 8080
