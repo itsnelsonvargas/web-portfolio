@@ -52,7 +52,7 @@
 
       gtag('config', 'G-L0RHNJ2SQB');
     </script>
-
+    
     <!-- Structured Data (JSON-LD) -->
     @php
         $personSchema = [
