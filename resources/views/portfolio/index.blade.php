@@ -42,7 +42,7 @@
     <meta name="theme-color" content="#0f172a">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-
+    
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-L0RHNJ2SQB"></script>
     <script>
@@ -653,7 +653,7 @@
                     <a href="#references" class="text-slate-300 hover:text-white transition-colors duration-200 font-medium text-sm uppercase tracking-wide" aria-label="Go to references section">
                         References
                     </a>
-                    <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md transition-colors duration-200 font-medium text-sm uppercase tracking-wide" aria-label="Go to contact section">
+                    <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-1.5 rounded-md transition-colors duration-200 font-medium text-sm uppercase tracking-wide" aria-label="Go to contact section">
                         Contact
                     </a>
                 </div>
@@ -673,7 +673,7 @@
                 <a href="#skills" class="block py-2 text-slate-300 hover:text-white hover:bg-slate-800 px-4 rounded transition" role="menuitem" aria-label="Go to skills section">Skills</a>
                 <a href="#seminars" class="block py-2 text-slate-300 hover:text-white hover:bg-slate-800 px-4 rounded transition" role="menuitem" aria-label="Go to seminars section">Seminars</a>
                 <a href="#references" class="block py-2 text-slate-300 hover:text-white hover:bg-slate-800 px-4 rounded transition" role="menuitem" aria-label="Go to references section">References</a>
-                <a href="#contact" class="block py-2 text-slate-300 hover:text-white hover:bg-slate-800 px-4 rounded transition" role="menuitem" aria-label="Go to contact section">Contact</a>
+                <a href="#contact" class="block py-2 bg-blue-600 hover:bg-blue-700 text-white px-4 rounded transition" role="menuitem" aria-label="Go to contact section">Contact</a>
             </div>
         </div>
     </nav>
