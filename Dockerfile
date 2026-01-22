@@ -53,7 +53,7 @@ RUN chown -R www-data:www-data /var/www/html \
 RUN cp .env.example .env 2>/dev/null || echo "No .env.example found"
 
 # Generate application key if not set
-RUN php artisan key:generate --no-interaction --force
+RUN php artisan key:generate --no-interaction --force || true
 
 # Ensure data directory exists and has proper permissions
 RUN mkdir -p data && \
