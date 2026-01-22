@@ -8,7 +8,6 @@ services:
       composer install --optimize-autoloader --no-dev --no-scripts --no-interaction --prefer-dist
       npm ci --only=production && npm run build
       composer run-script post-autoload-dump --no-interaction
-      php artisan key:generate --no-interaction --force
       php artisan config:cache --no-ansi --no-interaction
       php artisan route:cache --no-ansi --no-interaction
       php artisan view:cache --no-ansi --no-interaction
@@ -49,3 +48,5 @@ services:
         value: local
       - key: DB_SSLMODE
         value: require
+      - key: DB_DATABASE
+        value: /var/www/html/storage/database.sqlite
