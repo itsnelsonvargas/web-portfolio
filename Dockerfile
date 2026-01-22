@@ -46,12 +46,16 @@ RUN npx vite build && npm cache clean --force
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache /var/www/html/data
 RUN chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
 RUN chmod -R 755 /var/www/html/data
+RUN mkdir -p /var/www/html/storage/framework/cache/data /var/www/html/storage/framework/sessions /var/www/html/storage/framework/views
 
 # Create .env file if it doesn't exist
 RUN cp .env.example .env 2>/dev/null || echo "No .env.example found"
 
-# Generate application key if not set
-RUN php artisan key:generate --no-interaction --force || true
+# Create SQLite database file and set permissions
+RUN mkdir -p storage && \
+    touch storage/database.sqlite && \
+    chown www-data:www-data storage/database.sqlite && \
+    chmod 664 storage/database.sqlite
 
 # Ensure data directory exists and has proper permissions
 RUN mkdir -p data && \
