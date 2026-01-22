@@ -31,7 +31,7 @@ RUN composer install --optimize-autoloader --no-dev --no-scripts --no-interactio
 
 # Copy package files and install Node dependencies
 COPY package.json package-lock.json ./
-RUN npm ci --only=production && npm cache clean --force
+RUN npm ci && npm cache clean --force
 
 # Copy the rest of the application
 COPY . .
@@ -40,7 +40,7 @@ COPY . .
 RUN composer run-script post-autoload-dump --no-interaction
 
 # Build frontend assets
-RUN npm run build && npm cache clean --force
+RUN npx vite build && npm cache clean --force
 
 # Set proper permissions
 RUN chown -R www-data:www-data /var/www/html \
