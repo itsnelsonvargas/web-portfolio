@@ -42,12 +42,10 @@ RUN composer run-script post-autoload-dump --no-interaction
 # Build frontend assets
 RUN npx vite build && npm cache clean --force
 
-# Set proper permissions
-RUN chown -R www-data:www-data /var/www/html \
-    && chmod -R 755 /var/www/html \
-    && chmod -R 775 /var/www/html/storage \
-    && chmod -R 775 /var/www/html/bootstrap/cache \
-    && chmod -R 755 /var/www/html/data
+# Set proper permissions (targeted approach for performance)
+RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache /var/www/html/data
+RUN chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
+RUN chmod -R 755 /var/www/html/data
 
 # Create .env file if it doesn't exist
 RUN cp .env.example .env 2>/dev/null || echo "No .env.example found"

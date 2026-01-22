@@ -47,3 +47,5 @@ services:
         value: error
       - key: FILESYSTEM_DISK
         value: local
+      - key: DB_SSLMODE
+        value: require
