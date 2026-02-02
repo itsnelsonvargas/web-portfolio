@@ -1,98 +1,74 @@
 [
     {
-        "id": 1,
         "title": "Electronic Data Processing Specialist",
         "type": "certificate",
         "issuer": "Department of Communications and Information Technology",
         "description": "Certified in electronic data processing and information management systems.",
         "date": "2024-01-01",
         "icon": "\ud83c\udfc6",
-        "url": null,
-        "created_at": "2025-12-12T17:06:41.000000Z",
-        "updated_at": "2025-12-12T17:06:41.000000Z"
+        "url": null
     },
     {
-        "id": 2,
         "title": "Philippine Air Force Reservist",
         "type": "achievement",
         "issuer": "Philippine Air Force",
         "description": "Trained and certified as a reservist in the Philippine Air Force, demonstrating commitment to national service and discipline.",
         "date": "2021-07-21",
         "icon": "\u2708\uFE0F",
-        "url": null,
-        "created_at": "2025-12-12T17:06:41.000000Z",
-        "updated_at": "2025-12-12T17:06:41.000000Z"
+        "url": null
     },
     {
-        "id": 3,
         "title": "Quick Response Team (QRT) Lead",
         "type": "Designation",
         "issuer": "Department of Social Welfare and Development",
         "description": "Appointed as QRT Lead under DSWD Special Order No. 2434, series of 2025. Recognized for leadership and coordination in rapid response operations.",
         "date": "2024-05-10",
         "icon": "\ud83d\udea8",
-        "url": null,
-        "created_at": "2025-12-12T17:06:41.000000Z",
-        "updated_at": "2025-12-12T17:06:41.000000Z"
+        "url": null
     },
     {
-        "id": 4,
         "title": "Designated Safety and Evacuation Officer (SEO)",
         "type": "Designation",
         "issuer": "Department of Social Welfare and Development",
         "description": "Provided safety and evacuation training to staff, ensuring preparedness for emergencies in the workplace.",
         "date": "2024-01-01",
         "icon": "\ud83e\uddba",
-        "url": null,
-        "created_at": "2025-12-12T17:06:41.000000Z",
-        "updated_at": "2025-12-12T17:06:41.000000Z"
+        "url": null
     },
     {
-        "id": 5,
         "title": "Certified Six Sigma Yellow Belt",
         "type": "certificate",
         "issuer": "Prof. Dr. Marcelo Machado Fernandes",
         "description": "Professional certification in foundational Six Sigma principles for process improvement.",
         "date": "2024-04-27",
         "icon": "\ud83e\udd4b",
-        "url": null,
-        "created_at": "2025-12-12T17:06:41.000000Z",
-        "updated_at": "2025-12-12T17:06:41.000000Z"
+        "url": null
     },
     {
-        "id": 6,
         "title": "Civil Service Eligibility - Professional Level",
         "type": "certificate",
         "issuer": "Civil Service Commission",
         "description": "Passed the Civil Service Examination for Professional Level, demonstrating knowledge in public administration and governance.",
         "date": "2019-09-04",
         "icon": "\ud83d\udcdc",
-        "url": null,
-        "created_at": "2025-12-12T17:06:41.000000Z",
-        "updated_at": "2025-12-12T17:06:41.000000Z"
+        "url": null
     },
     {
-        "id": 7,
         "title": "DSWD Contingency Plan for Earthquake (Office Focal)",
         "type": "Designation",
         "issuer": "Department of Social Welfare and Development",
         "description": "Trained and oriented by the DSWD Buildings and Grounds Management Office (BGMD) to act as the designated office implementer and focal person for earthquake contingency plans.",
         "date": "2025-09-04",
         "icon": "\u26d1\uFE0F",
-        "url": null,
-        "created_at": "2025-12-12T17:06:41.000000Z",
-        "updated_at": "2025-12-12T17:06:41.000000Z"
+        "url": null
     },
     {
-        "id": 8,
         "title": "Compliance Officer for Data Privacy",
         "type": "Designation",
         "issuer": "Department of Social Welfare and Development",
         "description": "Designated as the Compliance Officer for Data Privacy, ensuring adherence to data protection policies, safeguarding sensitive information, and maintaining compliance with relevant laws and regulations.",
         "date": "2025-01-01",
         "icon": "\ud83d\udee1\uFE0F",
-        "url": null,
-        "created_at": "2025-12-12T17:06:41.000000Z",
-        "updated_at": "2025-12-12T17:06:41.000000Z"
+        "url": null
     }
 ]
