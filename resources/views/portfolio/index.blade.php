@@ -856,7 +856,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" role="list" aria-label="Certificates and achievements">
                 @foreach($achievements as $achievement)
-                <div class="group bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl border-2 border-slate-700 hover:border-blue-500 p-6 transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden" role="listitem" aria-labelledby="achievement-title-{{ $achievement->id }}">
+                <div class="group bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl border-2 border-slate-700 hover:border-blue-500 p-6 transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden" role="listitem" aria-labelledby="achievement-title-{{ $achievement->id ?? '' }}">
                     <!-- Type badge -->
                     <div class="absolute top-4 right-4">
                         <span class="px-3 py-1 rounded-full text-xs font-bold uppercase
@@ -872,7 +872,7 @@
                     <div class="text-5xl mb-4">{{ $achievement->icon }}</div>
 
                     <!-- Title and Issuer -->
-                    <h3 id="achievement-title-{{ $achievement->id }}" class="text-xl font-bold text-white mb-2 pr-20">{{ $achievement->title }}</h3>
+                    <h3 id="achievement-title-{{ $achievement->id ?? '' }}" class="text-xl font-bold text-white mb-2 pr-20">{{ $achievement->title }}</h3>
                     @if($achievement->issuer)
                     <p class="text-blue-400 font-semibold text-sm mb-3">{{ $achievement->issuer }}</p>
                     @endif
@@ -923,7 +923,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" role="list" aria-label="Featured projects">
                 @foreach($projects as $project)
-                <div class="group project-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl border-2 border-slate-700 hover:border-blue-500 overflow-hidden transition-all duration-300 transform hover:-translate-y-3" role="listitem" aria-labelledby="project-title-{{ $project->id }}">
+                <div class="group project-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl border-2 border-slate-700 hover:border-blue-500 overflow-hidden transition-all duration-300 transform hover:-translate-y-3" role="listitem" aria-labelledby="project-title-{{ $project->id ?? '' }}">
                     <div class="relative overflow-hidden h-56">
                         <img src="{{ $project->image }}" alt="{{ $project->title }}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://via.placeholder.com/800x600/1e293b/64748b?text={{ urlencode(str_replace(' ', '+', $project->title)) }}'" loading="lazy">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent opacity-60"></div>
@@ -932,7 +932,7 @@
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 id="project-title-{{ $project->id }}" class="text-2xl font-bold mb-3 text-white group-hover:text-blue-400 transition-colors">{{ $project->title }}</h3>
+                        <h3 id="project-title-{{ $project->id ?? '' }}" class="text-2xl font-bold mb-3 text-white group-hover:text-blue-400 transition-colors">{{ $project->title }}</h3>
                         <p class="text-slate-400 mb-4 line-clamp-2">{{ $project->description }}</p>
                         <div class="flex flex-wrap gap-2 mb-6">
                             @foreach($project->technologies as $tech)
