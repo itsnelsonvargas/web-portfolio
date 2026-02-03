@@ -58,6 +58,14 @@ class ProfileController extends Controller
         // Merge current data with validated data
         $updatedProfile = array_merge($currentProfile, $validated);
 
+        // Ensure we have an ID
+        if (! isset($updatedProfile['id'])) {
+            $updatedProfile['id'] = 1;
+        }
+
+        // Update timestamps
+        $updatedProfile['updated_at'] = now()->toISOString();
+
         // Save to JSON file
         $fileDataService->write('profile.json', [$updatedProfile]);
 

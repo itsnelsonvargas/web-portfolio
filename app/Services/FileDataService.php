@@ -113,6 +113,16 @@ class FileDataService
     {
         $records = $this->read($filename)->toArray();
 
+        // Generate ID if not provided
+        if (! isset($data['id'])) {
+            $maxId = collect($records)->max('id') ?? 0;
+            $data['id'] = $maxId + 1;
+        }
+
+        // Add timestamps
+        $data['created_at'] = now()->toISOString();
+        $data['updated_at'] = now()->toISOString();
+
         $records[] = $data;
 
         return $this->write($filename, $records);
@@ -147,7 +157,7 @@ class FileDataService
     {
         return $data->map(function ($item) {
             foreach ($item as $key => $value) {
-                if (in_array($key, ['started_at', 'ended_at', 'acquired_at', 'date']) && $value) {
+                if (in_array($key, ['started_at', 'ended_at', 'acquired_at', 'date', 'created_at', 'updated_at']) && $value) {
                     try {
                         $item[$key] = Carbon::parse($value);
                     } catch (\Exception $e) {
