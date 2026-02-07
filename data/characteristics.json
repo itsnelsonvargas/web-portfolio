@@ -1,20 +1,38 @@
 [
     {
-      "characteristic": "",
-      "description": "",
+      "characteristic": "🐦 Early Bird",
+      "description": "Demonstrates strong work discipline by starting tasks early, allowing better planning, focus, and consistent productivity throughout the day.",
       "icon": "",
-      "examples": [
-        {
-          "example": "",
-          "description": ""
-        }
-      ],
-      "proofs": [
-        {
-          "proof": "",
-          "description": ""
-        }
-      ]
+      "examples": [],
+      "proofs": []
+    },
+    {
+      "characteristic": "🧠 Problem Solver",
+      "description": "Approaches challenges analytically by identifying root causes, evaluating possible solutions, and implementing practical fixes efficiently.",
+      "icon": "",
+      "examples": [],
+      "proofs": []
+    },
+    {
+      "characteristic": "🔥 Self-Motivated",
+      "description": "Works effectively with minimal supervision, proactively taking ownership of tasks and continuously seeking ways to improve processes and outcomes.",
+      "icon": "",
+      "examples": [],
+      "proofs": []
+    },
+    {
+      "characteristic": "🔄 Adaptable",
+      "description": "Quickly adjusts to new tools, technologies, and changing requirements while maintaining quality and productivity.",
+      "icon": "",
+      "examples": [],
+      "proofs": []
+    },
+    {
+      "characteristic": "📈 Consistent",
+      "description": "Delivers reliable and steady results by maintaining focus, meeting deadlines, and ensuring quality across tasks and projects.",
+      "icon": "",
+      "examples": [],
+      "proofs": []
     }
   ]
   
