@@ -57,10 +57,15 @@ class PortfolioController extends Controller
             'years_of_experience' => $profile->years_of_experience ?? 1,
         ];
 
+        // Load characteristics from JSON file
+        $characteristics = $fileDataService->read('characteristics.json')->map(function ($characteristic) {
+            return (object) $characteristic;
+        });
+        
         // Load seminars from public/seminars folder (already working)
         $seminars = $this->getSeminars();
 
-        return view('portfolio.index', compact('profile', 'projects', 'skills', 'socialLinks', 'achievements', 'about', 'seminars', 'characterReferences'));
+        return view('portfolio.index', compact('profile', 'projects', 'skills', 'socialLinks', 'achievements', 'about', 'characteristics', 'seminars', 'characterReferences'));
     }
 
     /**
