@@ -1,0 +1,57 @@
+[
+    {
+      "characteristic": "Early Bird",
+      "description": "Demonstrates strong work discipline by starting tasks early, allowing better planning, focus, and consistent productivity throughout the day.",
+      "icon": "https://cdn-icons-png.flaticon.com/512/5776/5776369.png",
+      "examples": [
+        "I wake up at 5:00 AM to start my day early.",
+        "I report to work at 7:00 AM even though the official late time is 9:31 AM."
+      ],
+      "proofs": []
+    },
+    {
+      "characteristic": "Problem Solver",
+      "description": "Approaches challenges analytically by identifying root causes, evaluating possible solutions, and implementing practical fixes efficiently.",
+      "icon": "https://cdn-icons-png.flaticon.com/512/695/695811.png",
+      "examples": [
+        "I enjoy identifying problems and solving them independently.",
+        "I have participated in programming competitions."
+      ],
+      "proofs": []
+    },
+    {
+      "characteristic": "Self-Motivated",
+      "description": "Works effectively with minimal supervision, proactively taking ownership of tasks and continuously seeking ways to improve processes and outcomes.",
+      "icon": "https://cdn-icons-png.flaticon.com/512/13322/13322542.png",
+      "examples": [
+        "I view problems as challenges to overcome and take initiative without needing constant supervision."
+      ],
+      "proofs": []
+    },
+    {
+      "characteristic": "Adaptable",
+      "description": "Quickly adjusts to new tools, technologies, and changing requirements while maintaining quality and productivity.",
+      "icon": "https://cdn-icons-png.flaticon.com/512/5485/5485850.png",
+      "examples": [
+        "Deployed across diverse functions including national budgeting, event planning, rescue operations, and other non-IT roles, with successful outcomes in each assignment."
+      ],
+      "proofs": []
+    },
+    {
+      "characteristic": "Consistent",
+      "description": "Delivers reliable and steady results by maintaining focus, meeting deadlines, and ensuring quality across tasks and projects.",
+      "icon": "https://cdn-icons-png.flaticon.com/512/4729/4729487.png",
+      "examples":  [
+        "I consistently meet deadlines and maintain quality across tasks, regardless of workload or assignment type."
+      ],
+      "proofs": []
+    },{
+      "characteristic": "Challenge-driven",
+      "description": "Motivated by difficult tasks and energized by solving complex problems, especially in unfamiliar or demanding situations",
+      "icon":"https://cdn-icons-png.flaticon.com/512/16780/16780933.png",
+      "examples": [],
+      "proofs": []
+    }
+
+  ]
+  

@@ -641,6 +641,9 @@
                     <a href="#achievements" class="text-slate-300 hover:text-white transition-colors duration-200 font-medium text-sm uppercase tracking-wide" aria-label="Go to achievements section">
                         Achievements
                     </a>
+                    <a href="#characteristics" class="text-slate-300 hover:text-white transition-colors duration-200 font-medium text-sm uppercase tracking-wide" aria-label="Go to characteristics section">
+                        Characteristics
+                    </a>
                     <a href="#projects" class="text-slate-300 hover:text-white transition-colors duration-200 font-medium text-sm uppercase tracking-wide" aria-label="Go to projects section">
                         Projects
                     </a>
@@ -669,6 +672,7 @@
                 <a href="#home" class="block py-2 text-slate-300 hover:text-white hover:bg-slate-800 px-4 rounded transition" role="menuitem" aria-label="Go to home section">Home</a>
                 <a href="#about" class="block py-2 text-slate-300 hover:text-white hover:bg-slate-800 px-4 rounded transition" role="menuitem" aria-label="Go to about section">About</a>
                 <a href="#achievements" class="block py-2 text-slate-300 hover:text-white hover:bg-slate-800 px-4 rounded transition" role="menuitem" aria-label="Go to achievements section">Achievements</a>
+                <a href="#characteristics" class="block py-2 text-slate-300 hover:text-white hover:bg-slate-800 px-4 rounded transition" role="menuitem" aria-label="Go to characteristics section">Characteristics</a>
                 <a href="#projects" class="block py-2 text-slate-300 hover:text-white hover:bg-slate-800 px-4 rounded transition" role="menuitem" aria-label="Go to projects section">Projects</a>
                 <a href="#skills" class="block py-2 text-slate-300 hover:text-white hover:bg-slate-800 px-4 rounded transition" role="menuitem" aria-label="Go to skills section">Skills</a>
                 <a href="#seminars" class="block py-2 text-slate-300 hover:text-white hover:bg-slate-800 px-4 rounded transition" role="menuitem" aria-label="Go to seminars section">Seminars</a>
@@ -856,7 +860,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" role="list" aria-label="Certificates and achievements">
                 @foreach($achievements as $achievement)
-                <div class="group bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl border-2 border-slate-700 hover:border-blue-500 p-6 transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden" role="listitem" aria-labelledby="achievement-title-{{ $achievement->id }}">
+                <div class="group bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl border-2 border-slate-700 hover:border-blue-500 p-6 transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden" role="listitem" aria-labelledby="achievement-title-{{ $achievement->id ?? '' }}">
                     <!-- Type badge -->
                     <div class="absolute top-4 right-4">
                         <span class="px-3 py-1 rounded-full text-xs font-bold uppercase
@@ -872,7 +876,7 @@
                     <div class="text-5xl mb-4">{{ $achievement->icon }}</div>
 
                     <!-- Title and Issuer -->
-                    <h3 id="achievement-title-{{ $achievement->id }}" class="text-xl font-bold text-white mb-2 pr-20">{{ $achievement->title }}</h3>
+                    <h3 id="achievement-title-{{ $achievement->id ?? '' }}" class="text-xl font-bold text-white mb-2 pr-20">{{ $achievement->title }}</h3>
                     @if($achievement->issuer)
                     <p class="text-blue-400 font-semibold text-sm mb-3">{{ $achievement->issuer }}</p>
                     @endif
@@ -923,7 +927,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" role="list" aria-label="Featured projects">
                 @foreach($projects as $project)
-                <div class="group project-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl border-2 border-slate-700 hover:border-blue-500 overflow-hidden transition-all duration-300 transform hover:-translate-y-3" role="listitem" aria-labelledby="project-title-{{ $project->id }}">
+                <div class="group project-card bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl border-2 border-slate-700 hover:border-blue-500 overflow-hidden transition-all duration-300 transform hover:-translate-y-3" role="listitem" aria-labelledby="project-title-{{ $project->id ?? '' }}">
                     <div class="relative overflow-hidden h-56">
                         <img src="{{ $project->image }}" alt="{{ $project->title }}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://via.placeholder.com/800x600/1e293b/64748b?text={{ urlencode(str_replace(' ', '+', $project->title)) }}'" loading="lazy">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent opacity-60"></div>
@@ -932,7 +936,7 @@
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 id="project-title-{{ $project->id }}" class="text-2xl font-bold mb-3 text-white group-hover:text-blue-400 transition-colors">{{ $project->title }}</h3>
+                        <h3 id="project-title-{{ $project->id ?? '' }}" class="text-2xl font-bold mb-3 text-white group-hover:text-blue-400 transition-colors">{{ $project->title }}</h3>
                         <p class="text-slate-400 mb-4 line-clamp-2">{{ $project->description }}</p>
                         <div class="flex flex-wrap gap-2 mb-6">
                             @foreach($project->technologies as $tech)
@@ -1113,6 +1117,47 @@
                         </div>
                     </div>
                     @endif
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Characteristics Section -->
+    <section id="characteristics" class="py-20 md:py-32 bg-slate-950 relative overflow-hidden" aria-labelledby="characteristics-heading">
+        <!-- Background -->
+        <div class="absolute inset-0 bg-grid-pattern opacity-[0.02]"></div>
+        <div class="absolute top-0 left-1/2 w-96 h-96 bg-purple-600/10 rounded-full filter blur-3xl"></div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-16">
+                <h2 id="characteristics-heading" class="text-5xl md:text-6xl font-black text-white mb-4">Key Characteristics</h2>
+                <div class="flex justify-center gap-2 items-center mb-4">
+                    <div class="h-1 w-24 bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 rounded-full"></div>
+                </div>
+                <p class="text-slate-400 text-lg">Defining traits that shape my professional identity</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" role="list" aria-label="Key Characteristics">
+                @foreach($characteristics as $characteristic)
+                <div class="group bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl border-2 border-slate-700 hover:border-purple-500 p-6 transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden" role="listitem" aria-labelledby="characteristic-title-{{ $loop->index }}">
+                    <!-- Icon -->
+                                    <div class="mb-4 w-12 h-12 flex items-center justify-center bg-transparent rounded-full">
+                                        @if(filter_var($characteristic->icon, FILTER_VALIDATE_URL) || str_starts_with($characteristic->icon, 'data:image'))
+                                        <img src="{{ $characteristic->icon }}" alt="{{ $characteristic->characteristic }}" class="w-full h-full object-contain bg-transparent">
+                                        @else
+                                        <span class="text-5xl leading-none">{{ $characteristic->icon }}</span>
+                                        @endif
+                                    </div>
+                    <!-- Title -->
+                    <h3 id="characteristic-title-{{ $loop->index }}" class="text-xl font-bold text-white mb-2">{{ $characteristic->characteristic }}</h3>
+
+                    <!-- Description -->
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">{{ $characteristic->description }}</p>
+
+                    <!-- Hover effect -->
+                    <div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                 </div>
                 @endforeach
             </div>
