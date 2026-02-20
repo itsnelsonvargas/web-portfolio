@@ -17,6 +17,10 @@ Route::get('/health', function () {
 Route::get('/', [PortfolioController::class, 'index'])->name('portfolio.index');
 Route::post('/contact', [PortfolioController::class, 'contact'])->name('contact.submit');
 
+Route::get('/certificates', function () {
+    return redirect('https://drive.google.com/drive/folders/1Q37Vv1HtMCmLBKvg0XG6WA1B7uvZQziW');
+})->name('certificates');
+
 // Admin authentication
 Route::middleware('guest')->group(function () {
     Route::get('/admin/login', [AuthController::class, 'showLogin'])->name('admin.login');

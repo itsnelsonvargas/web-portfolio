@@ -43,5 +43,5 @@ Thumbs.db
 /database/*.sqlite-journal
 
 # Ignore all seminar files
-/public/seminars/*
+
 !/public/seminars/.gitkeep
