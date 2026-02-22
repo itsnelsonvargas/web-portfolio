@@ -17,6 +17,9 @@ return Application::configure(basePath: dirname(__DIR__))
         // Trust all proxies (safe on Render.com)
         $middleware->trustProxies(at: '*');
 
+        //all nelsonvargas.onrender.com will be redirected to nelvargas.com
+        $middleware->append(\App\Http\Middleware\ForceCustomDomain::class);
+
         $middleware->alias([
             'auth' => Authenticate::class,
             'guest' => RedirectIfAuthenticated::class,
