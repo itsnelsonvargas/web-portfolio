@@ -382,6 +382,12 @@
         "category": "Automation",
         "proficiency": 80,
         "logo_url": "https://icon.icepanel.io/Technology/svg/Selenium.svg"
+    },
+    {
+        "name": "PhpStorm",
+        "category": "Tools",
+        "proficiency": 90,
+        "logo_url": ""
     }
 
 
