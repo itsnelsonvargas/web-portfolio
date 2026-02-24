@@ -388,6 +388,12 @@
         "category": "Tools",
         "proficiency": 90,
         "logo_url": "https://icon.icepanel.io/Technology/svg/PhpStorm.svg"
+    },
+    {
+        "name": "jQuery",
+        "category": "Frontend",
+        "proficiency": 90,
+        "logo_url": ""
     }
 
 
