@@ -376,6 +376,12 @@
         "category": "AI",
         "proficiency": 85,
         "logo_url": "https://icon.icepanel.io/Technology/svg/Firebase.svg"
+    },
+    {
+        "name": "Selenium",
+        "category": "Programming Languages",
+        "proficiency": 85,
+        "logo_url": ""
     }
 
 
