@@ -351,6 +351,12 @@
         "name": "Eclipse",
         "category": "Tools",
         "proficiency": 80,
+        "logo_url": "https://icon.icepanel.io/Technology/svg/Eclipse-IDE.svg"
+    },
+    {
+        "name": "Jupyter",
+        "category": "Tools",
+        "proficiency": 80,
         "logo_url": ""
     }
 
