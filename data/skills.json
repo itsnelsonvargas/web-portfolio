@@ -394,6 +394,12 @@
         "category": "Frontend",
         "proficiency": 90,
         "logo_url": "https://icon.icepanel.io/Technology/svg/jQuery.svg"
+    },
+    {
+        "name": "TortoiseGit",
+        "category": "Tools",
+        "proficiency": 86,
+        "logo_url": ""
     }
 
 
