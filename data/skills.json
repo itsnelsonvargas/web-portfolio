@@ -346,6 +346,12 @@
         "category": "Tools",
         "proficiency": 85,
         "logo_url": "https://www.gstatic.com/images/branding/product/2x/hh_apps_script_512dp.png"
+    },
+    {
+        "name": "Eclipse",
+        "category": "Tools",
+        "proficiency": 80,
+        "logo_url": ""
     }
 
 
