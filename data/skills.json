@@ -364,6 +364,12 @@
         "category": "Frontend",
         "proficiency": 60,
         "logo_url": "https://icon.icepanel.io/Technology/svg/Flask.svg"
+    },
+    {
+        "name": "Markdown",
+        "category": "Documentation & Technical Communication",
+        "proficiency": 90,
+        "logo_url": ""
     }
 
 
