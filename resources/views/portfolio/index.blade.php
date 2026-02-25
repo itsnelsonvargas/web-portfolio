@@ -1028,6 +1028,7 @@
                     $categories = $orderedCategories;
                 @endphp
                 @foreach($categories as $category => $categorySkills)
+                @continue($category === 'Automation') {{-- Temporarily hide Automation --}}
                 <div class="relative w-full">
                     <!-- Category Title - Centered with Badge Design -->
                     <div class="flex justify-center mb-8">
