@@ -988,9 +988,31 @@
             <div class="space-y-16">
                 @php
                     $categories = $skills->groupBy('category');
-                    $staticCategories = ['Frontend', 'Backend', 'DevOps', 'Tools', 'Programming Languages', 'Documentation & Technical Communication', 'Database', 'Penetration Testing', 'AI'];
-                    // Define category order to ensure AI appears after Programming Languages
-                    $categoryOrder = ['Frontend', 'Backend', 'Database', 'DevOps', 'Tools', 'Programming Languages', 'Documentation & Technical Communication', 'AI'];
+                    // Categories that should use the static grid layout (no auto-scrolling)
+                    $staticCategories = [
+                        'Frontend',
+                        'Backend',
+                        'DevOps',
+                        'Automation',
+                        'Tools',
+                        'Programming Languages',
+                        'Documentation & Technical Communication',
+                        'Database',
+                        'Penetration Testing',
+                        'AI',
+                    ];
+                    // Define category order to ensure consistent ordering (and AI after Programming Languages)
+                    $categoryOrder = [
+                        'Frontend',
+                        'Backend',
+                        'Database',
+                        'DevOps',
+                        'Automation',
+                        'Tools',
+                        'Programming Languages',
+                        'Documentation & Technical Communication',
+                        'AI',
+                    ];
                     $orderedCategories = [];
                     foreach ($categoryOrder as $cat) {
                         if (isset($categories[$cat])) {
