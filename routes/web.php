@@ -52,3 +52,4 @@ Route::prefix('admin')->name('admin.')->middleware(['admin'])->group(function ()
     Route::post('/password', [PasswordController::class, 'update'])->name('password.update');
 });
 
+Route::get('/resume/{category}', [ResumeController::class, 'index'])->name('resume.index');
