@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\TrainingController;
 use App\Http\Controllers\Admin\UploadController;
 use App\Http\Controllers\PortfolioController;
+use App\Http\Controllers\ResumeController;
 use Illuminate\Support\Facades\Route;
 
 // Health check endpoint for Docker/Render
