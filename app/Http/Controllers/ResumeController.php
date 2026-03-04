@@ -14,6 +14,8 @@ class ResumeController extends Controller
 
             'dev' => redirect()->away('https://www.canva.com/design/DAGtyKG958Y/KpGNkYhAltA6NPCv0UywLA/edit?utm_content=DAGtyKG958Y&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton'),
 
+            'pentest' => redirect()->away('https://www.canva.com/design/DAG7UJty_B8/TSjdKkxvc84hcD5G3c_JCQ/edit?utm_content=DAG7UJty_B8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton');
+
             default => abort(404),
         };
     }
