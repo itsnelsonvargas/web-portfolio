@@ -151,6 +151,7 @@
     @endif
     
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @yield('styles')
     <style>
         /* Ensure no keyboard navigation class on body initially */
         body {
@@ -658,6 +659,7 @@
 
     <!-- Hero Section -->
     <main id="main-content" role="main">
+    @yield('content')
     <section id="home" class="relative pt-24 pb-20 md:pt-32 md:pb-32 bg-slate-950 overflow-hidden" role="banner" aria-labelledby="home-heading">
         <!-- Animated Grid Pattern -->
         <div class="absolute inset-0 bg-grid-pattern opacity-[0.03]"></div>
@@ -1907,7 +1909,7 @@
                 }
             });
         });
-
     </script>
+    @yield('scripts')
 </body>
 </html>
