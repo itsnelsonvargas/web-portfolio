@@ -157,29 +157,9 @@
             outline: none !important;
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
-        }
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
         }
         @keyframes slideInRight {
             from {
@@ -191,14 +171,8 @@
                 transform: translateX(0);
             }
         }
-        .animate-fadeInUp {
-            animation: fadeInUp 0.6s ease-out forwards;
-        }
         .animate-fadeIn {
             animation: fadeIn 0.8s ease-out forwards;
-        }
-        .animate-slideInLeft {
-            animation: slideInLeft 0.6s ease-out forwards;
         }
         .animate-slideInRight {
             animation: slideInRight 0.6s ease-out forwards;
@@ -697,7 +671,7 @@
 
         <div class="container mx-auto px-4 relative z-10">
             <div class="flex flex-col md:flex-row items-center justify-between gap-16">
-                <div class="md:w-3/5 text-center md:text-left opacity-0 animate-slideInLeft">
+                <div class="md:w-3/5 text-center md:text-left">
                     <!-- Status Badge with glow -->
                     <div class="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-emerald-500/10 to-emerald-600/10 border border-emerald-500/30 rounded-lg mb-8 backdrop-blur-sm">
                         <div class="relative">
