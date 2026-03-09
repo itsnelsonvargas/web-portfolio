@@ -93,12 +93,13 @@
                     </div>
                 </div>
 
-                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-black py-4 rounded-2xl shadow-lg shadow-blue-600/20 transform active:scale-[0.98] transition-all tracking-widest uppercase text-sm flex items-center justify-center gap-2 group">
+                <button type="submit" class="w-full bg-blue-600/10 border-2 border-blue-700 hover:bg-blue-600 text-blue-500 hover:text-white font-black py-4 rounded-2xl shadow-lg shadow-blue-600/10 transform active:scale-[0.98] transition-all tracking-widest uppercase text-sm flex items-center justify-center gap-2 group">
                     <span>Send Feedback</span>
                     <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                     </svg>
                 </button>
+                
             </form>
         </div>
     </div>
