@@ -4,9 +4,11 @@ use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\PasswordController;
 use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\Admin\ReviewManagementController;
 use App\Http\Controllers\Admin\TrainingController;
 use App\Http\Controllers\Admin\UploadController;
 use App\Http\Controllers\PortfolioController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ResumeController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,6 +19,9 @@ Route::get('/health', function () {
 
 Route::get('/', [PortfolioController::class, 'index'])->name('portfolio.index');
 Route::post('/contact', [PortfolioController::class, 'contact'])->name('contact.submit');
+
+Route::get('/portfolio-feedback', [ReviewController::class, 'index'])->name('review.index');
+Route::post('/portfolio-feedback', [ReviewController::class, 'store'])->name('review.store');
 
 Route::get('/certificates', function () {
     return redirect('https://drive.google.com/drive/folders/1Q37Vv1HtMCmLBKvg0XG6WA1B7uvZQziW');
@@ -51,6 +56,9 @@ Route::prefix('admin')->name('admin.')->middleware(['admin'])->group(function ()
 
     Route::get('/password', [PasswordController::class, 'edit'])->name('password.edit');
     Route::post('/password', [PasswordController::class, 'update'])->name('password.update');
+
+    Route::get('/reviews', [ReviewManagementController::class, 'index'])->name('reviews.index');
+    Route::delete('/reviews/{id}', [ReviewManagementController::class, 'destroy'])->name('reviews.destroy');
 });
 
 Route::get('/resume/{category}', [ResumeController::class, 'index'])->name('resume.index');
