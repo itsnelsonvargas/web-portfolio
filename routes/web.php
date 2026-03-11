@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\ReviewManagementController;
 use App\Http\Controllers\Admin\TrainingController;
 use App\Http\Controllers\Admin\UploadController;
 use App\Http\Controllers\PortfolioController;
+use App\Http\Controllers\CharacteristicController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ResumeController;
 use Illuminate\Support\Facades\Route;
@@ -62,3 +63,9 @@ Route::prefix('admin')->name('admin.')->middleware(['admin'])->group(function ()
 });
 
 Route::get('/resume/{category}', [ResumeController::class, 'index'])->name('resume.index');
+
+
+Route::prefix('characteristic')->name('characteristic.')->group(function () {
+    Route::get('/', [CharacteristicController::class, 'index'])->name('index');
+    Route::get('/{character}', [CharacteristicController::class, 'showCharacter'])->name('show');
+});
