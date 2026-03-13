@@ -19,12 +19,12 @@ class CharacteristicController extends Controller
         // Load profile from JSON file
         $profileData = $this->fileDataService->first('profile.json');
         $profile = $profileData ? (object) $profileData : (object) [
-            'name' => env('PORTFOLIO_NAME', 'John Doe'),
+            'name' => env('PORTFOLIO_NAME', 'Nelson Vargas'),
             'title' => env('PORTFOLIO_TITLE', 'Full Stack Web Developer'),
             'bio' => env('PORTFOLIO_BIO', 'Passionate web developer'),
-            'email' => env('PORTFOLIO_EMAIL', 'hello@example.com'),
-            'phone' => env('PORTFOLIO_PHONE', '+1 (555) 123-4567'),
-            'location' => env('PORTFOLIO_LOCATION', 'San Francisco, CA'),
+            'email' => env('PORTFOLIO_EMAIL', 'dev@nelvargas.com'),
+            'phone' => env('PORTFOLIO_PHONE', '0908.260.****'),
+            'location' => env('PORTFOLIO_LOCATION', 'Quezon City, Philippines'),
             'profile_image' => env('PORTFOLIO_PROFILE_IMAGE', 'https://ui-avatars.com/api/?name=Portfolio&size=400'),
             'resume_url' => env('PORTFOLIO_RESUME_URL', '#'),
         ];
@@ -47,12 +47,12 @@ class CharacteristicController extends Controller
         // Load profile from JSON file
         $profileData = $this->fileDataService->first('profile.json');
         $profile = $profileData ? (object) $profileData : (object) [
-            'name' => env('PORTFOLIO_NAME', 'John Doe'),
+            'name' => env('PORTFOLIO_NAME', 'Nelson Vargas'),
             'title' => env('PORTFOLIO_TITLE', 'Full Stack Web Developer'),
             'bio' => env('PORTFOLIO_BIO', 'Passionate web developer'),
-            'email' => env('PORTFOLIO_EMAIL', 'hello@example.com'),
-            'phone' => env('PORTFOLIO_PHONE', '+1 (555) 123-4567'),
-            'location' => env('PORTFOLIO_LOCATION', 'San Francisco, CA'),
+            'email' => env('PORTFOLIO_EMAIL', 'dev@nelvargas.com'),
+            'phone' => env('PORTFOLIO_PHONE', '0908.260.****'),
+            'location' => env('PORTFOLIO_LOCATION', 'Quezon City, Philippines'),
             'profile_image' => env('PORTFOLIO_PROFILE_IMAGE', 'https://ui-avatars.com/api/?name=Portfolio&size=400'),
             'resume_url' => env('PORTFOLIO_RESUME_URL', '#'),
         ];
