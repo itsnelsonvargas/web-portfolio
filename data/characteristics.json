@@ -31,13 +31,13 @@
       "description": "Approaches challenges analytically by identifying root causes, evaluating possible solutions, and implementing practical fixes efficiently.",
       "icon": "https://cdn-icons-png.flaticon.com/512/695/695811.png",
       "examples": [
-        "I enjoy identifying problems and solving them independently.",
-        "I have participated in programming competitions."
+        "I love solving huge bottleneck problem",
+        "I provide solution and technical assistance to my fellow tehcnical collegue."
       ],
       "proofs": [
         {
-          "title": "National Budgeting Automation",
-          "content": "Identified a bottleneck in the national budgeting process where manual data entry was prone to errors. Developed a script to automate data validation, reducing error rates by 95%.",
+          "title": "National Program's matching problem",
+          "content": "Created an algorithm to match the program's beneficiary to the nearest area for their assignment. This algorithm has been approved by the Undersecretary for Innovations and Program Development. It was created alone and implemented to several regions in the Philippines without the usage of any budget.",
           "type": "case-study"
         },
         {
