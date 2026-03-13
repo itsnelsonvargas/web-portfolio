@@ -53,5 +53,19 @@
             "Python"
         ],
         "featured": true
+    },
+    {
+        "title": "[Retracted] Barangay Management Information System",
+        "description": "A Barangay Management Information System (BMIS) designed to streamline and improve the management of barangay services, resources, and operations. The system provides a centralized platform for efficient communication, data management, and decision-making within barangays.",
+        "image": "https://img.freepik.com/premium-vector/mis-management-information-system-concept-with-icon-set-with-big-word-text-center_25156-1323.jpg",
+        "demo_url": "",
+        "github_url": null,
+        "technologies": [
+            "C#", 
+            "MySQL",
+            "SQLite"
+        ],
+        "featured": true
     }
+    
 ]
