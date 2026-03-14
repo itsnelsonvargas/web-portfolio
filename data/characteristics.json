@@ -91,9 +91,14 @@
       ],
       "proofs": [
         {
-          "title": "100% Deadline Compliance",
-          "content": "Over the past 2 years, I have maintained a 100% record of meeting project deadlines, even when requirements shifted mid-development.",
-          "type": "text"
+          "title": "Blood Pressure",
+          "content": "I maintain a consistent blood pressure of 120/80 mmHg.",
+          "type": "Health"
+        },
+         {
+          "title": "Healthy Chest ",
+          "content": "I maintain a healthy chest size without going to the Gym",
+          "type": "Health"
         }
       ]
     },
