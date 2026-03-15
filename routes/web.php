@@ -11,7 +11,9 @@ use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\CharacteristicController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ResumeController;
+use App\Http\Controllers\DownloadController;
 use Illuminate\Support\Facades\Route;
+use Psy\VersionUpdater\Downloader;
 
 // Health check endpoint for Docker/Render
 Route::get('/health', function () {
@@ -68,4 +70,9 @@ Route::get('/resume/{category}', [ResumeController::class, 'index'])->name('resu
 Route::prefix('characteristic')->name('characteristic.')->group(function () {
     Route::get('/', [CharacteristicController::class, 'index'])->name('index');
     Route::get('/{character}', [CharacteristicController::class, 'showCharacter'])->name('show');
+});
+
+
+Route::prefix('download')->name('download.')->group(function () {
+    Route::get('/tor', [DownloadController::class, 'downloadTor'])->name('tor');
 });
