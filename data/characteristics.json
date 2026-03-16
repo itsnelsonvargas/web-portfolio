@@ -1,5 +1,6 @@
 [
     {
+      "id": "early-bird",
       "characteristic": "Early Bird",
       "description": "Demonstrates strong work discipline by starting tasks early, allowing better planning, focus, and consistent productivity throughout the day.",
       "icon": "https://cdn-icons-png.flaticon.com/512/5776/5776369.png",
@@ -7,9 +8,25 @@
         "I wake up at 5:00 AM to start my day early.",
         "I report to work at 7:00 AM even though the official late time is 9:31 AM."
       ],
-      "proofs": []
+      "proofs": [
+        {
+          "title": "Time Logs & Attendance",
+          "content": "My daily attendance records show a consistent pattern of arriving at least 2 hours before the required time. This extra time is used for deep work and planning the day's tasks without distractions.",
+          "type": "text",
+          "file_url": "https://images.unsplash.com/photo-1508962914676-134849a727f0?auto=format&fit=crop&w=800&q=80",
+          "file_type": "image"
+        },
+        {
+          "title": "Project Kickoffs",
+          "content": "I consistently submit initial project drafts well ahead of internal deadlines, allowing ample time for feedback and iterations.",
+          "type": "achievement",
+          "file_url": "/documents/sample-timeline.pdf",
+          "file_type": "pdf"
+        }
+      ]
     },
     {
+      "id": "problem-solver",
       "characteristic": "Problem Solver",
       "description": "Approaches challenges analytically by identifying root causes, evaluating possible solutions, and implementing practical fixes efficiently.",
       "icon": "https://cdn-icons-png.flaticon.com/512/695/695811.png",
@@ -24,37 +41,73 @@
     ]
     },
     {
+      "id": "self-motivated",
       "characteristic": "Self-Motivated",
       "description": "Works effectively with minimal supervision, proactively taking ownership of tasks and continuously seeking ways to improve processes and outcomes.",
       "icon": "https://cdn-icons-png.flaticon.com/512/13322/13322542.png",
       "examples": [
         "I view problems as challenges to overcome and take initiative without needing constant supervision."
       ],
-      "proofs": []
+      "proofs": [
+        {
+          "title": "Self-Directed Learning",
+          "content": "Independently mastered several modern web frameworks (React, Laravel, Tailwind) through documentation and hands-on projects, applying this knowledge to improve existing portfolio sites.",
+          "type": "text"
+        }
+      ]
     },
     {
+      "id": "adaptable",
       "characteristic": "Adaptable",
       "description": "Quickly adjusts to new tools, technologies, and changing requirements while maintaining quality and productivity.",
       "icon": "https://cdn-icons-png.flaticon.com/512/5485/5485850.png",
       "examples": [
         "Deployed across diverse functions including national budgeting, event planning, rescue operations, and other non-IT roles, with successful outcomes in each assignment."
       ],
-      "proofs": []
+      "proofs": [
+        {
+          "title": "Rescue Operation Logistics",
+          "content": "During a critical rescue operation, I quickly transitioned from a technical role to managing emergency logistics, ensuring supplies were distributed effectively under high-pressure conditions.",
+          "type": "experience"
+        }
+      ]
     },
     {
+      "id": "consistent",
       "characteristic": "Consistent",
       "description": "Delivers reliable and steady results by maintaining focus, meeting deadlines, and ensuring quality across tasks and projects.",
       "icon": "https://cdn-icons-png.flaticon.com/512/4729/4729487.png",
       "examples":  [
-        "I consistently meet deadlines and maintain quality across tasks, regardless of workload or assignment type."
+        "I do three (3) sets of push ups since June of 2021. ",
+        "I do sit ups since March of 2023.",
+        "I trained with Duolingo since 2024. I have trained with Duolingo for 2 years. I have trained with Duolingo for 2 years."
       ],
-      "proofs": []
-    },{
+      "proofs": [
+        {
+          "title": "Blood Pressure",
+          "content": "I maintain a consistent blood pressure of 120/80 mmHg.",
+          "type": "Health"
+        },
+         {
+          "title": "Healthy Chest ",
+          "content": "I maintain a healthy chest size without going to the Gym",
+          "type": "Health"
+        }
+      ]
+    },
+    {
+      "id": "challenge-driven",
       "characteristic": "Challenge-driven",
       "description": "Motivated by difficult tasks and energized by solving complex problems, especially in unfamiliar or demanding situations",
       "icon":"https://cdn-icons-png.flaticon.com/512/16780/16780933.png",
       "examples": [],
-      "proofs": []
+      "proofs": [
+        {
+          "title": "Complex Legacy Migrations",
+          "content": "Successfully led the migration of a decade-old legacy system to a modern stack, tackling undocumented code and complex data relationships that others had avoided.",
+          "type": "experience"
+        }
+      ]
     }
 
   ]
