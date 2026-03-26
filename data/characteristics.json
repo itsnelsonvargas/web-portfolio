@@ -6,7 +6,7 @@
       "icon": "https://cdn-icons-png.flaticon.com/512/5776/5776369.png",
       "examples": [
         "I wake up at 5:00 AM to start my day early.",
-        "I report to work at 7:00 AM even though the official late time is 9:31 AM."
+        "I report to work at 7:00 AM even though the official start time is 9:00 AM."
       ],
       "proofs": [
         {
@@ -18,7 +18,7 @@
         },
         {
           "title": "Punctuality",
-          "content": "I arrive at work or meeting before the scheduled time..",
+          "content": "I arrive at work or meetings before the scheduled time.",
           "type": "achievement",
           "file_url": "#",
           "file_type": "pdf"
@@ -33,13 +33,25 @@
       "examples": [
         "I enjoy identifying problems and solving them independently.",
         "I have participated in programming competitions.",
-        "I try to provide a simple solution to a complex problem"
+        "I provide simple solutions to complex problems."
       ],
       "proofs": [
-        "Won the STI Into Programming Competition.",
-        "Passed the Department of Information and Communications Technology Electronic Data Processing Specialist certification examination, including both the paper-based and computer-based tests.",
-        "Developed a solution for the Tara, Basa! Tutoring Program of the Department of Social Welfare and Development, enabling beneficiaries to be matched with the nearest tutoring center, implemented with zero additional budget."
-    ]
+        {
+          "title": "Competition Win",
+          "content": "Won the STI Into Programming Competition.",
+          "type": "achievement"
+        },
+        {
+          "title": "DICT Certification",
+          "content": "Passed the DICT Electronic Data Processing Specialist certification (paper and computer-based).",
+          "type": "certification"
+        },
+        {
+          "title": "Tara, Basa! Solution",
+          "content": "Developed a zero-budget matching system for DSWD tutoring centers.",
+          "type": "project"
+        }
+      ]
     },
     {
       "id": "self-motivated",
@@ -52,7 +64,7 @@
       "proofs": [
         {
           "title": "Self-Directed Learning",
-          "content": "Independently mastered several modern web frameworks (React, Laravel, Tailwind) through documentation and hands-on projects, applying this knowledge to improve existing portfolio sites.",
+          "content": "Independently mastered modern web frameworks (React, Laravel, Tailwind) through documentation and hands-on projects.",
           "type": "text"
         }
       ]
@@ -63,12 +75,13 @@
       "description": "Quickly adjusts to new tools, technologies, and changing requirements while maintaining quality and productivity.",
       "icon": "https://cdn-icons-png.flaticon.com/512/5485/5485850.png",
       "examples": [
-        "Deployed across diverse functions including national budgeting, event planning, rescue operations, and other non-IT roles, with successful outcomes in each assignment."
+        "Deployed across diverse functions including national budgeting, event planning, and rescue operations."
       ],
       "proofs": [
         {
-          "title": "Multiple designation at DSWD",
-          "content": "I have been assigned several designations/tasks that are not connected with my positions or at least my core tasks. This includes my time in the 2024-2025 budget allocation for the whole program, and several other designations that are too many to put in this section."
+          "title": "Multiple Designations at DSWD",
+          "content": "Successfully handled 2024-2025 budget allocations and non-core tasks outside of standard IT responsibilities.",
+          "type": "experience"
         }
       ]
     },
@@ -77,44 +90,48 @@
       "characteristic": "Consistent",
       "description": "Delivers reliable and steady results by maintaining focus, meeting deadlines, and ensuring quality across tasks and projects.",
       "icon": "https://cdn-icons-png.flaticon.com/512/4729/4729487.png",
-      "examples":  [
-        "I do three (3) sets of push ups in morning since June of 2021. ",
-        "I do sit ups in morning since March of 2023.",
-        "I trained with Duolingo since 2024. I have trained with Duolingo for 2 years. I have trained with Duolingo for 2 years."
+      "examples": [
+        "I do three (3) sets of push ups every morning since June 2021.",
+        "I do sit ups every morning since March 2023.",
+        "I have maintained a Duolingo learning streak since 2024."
       ],
       "proofs": [
         {
           "title": "Blood Pressure",
           "content": "I maintain a consistent blood pressure of 120/80 mmHg.",
-          "type": "Health"
+          "type": "health"
         },
-         {
-          "title": "Healthy Chest ",
-          "content": "I maintain a healthy chest size without going to the Gym",
-          "type": "Health"
+        {
+          "title": "Physical Fitness",
+          "content": "Maintained physical conditioning through consistent home-based exercise routines.",
+          "type": "health"
         }
       ]
     },
     {
       "id": "challenge-driven",
       "characteristic": "Challenge-driven",
-      "description": "Motivated by difficult tasks and energized by solving complex problems, especially in unfamiliar or demanding situations",
-      "icon":"https://cdn-icons-png.flaticon.com/512/16780/16780933.png",
-      "examples": [],
+      "description": "Motivated by difficult tasks and energized by solving complex problems, especially in unfamiliar or demanding situations.",
+      "icon": "https://cdn-icons-png.flaticon.com/512/16780/16780933.png",
+      "examples": [
+        "Proactively seeking roles that require physical or mental endurance beyond the standard scope."
+      ],
       "proofs": [
         {
           "title": "Basic Citizen Military Training",
-          "content": "I joined the Basic Citizen Military Training (BCMT) program conducted by the Philippine Air Force in 2021 to enhance my physical fitness and discipline.",
+          "content": "Joined the BCMT program conducted by the Philippine Air Force in 2021.",
           "type": "experience"
-        },{
+        },
+        {
           "title": "Covid-19 Marshall",
-          "content": "I participated in the Covid-19 Marshall program in 2021, where I helped lower down the number of covid-19 cases in our town",
+          "content": "Participated in the Marshall program to help lower case numbers in my town.",
           "type": "experience"
-        },{
+        },
+        {
           "title": "DOLE Enumerator",
-          "content": "I signed a contract with DOLE to work as an Enumerator for their projects. Hiking to mountains and rural areas just to list the status of working children. Taking the job not for the minimum wage pay but for the challenge of going beyond",
+          "content": "Hiked to remote mountain areas to track the status of working children.",
           "type": "experience"
+        }
       ]
     }
-
   ]
