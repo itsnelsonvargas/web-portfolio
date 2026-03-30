@@ -110,6 +110,11 @@
           "title": "Physical Fitness",
           "content": "Maintained physical conditioning through consistent home-based exercise routines.",
           "type": "health"
+        },
+        {
+          "title": "Github Contributions",
+          "content": "I code everyday and save it to my Github repository.",
+          "type": "dedication"
         }
       ]
     },
