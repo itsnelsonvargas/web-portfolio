@@ -13,7 +13,7 @@
           "title": "Time Logs & Attendance",
           "content": "My daily attendance records show a consistent pattern of arriving at least 2 hours before the required time. This extra time is used for deep work and planning the day's tasks without distractions.",
           "type": "text",
-     
+          "file_url": "#",
           "file_type": "image"
         },
         {
@@ -29,11 +29,12 @@
       "id": "problem-solver",
       "characteristic": "Problem Solver",
       "description": "Approaches challenges analytically by identifying root causes, evaluating possible solutions, and implementing practical fixes efficiently.",
-      "icon": "#",
+      "icon": "https://cdn-icons-png.flaticon.com/512/695/695811.png",
       "examples": [
         "I enjoy identifying problems and solving them independently.",
         "I have participated in programming competitions.",
-        "I provide simple solutions to complex problems."
+        "I provide simple solutions to complex problems.",
+        "I love playing chess and minesweeper. Two (2) games that require me to think critically and strategically."
       ],
       "proofs": [
         {
@@ -82,11 +83,6 @@
           "title": "Multiple Designations at DSWD",
           "content": "Successfully handled 2024-2025 budget allocations and non-core tasks outside of standard IT responsibilities.",
           "type": "experience"
-        },
-        {
-          "title": "Easily",
-          "content": "I easily learned the tasks provided to me.",
-          "type": "experience"
         }
       ]
     },
@@ -110,11 +106,6 @@
           "title": "Physical Fitness",
           "content": "Maintained physical conditioning through consistent home-based exercise routines.",
           "type": "health"
-        },
-        {
-          "title": "Github Contributions",
-          "content": "I code everyday and save it to my Github repository.",
-          "type": "dedication"
         }
       ]
     },
@@ -139,7 +130,7 @@
         },
         {
           "title": "DOLE Enumerator",
-          "content": "Signed up as Department of Labor and Employment (DOLE) Enumerator for collecting data. Took the job, not for the salary but for the challenge it offers.",
+          "content": "Hiked to remote mountain areas to track the status of working children.",
           "type": "experience"
         }
       ]
