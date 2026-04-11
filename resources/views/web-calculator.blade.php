@@ -153,6 +153,58 @@
                 </div>
             </div>
         </section>
+
+        <section class="pb-20 md:pb-28">
+            <div class="container mx-auto px-4">
+                <div class="max-w-6xl mx-auto bg-gradient-to-br from-slate-800 to-slate-900 border-2 border-slate-700 rounded-2xl p-6 md:p-8">
+                    <div class="text-center mb-8">
+                        <h2 class="text-2xl md:text-3xl font-black text-white mb-3">Compare With Trusted Calculators</h2>
+                        <p class="text-slate-400 max-w-3xl mx-auto">
+                            For transparency, you can compare our estimate with established platforms and agencies. In most similar scopes, these providers show higher market ranges.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <a href="https://www.webfx.com/web-design/website-design-cost-calculator.html" target="_blank" rel="noopener noreferrer" class="group rounded-xl border border-slate-700 bg-slate-900/70 hover:border-blue-500/70 p-5 transition-all">
+                            <p class="text-white font-bold text-lg">WebFX Calculator</p>
+                            <p class="text-slate-400 text-sm mt-2">Agency pricing calculator with enterprise-level service ranges.</p>
+                            <span class="inline-flex items-center gap-2 mt-4 text-blue-400 group-hover:text-blue-300 font-semibold text-sm">
+                                Open Website
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                </svg>
+                            </span>
+                        </a>
+
+                        <a href="https://www.upwork.com/tools/website-design-cost-calculator" target="_blank" rel="noopener noreferrer" class="group rounded-xl border border-slate-700 bg-slate-900/70 hover:border-blue-500/70 p-5 transition-all">
+                            <p class="text-white font-bold text-lg">Upwork Calculator</p>
+                            <p class="text-slate-400 text-sm mt-2">Popular freelancer marketplace cost estimator and budget guide.</p>
+                            <span class="inline-flex items-center gap-2 mt-4 text-blue-400 group-hover:text-blue-300 font-semibold text-sm">
+                                Open Website
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                </svg>
+                            </span>
+                        </a>
+
+                        <a href="https://www.scnsoft.com/web-development/calculator" target="_blank" rel="noopener noreferrer" class="group rounded-xl border border-slate-700 bg-slate-900/70 hover:border-blue-500/70 p-5 transition-all">
+                            <p class="text-white font-bold text-lg">ScienceSoft Calculator</p>
+                            <p class="text-slate-400 text-sm mt-2">Long-running software company calculator for custom web projects.</p>
+                            <span class="inline-flex items-center gap-2 mt-4 text-blue-400 group-hover:text-blue-300 font-semibold text-sm">
+                                Open Website
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+
+                    <p class="text-center text-xs text-slate-500 mt-6">
+                        External calculator pricing varies by scope, timeline, and region. We keep our rates competitive for similar deliverables.
+                    </p>
+                </div>
+            </div>
+        </section>
     </main>
 </body>
 </html>
