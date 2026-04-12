@@ -166,7 +166,13 @@
 
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <a href="https://www.webfx.com/web-design/website-design-cost-calculator.html" target="_blank" rel="noopener noreferrer" class="group rounded-xl border border-slate-700 bg-slate-900/70 hover:border-blue-500/70 p-5 transition-all">
-                            <p class="text-white font-bold text-lg">WebFX Calculator</p>
+                            <div class="flex items-center justify-between gap-3">
+                                <p class="text-white font-bold text-lg">WebFX Calculator</p>
+                                <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-300 bg-slate-800 border border-slate-700 px-2.5 py-1 rounded-md">
+                                    <span aria-hidden="true">🇺🇸</span>
+                                    USA
+                                </span>
+                            </div>
                             <p class="text-slate-400 text-sm mt-2">Agency pricing calculator with enterprise-level service ranges.</p>
                             <span class="inline-flex items-center gap-2 mt-4 text-blue-400 group-hover:text-blue-300 font-semibold text-sm">
                                 Open Website
@@ -177,7 +183,13 @@
                         </a>
 
                         <a href="https://www.upwork.com/tools/website-design-cost-calculator" target="_blank" rel="noopener noreferrer" class="group rounded-xl border border-slate-700 bg-slate-900/70 hover:border-blue-500/70 p-5 transition-all">
-                            <p class="text-white font-bold text-lg">Upwork Calculator</p>
+                            <div class="flex items-center justify-between gap-3">
+                                <p class="text-white font-bold text-lg">Upwork Calculator</p>
+                                <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-300 bg-slate-800 border border-slate-700 px-2.5 py-1 rounded-md">
+                                    <span aria-hidden="true">🇺🇸</span>
+                                    USA
+                                </span>
+                            </div>
                             <p class="text-slate-400 text-sm mt-2">Popular freelancer marketplace cost estimator and budget guide.</p>
                             <span class="inline-flex items-center gap-2 mt-4 text-blue-400 group-hover:text-blue-300 font-semibold text-sm">
                                 Open Website
@@ -188,7 +200,13 @@
                         </a>
 
                         <a href="https://www.scnsoft.com/web-development/calculator" target="_blank" rel="noopener noreferrer" class="group rounded-xl border border-slate-700 bg-slate-900/70 hover:border-blue-500/70 p-5 transition-all">
-                            <p class="text-white font-bold text-lg">ScienceSoft Calculator</p>
+                            <div class="flex items-center justify-between gap-3">
+                                <p class="text-white font-bold text-lg">ScienceSoft Calculator</p>
+                                <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-300 bg-slate-800 border border-slate-700 px-2.5 py-1 rounded-md">
+                                    <span aria-hidden="true">🇺🇸</span>
+                                    USA
+                                </span>
+                            </div>
                             <p class="text-slate-400 text-sm mt-2">Long-running software company calculator for custom web projects.</p>
                             <span class="inline-flex items-center gap-2 mt-4 text-blue-400 group-hover:text-blue-300 font-semibold text-sm">
                                 Open Website
