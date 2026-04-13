@@ -217,6 +217,59 @@
                         </a>
                     </div>
 
+                    <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <a href="https://www.webdesignphils.com/web-project-cost-estimator/" target="_blank" rel="noopener noreferrer" class="group rounded-xl border border-slate-700 bg-slate-900/70 hover:border-cyan-500/70 p-5 transition-all">
+                            <div class="flex items-center justify-between gap-3">
+                                <p class="text-white font-bold text-lg">WebDesignPhils Estimator</p>
+                                <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-300 bg-slate-800 border border-slate-700 px-2.5 py-1 rounded-md">
+                                    <span aria-hidden="true">🇵🇭</span>
+                                    Philippines
+                                </span>
+                            </div>
+                            <p class="text-slate-400 text-sm mt-2">Philippine-based web project cost estimator for websites and apps.</p>
+                            <span class="inline-flex items-center gap-2 mt-4 text-cyan-400 group-hover:text-cyan-300 font-semibold text-sm">
+                                Open Website
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                </svg>
+                            </span>
+                        </a>
+
+                        <a href="https://nordicconsult.ph/website-price-calculator/" target="_blank" rel="noopener noreferrer" class="group rounded-xl border border-slate-700 bg-slate-900/70 hover:border-cyan-500/70 p-5 transition-all">
+                            <div class="flex items-center justify-between gap-3">
+                                <p class="text-white font-bold text-lg">Nordic Consult Calculator</p>
+                                <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-300 bg-slate-800 border border-slate-700 px-2.5 py-1 rounded-md">
+                                    <span aria-hidden="true">🇵🇭</span>
+                                    Philippines
+                                </span>
+                            </div>
+                            <p class="text-slate-400 text-sm mt-2">Website price calculator from a Philippine digital services provider.</p>
+                            <span class="inline-flex items-center gap-2 mt-4 text-cyan-400 group-hover:text-cyan-300 font-semibold text-sm">
+                                Open Website
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                </svg>
+                            </span>
+                        </a>
+
+                        <a href="https://dotnek.com/en-PH/Pricing" target="_blank" rel="noopener noreferrer" class="group rounded-xl border border-slate-700 bg-slate-900/70 hover:border-cyan-500/70 p-5 transition-all">
+                            <div class="flex items-center justify-between gap-3">
+                                <p class="text-white font-bold text-lg">DotNek Pricing Calculator</p>
+                                <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-300 bg-slate-800 border border-slate-700 px-2.5 py-1 rounded-md">
+                                    <span aria-hidden="true">🇵🇭</span>
+                                    Philippines
+                                </span>
+                            </div>
+                            <p class="text-slate-400 text-sm mt-2">Calculator-style pricing page with Philippines-localized web services.</p>
+                            <span class="inline-flex items-center gap-2 mt-4 text-cyan-400 group-hover:text-cyan-300 font-semibold text-sm">
+                                Open Website
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+
                     <p class="text-center text-xs text-slate-500 mt-6">
                         External calculator pricing varies by scope, timeline, and region. We keep our rates competitive for similar deliverables.
                     </p>
