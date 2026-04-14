@@ -218,15 +218,15 @@
                     </div>
 
                     <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <a href="https://www.webdesignphils.com/web-project-cost-estimator/" target="_blank" rel="noopener noreferrer" class="group rounded-xl border border-slate-700 bg-slate-900/70 hover:border-cyan-500/70 p-5 transition-all">
+                        <a href="https://www.truelogic.com.ph/blog/website-cost/" target="_blank" rel="noopener noreferrer" class="group rounded-xl border border-slate-700 bg-slate-900/70 hover:border-cyan-500/70 p-5 transition-all">
                             <div class="flex items-center justify-between gap-3">
-                                <p class="text-white font-bold text-lg">WebDesignPhils Estimator</p>
+                                <p class="text-white font-bold text-lg">Truelogic Cost Guide</p>
                                 <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-300 bg-slate-800 border border-slate-700 px-2.5 py-1 rounded-md">
                                     <span aria-hidden="true">🇵🇭</span>
                                     Philippines
                                 </span>
                             </div>
-                            <p class="text-slate-400 text-sm mt-2">Philippine-based web project cost estimator for websites and apps.</p>
+                            <p class="text-slate-400 text-sm mt-2">Philippine agency pricing guide with local website cost ranges and benchmarks.</p>
                             <span class="inline-flex items-center gap-2 mt-4 text-cyan-400 group-hover:text-cyan-300 font-semibold text-sm">
                                 Open Website
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -252,15 +252,15 @@
                             </span>
                         </a>
 
-                        <a href="https://dotnek.com/en-PH/Pricing" target="_blank" rel="noopener noreferrer" class="group rounded-xl border border-slate-700 bg-slate-900/70 hover:border-cyan-500/70 p-5 transition-all">
+                        <a href="https://www.praferosawebworks.com/blog/website-cost-philippines-2026/" target="_blank" rel="noopener noreferrer" class="group rounded-xl border border-slate-700 bg-slate-900/70 hover:border-cyan-500/70 p-5 transition-all">
                             <div class="flex items-center justify-between gap-3">
-                                <p class="text-white font-bold text-lg">DotNek Pricing Calculator</p>
+                                <p class="text-white font-bold text-lg">Praferosa Cost Guide</p>
                                 <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-300 bg-slate-800 border border-slate-700 px-2.5 py-1 rounded-md">
                                     <span aria-hidden="true">🇵🇭</span>
                                     Philippines
                                 </span>
                             </div>
-                            <p class="text-slate-400 text-sm mt-2">Calculator-style pricing page with Philippines-localized web services.</p>
+                            <p class="text-slate-400 text-sm mt-2">Detailed Philippines web pricing breakdown with updated local market ranges.</p>
                             <span class="inline-flex items-center gap-2 mt-4 text-cyan-400 group-hover:text-cyan-300 font-semibold text-sm">
                                 Open Website
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
