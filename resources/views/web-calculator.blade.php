@@ -168,9 +168,15 @@
                         <a href="https://www.webfx.com/web-design/website-design-cost-calculator.html" target="_blank" rel="noopener noreferrer" class="group rounded-xl border border-slate-700 bg-slate-900/70 hover:border-blue-500/70 p-5 transition-all">
                             <div class="flex items-center justify-between gap-3">
                                 <p class="text-white font-bold text-lg">WebFX Calculator</p>
-                                <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-300 bg-slate-800 border border-slate-700 px-2.5 py-1 rounded-md">
-                                    <span aria-hidden="true">🇺🇸</span>
-                                    USA
+                                <span class="inline-flex items-center justify-center w-9 h-9 bg-slate-950/70 border border-slate-600/80 rounded-lg shadow-sm" title="United States">
+                                    <svg class="w-5 h-5" viewBox="0 0 24 24" aria-hidden="true">
+                                        <rect x="2.5" y="5" width="19" height="14" rx="2" fill="#ffffff"/>
+                                        <rect x="2.5" y="5" width="19" height="2" fill="#B22234"/>
+                                        <rect x="2.5" y="9" width="19" height="2" fill="#B22234"/>
+                                        <rect x="2.5" y="13" width="19" height="2" fill="#B22234"/>
+                                        <rect x="2.5" y="17" width="19" height="2" fill="#B22234"/>
+                                        <rect x="2.5" y="5" width="8.5" height="8" rx="1" fill="#3C3B6E"/>
+                                    </svg>
                                 </span>
                             </div>
                             <p class="text-slate-400 text-sm mt-2">Agency pricing calculator with enterprise-level service ranges.</p>
@@ -185,9 +191,15 @@
                         <a href="https://www.upwork.com/tools/website-design-cost-calculator" target="_blank" rel="noopener noreferrer" class="group rounded-xl border border-slate-700 bg-slate-900/70 hover:border-blue-500/70 p-5 transition-all">
                             <div class="flex items-center justify-between gap-3">
                                 <p class="text-white font-bold text-lg">Upwork Calculator</p>
-                                <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-300 bg-slate-800 border border-slate-700 px-2.5 py-1 rounded-md">
-                                    <span aria-hidden="true">🇺🇸</span>
-                                    USA
+                                <span class="inline-flex items-center justify-center w-9 h-9 bg-slate-950/70 border border-slate-600/80 rounded-lg shadow-sm" title="United States">
+                                    <svg class="w-5 h-5" viewBox="0 0 24 24" aria-hidden="true">
+                                        <rect x="2.5" y="5" width="19" height="14" rx="2" fill="#ffffff"/>
+                                        <rect x="2.5" y="5" width="19" height="2" fill="#B22234"/>
+                                        <rect x="2.5" y="9" width="19" height="2" fill="#B22234"/>
+                                        <rect x="2.5" y="13" width="19" height="2" fill="#B22234"/>
+                                        <rect x="2.5" y="17" width="19" height="2" fill="#B22234"/>
+                                        <rect x="2.5" y="5" width="8.5" height="8" rx="1" fill="#3C3B6E"/>
+                                    </svg>
                                 </span>
                             </div>
                             <p class="text-slate-400 text-sm mt-2">Popular freelancer marketplace cost estimator and budget guide.</p>
@@ -202,9 +214,15 @@
                         <a href="https://www.scnsoft.com/web-development/calculator" target="_blank" rel="noopener noreferrer" class="group rounded-xl border border-slate-700 bg-slate-900/70 hover:border-blue-500/70 p-5 transition-all">
                             <div class="flex items-center justify-between gap-3">
                                 <p class="text-white font-bold text-lg">ScienceSoft Calculator</p>
-                                <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-300 bg-slate-800 border border-slate-700 px-2.5 py-1 rounded-md">
-                                    <span aria-hidden="true">🇺🇸</span>
-                                    USA
+                                <span class="inline-flex items-center justify-center w-9 h-9 bg-slate-950/70 border border-slate-600/80 rounded-lg shadow-sm" title="United States">
+                                    <svg class="w-5 h-5" viewBox="0 0 24 24" aria-hidden="true">
+                                        <rect x="2.5" y="5" width="19" height="14" rx="2" fill="#ffffff"/>
+                                        <rect x="2.5" y="5" width="19" height="2" fill="#B22234"/>
+                                        <rect x="2.5" y="9" width="19" height="2" fill="#B22234"/>
+                                        <rect x="2.5" y="13" width="19" height="2" fill="#B22234"/>
+                                        <rect x="2.5" y="17" width="19" height="2" fill="#B22234"/>
+                                        <rect x="2.5" y="5" width="8.5" height="8" rx="1" fill="#3C3B6E"/>
+                                    </svg>
                                 </span>
                             </div>
                             <p class="text-slate-400 text-sm mt-2">Long-running software company calculator for custom web projects.</p>
@@ -221,9 +239,14 @@
                         <a href="https://www.truelogic.com.ph/blog/website-cost/" target="_blank" rel="noopener noreferrer" class="group rounded-xl border border-slate-700 bg-slate-900/70 hover:border-cyan-500/70 p-5 transition-all">
                             <div class="flex items-center justify-between gap-3">
                                 <p class="text-white font-bold text-lg">Truelogic Cost Guide</p>
-                                <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-300 bg-slate-800 border border-slate-700 px-2.5 py-1 rounded-md">
-                                    <span aria-hidden="true">🇵🇭</span>
-                                    Philippines
+                                <span class="inline-flex items-center justify-center w-9 h-9 bg-slate-950/70 border border-slate-600/80 rounded-lg shadow-sm" title="Philippines">
+                                    <svg class="w-5 h-5" viewBox="0 0 24 24" aria-hidden="true">
+                                        <rect x="2.5" y="5" width="19" height="14" rx="2" fill="#ffffff"/>
+                                        <path d="M7 5h14.5v7H7z" fill="#0038A8"/>
+                                        <path d="M7 12h14.5v7H7z" fill="#CE1126"/>
+                                        <path d="M2.5 5l8.5 7-8.5 7z" fill="#ffffff"/>
+                                        <circle cx="6" cy="12" r="1" fill="#FCD116"/>
+                                    </svg>
                                 </span>
                             </div>
                             <p class="text-slate-400 text-sm mt-2">Philippine agency pricing guide with local website cost ranges and benchmarks.</p>
@@ -238,9 +261,14 @@
                         <a href="https://nordicconsult.ph/website-price-calculator/" target="_blank" rel="noopener noreferrer" class="group rounded-xl border border-slate-700 bg-slate-900/70 hover:border-cyan-500/70 p-5 transition-all">
                             <div class="flex items-center justify-between gap-3">
                                 <p class="text-white font-bold text-lg">Nordic Consult Calculator</p>
-                                <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-300 bg-slate-800 border border-slate-700 px-2.5 py-1 rounded-md">
-                                    <span aria-hidden="true">🇵🇭</span>
-                                    Philippines
+                                <span class="inline-flex items-center justify-center w-9 h-9 bg-slate-950/70 border border-slate-600/80 rounded-lg shadow-sm" title="Philippines">
+                                    <svg class="w-5 h-5" viewBox="0 0 24 24" aria-hidden="true">
+                                        <rect x="2.5" y="5" width="19" height="14" rx="2" fill="#ffffff"/>
+                                        <path d="M7 5h14.5v7H7z" fill="#0038A8"/>
+                                        <path d="M7 12h14.5v7H7z" fill="#CE1126"/>
+                                        <path d="M2.5 5l8.5 7-8.5 7z" fill="#ffffff"/>
+                                        <circle cx="6" cy="12" r="1" fill="#FCD116"/>
+                                    </svg>
                                 </span>
                             </div>
                             <p class="text-slate-400 text-sm mt-2">Website price calculator from a Philippine digital services provider.</p>
@@ -255,9 +283,14 @@
                         <a href="https://www.praferosawebworks.com/blog/website-cost-philippines-2026/" target="_blank" rel="noopener noreferrer" class="group rounded-xl border border-slate-700 bg-slate-900/70 hover:border-cyan-500/70 p-5 transition-all">
                             <div class="flex items-center justify-between gap-3">
                                 <p class="text-white font-bold text-lg">Praferosa Cost Guide</p>
-                                <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-300 bg-slate-800 border border-slate-700 px-2.5 py-1 rounded-md">
-                                    <span aria-hidden="true">🇵🇭</span>
-                                    Philippines
+                                <span class="inline-flex items-center justify-center w-9 h-9 bg-slate-950/70 border border-slate-600/80 rounded-lg shadow-sm" title="Philippines">
+                                    <svg class="w-5 h-5" viewBox="0 0 24 24" aria-hidden="true">
+                                        <rect x="2.5" y="5" width="19" height="14" rx="2" fill="#ffffff"/>
+                                        <path d="M7 5h14.5v7H7z" fill="#0038A8"/>
+                                        <path d="M7 12h14.5v7H7z" fill="#CE1126"/>
+                                        <path d="M2.5 5l8.5 7-8.5 7z" fill="#ffffff"/>
+                                        <circle cx="6" cy="12" r="1" fill="#FCD116"/>
+                                    </svg>
                                 </span>
                             </div>
                             <p class="text-slate-400 text-sm mt-2">Detailed Philippines web pricing breakdown with updated local market ranges.</p>
