@@ -115,6 +115,66 @@
                                 </label>
                             </div>
                         </article>
+
+                        <article class="bg-gradient-to-br from-slate-800 to-slate-900 border-2 border-slate-700 rounded-2xl p-6 md:p-8">
+                            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-3 mb-6">
+                                <div>
+                                    <h2 class="text-2xl font-bold text-white">Add-ons</h2>
+                                    <p class="text-sm text-slate-400 mt-1">Optional services for compliance, testing, and delivery readiness.</p>
+                                </div>
+                                <p class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Select all that apply</p>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <label class="flex items-start gap-3 p-4 rounded-xl border border-slate-700 bg-slate-900/60 hover:border-cyan-500/70 transition-colors">
+                                    <input type="checkbox" class="mt-1 accent-cyan-500">
+                                    <span>
+                                        <span class="block text-slate-100 font-semibold">UAT Support</span>
+                                        <span class="block text-xs text-slate-400 mt-1">User acceptance testing support and defect triage.</span>
+                                    </span>
+                                </label>
+
+                                <label class="flex items-start gap-3 p-4 rounded-xl border border-slate-700 bg-slate-900/60 hover:border-cyan-500/70 transition-colors">
+                                    <input type="checkbox" class="mt-1 accent-cyan-500">
+                                    <span>
+                                        <span class="block text-slate-100 font-semibold">PIA Assessment</span>
+                                        <span class="block text-xs text-slate-400 mt-1">Privacy impact analysis for personal data handling.</span>
+                                    </span>
+                                </label>
+
+                                <label class="flex items-start gap-3 p-4 rounded-xl border border-slate-700 bg-slate-900/60 hover:border-cyan-500/70 transition-colors">
+                                    <input type="checkbox" class="mt-1 accent-cyan-500">
+                                    <span>
+                                        <span class="block text-slate-100 font-semibold">QA Assessment</span>
+                                        <span class="block text-xs text-slate-400 mt-1">Structured quality assurance checks and reporting.</span>
+                                    </span>
+                                </label>
+
+                                <label class="flex items-start gap-3 p-4 rounded-xl border border-slate-700 bg-slate-900/60 hover:border-cyan-500/70 transition-colors">
+                                    <input type="checkbox" class="mt-1 accent-cyan-500">
+                                    <span>
+                                        <span class="block text-slate-100 font-semibold">VA Assessment</span>
+                                        <span class="block text-xs text-slate-400 mt-1">Vulnerability assessment for common web security risks.</span>
+                                    </span>
+                                </label>
+
+                                <label class="flex items-start gap-3 p-4 rounded-xl border border-slate-700 bg-slate-900/60 hover:border-cyan-500/70 transition-colors">
+                                    <input type="checkbox" class="mt-1 accent-cyan-500">
+                                    <span>
+                                        <span class="block text-slate-100 font-semibold">Performance Audit</span>
+                                        <span class="block text-xs text-slate-400 mt-1">Load, speed, and Core Web Vitals improvement review.</span>
+                                    </span>
+                                </label>
+
+                                <label class="flex items-start gap-3 p-4 rounded-xl border border-slate-700 bg-slate-900/60 hover:border-cyan-500/70 transition-colors">
+                                    <input type="checkbox" class="mt-1 accent-cyan-500">
+                                    <span>
+                                        <span class="block text-slate-100 font-semibold">Post-launch Monitoring</span>
+                                        <span class="block text-xs text-slate-400 mt-1">Early support window with incident monitoring and fixes.</span>
+                                    </span>
+                                </label>
+                            </div>
+                        </article>
                     </div>
 
                     <aside class="lg:col-span-1">
