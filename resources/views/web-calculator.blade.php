@@ -225,7 +225,7 @@
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <a href="https://www.webfx.com/web-design/website-design-cost-calculator.html" target="_blank" rel="noopener noreferrer" class="group rounded-xl border border-slate-700 bg-slate-900/70 hover:border-blue-500/70 p-5 transition-all">
+                        <a href="https://www.webfx.com/web-design/website-design-cost-calculator.html" target="_blank" rel="noopener noreferrer" class="external-compare-link group rounded-xl border border-slate-700 bg-slate-900/70 hover:border-blue-500/70 p-5 transition-all">
                             <div class="flex items-center justify-between gap-3">
                                 <p class="text-white font-bold text-lg">WebFX Calculator</p>
                                 <span class="inline-flex items-center justify-center w-9 h-9 bg-slate-950/70 border border-slate-600/80 rounded-lg shadow-sm" title="United States">
@@ -248,7 +248,7 @@
                             </span>
                         </a>
 
-                        <a href="https://www.upwork.com/tools/website-design-cost-calculator" target="_blank" rel="noopener noreferrer" class="group rounded-xl border border-slate-700 bg-slate-900/70 hover:border-blue-500/70 p-5 transition-all">
+                        <a href="https://www.upwork.com/tools/website-design-cost-calculator" target="_blank" rel="noopener noreferrer" class="external-compare-link group rounded-xl border border-slate-700 bg-slate-900/70 hover:border-blue-500/70 p-5 transition-all">
                             <div class="flex items-center justify-between gap-3">
                                 <p class="text-white font-bold text-lg">Upwork Calculator</p>
                                 <span class="inline-flex items-center justify-center w-9 h-9 bg-slate-950/70 border border-slate-600/80 rounded-lg shadow-sm" title="United States">
@@ -271,7 +271,7 @@
                             </span>
                         </a>
 
-                        <a href="https://www.scnsoft.com/web-development/calculator" target="_blank" rel="noopener noreferrer" class="group rounded-xl border border-slate-700 bg-slate-900/70 hover:border-blue-500/70 p-5 transition-all">
+                        <a href="https://www.scnsoft.com/web-development/calculator" target="_blank" rel="noopener noreferrer" class="external-compare-link group rounded-xl border border-slate-700 bg-slate-900/70 hover:border-blue-500/70 p-5 transition-all">
                             <div class="flex items-center justify-between gap-3">
                                 <p class="text-white font-bold text-lg">ScienceSoft Calculator</p>
                                 <span class="inline-flex items-center justify-center w-9 h-9 bg-slate-950/70 border border-slate-600/80 rounded-lg shadow-sm" title="United States">
@@ -296,7 +296,7 @@
                     </div>
 
                     <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <a href="https://www.truelogic.com.ph/blog/website-cost/" target="_blank" rel="noopener noreferrer" class="group rounded-xl border border-slate-700 bg-slate-900/70 hover:border-cyan-500/70 p-5 transition-all">
+                        <a href="https://www.truelogic.com.ph/blog/website-cost/" target="_blank" rel="noopener noreferrer" class="external-compare-link group rounded-xl border border-slate-700 bg-slate-900/70 hover:border-cyan-500/70 p-5 transition-all">
                             <div class="flex items-center justify-between gap-3">
                                 <p class="text-white font-bold text-lg">Truelogic Cost Guide</p>
                                 <span class="inline-flex items-center justify-center w-9 h-9 bg-slate-950/70 border border-slate-600/80 rounded-lg shadow-sm" title="Philippines">
@@ -318,7 +318,7 @@
                             </span>
                         </a>
 
-                        <a href="https://nordicconsult.ph/website-price-calculator/" target="_blank" rel="noopener noreferrer" class="group rounded-xl border border-slate-700 bg-slate-900/70 hover:border-cyan-500/70 p-5 transition-all">
+                        <a href="https://nordicconsult.ph/website-price-calculator/" target="_blank" rel="noopener noreferrer" class="external-compare-link group rounded-xl border border-slate-700 bg-slate-900/70 hover:border-cyan-500/70 p-5 transition-all">
                             <div class="flex items-center justify-between gap-3">
                                 <p class="text-white font-bold text-lg">Nordic Consult Calculator</p>
                                 <span class="inline-flex items-center justify-center w-9 h-9 bg-slate-950/70 border border-slate-600/80 rounded-lg shadow-sm" title="Philippines">
@@ -340,7 +340,7 @@
                             </span>
                         </a>
 
-                        <a href="https://www.praferosawebworks.com/blog/website-cost-philippines-2026/" target="_blank" rel="noopener noreferrer" class="group rounded-xl border border-slate-700 bg-slate-900/70 hover:border-cyan-500/70 p-5 transition-all">
+                        <a href="https://www.praferosawebworks.com/blog/website-cost-philippines-2026/" target="_blank" rel="noopener noreferrer" class="external-compare-link group rounded-xl border border-slate-700 bg-slate-900/70 hover:border-cyan-500/70 p-5 transition-all">
                             <div class="flex items-center justify-between gap-3">
                                 <p class="text-white font-bold text-lg">Praferosa Cost Guide</p>
                                 <span class="inline-flex items-center justify-center w-9 h-9 bg-slate-950/70 border border-slate-600/80 rounded-lg shadow-sm" title="Philippines">
@@ -370,5 +370,18 @@
             </div>
         </section>
     </main>
+    <script>
+        document.querySelectorAll('.external-compare-link').forEach((link) => {
+            link.addEventListener('click', (event) => {
+                const confirmed = window.confirm(
+                    'You are about to open a third-party website.\\n\\nFor transparency: we do not own, control, or verify these links.\\n\\nDo you want to continue?'
+                );
+
+                if (!confirmed) {
+                    event.preventDefault();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
