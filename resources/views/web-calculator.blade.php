@@ -210,8 +210,6 @@
                                     <span id="estimated-timeline" class="text-emerald-300 font-semibold">+₱9,000</span>
                                 </div>
                             </div>
-                            <p class="text-[11px] text-slate-500 mt-3">Conversion rate used: ₱60 = $1</p>
-
                             <button type="button" class="w-full mt-8 bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-bold py-3.5 rounded-lg transition-all duration-200">
                                 Request Full Quotation
                             </button>
