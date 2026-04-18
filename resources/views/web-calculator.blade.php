@@ -179,28 +179,38 @@
 
                     <aside class="lg:col-span-1">
                         <div class="sticky top-6 bg-gradient-to-br from-slate-800 to-slate-900 border-2 border-blue-500/40 rounded-2xl p-6 md:p-8 shadow-2xl shadow-blue-900/20">
-                            <p class="text-xs uppercase tracking-wider text-slate-400 font-bold mb-2">Estimated Amount</p>
-                            <p class="text-4xl md:text-5xl font-black bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-6">
-                                $2,450
+                            <div class="flex items-start justify-between gap-4 mb-2">
+                                <p class="text-xs uppercase tracking-wider text-slate-400 font-bold">Estimated Amount</p>
+                                <div>
+                                    <label for="currency-selector" class="sr-only">Choose currency</label>
+                                    <select id="currency-selector" class="bg-slate-900 border border-slate-700 text-slate-200 text-xs font-semibold rounded-md px-2.5 py-1.5 focus:border-blue-500 focus:outline-none">
+                                        <option value="PHP" selected>PHP (₱)</option>
+                                        <option value="USD">USD ($)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <p id="estimated-total" class="text-4xl md:text-5xl font-black bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-6">
+                                ₱147,000
                             </p>
                             <div class="space-y-3 text-sm">
                                 <div class="flex justify-between border-b border-slate-700/70 pb-2">
                                     <span class="text-slate-400">Base Project</span>
-                                    <span class="text-slate-200">$1,500</span>
+                                    <span id="estimated-base" class="text-slate-200">₱90,000</span>
                                 </div>
                                 <div class="flex justify-between border-b border-slate-700/70 pb-2">
                                     <span class="text-slate-400">Pages & Sections</span>
-                                    <span class="text-slate-200">$450</span>
+                                    <span id="estimated-pages" class="text-slate-200">₱27,000</span>
                                 </div>
                                 <div class="flex justify-between border-b border-slate-700/70 pb-2">
                                     <span class="text-slate-400">Features</span>
-                                    <span class="text-slate-200">$350</span>
+                                    <span id="estimated-features" class="text-slate-200">₱21,000</span>
                                 </div>
                                 <div class="flex justify-between pt-1">
                                     <span class="text-slate-300 font-semibold">Timeline Adjustment</span>
-                                    <span class="text-emerald-300 font-semibold">+$150</span>
+                                    <span id="estimated-timeline" class="text-emerald-300 font-semibold">+₱9,000</span>
                                 </div>
                             </div>
+                            <p class="text-[11px] text-slate-500 mt-3">Conversion rate used: ₱60 = $1</p>
 
                             <button type="button" class="w-full mt-8 bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-bold py-3.5 rounded-lg transition-all duration-200">
                                 Request Full Quotation
@@ -371,6 +381,51 @@
         </section>
     </main>
     <script>
+        const conversionRate = 60;
+        const estimateUsd = {
+            base: 1500,
+            pages: 450,
+            features: 350,
+            timeline: 150,
+            total: 2450,
+        };
+
+        const currencySelector = document.getElementById('currency-selector');
+        const estimatedTotal = document.getElementById('estimated-total');
+        const estimatedBase = document.getElementById('estimated-base');
+        const estimatedPages = document.getElementById('estimated-pages');
+        const estimatedFeatures = document.getElementById('estimated-features');
+        const estimatedTimeline = document.getElementById('estimated-timeline');
+
+        function formatCurrency(amount, currency) {
+            const locale = currency === 'PHP' ? 'en-PH' : 'en-US';
+            return new Intl.NumberFormat(locale, {
+                style: 'currency',
+                currency,
+                maximumFractionDigits: 0,
+            }).format(amount);
+        }
+
+        function convertAmount(usdAmount, currency) {
+            return currency === 'PHP' ? usdAmount * conversionRate : usdAmount;
+        }
+
+        function renderEstimate(currency) {
+            estimatedTotal.textContent = formatCurrency(convertAmount(estimateUsd.total, currency), currency);
+            estimatedBase.textContent = formatCurrency(convertAmount(estimateUsd.base, currency), currency);
+            estimatedPages.textContent = formatCurrency(convertAmount(estimateUsd.pages, currency), currency);
+            estimatedFeatures.textContent = formatCurrency(convertAmount(estimateUsd.features, currency), currency);
+            estimatedTimeline.textContent = `+${formatCurrency(convertAmount(estimateUsd.timeline, currency), currency)}`;
+        }
+
+        if (currencySelector) {
+            currencySelector.addEventListener('change', (event) => {
+                renderEstimate(event.target.value);
+            });
+
+            renderEstimate(currencySelector.value);
+        }
+
         document.querySelectorAll('.external-compare-link').forEach((link) => {
             link.addEventListener('click', (event) => {
                 const confirmed = window.confirm(
