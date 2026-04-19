@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Calculator</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <style>
         .bg-grid-pattern {
             background-image:
@@ -213,6 +214,9 @@
                             <button type="button" class="w-full mt-8 bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-bold py-3.5 rounded-lg transition-all duration-200">
                                 Request Full Quotation
                             </button>
+                            <button id="download-estimate-pdf" type="button" class="w-full mt-3 bg-slate-900 hover:bg-slate-800 border border-slate-600 text-slate-100 font-semibold py-3 rounded-lg transition-all duration-200">
+                                Download Estimate PDF
+                            </button>
                             <p class="text-xs text-slate-500 mt-4 leading-relaxed">
                                 This is a sample estimate. Final pricing depends on detailed requirements and project scope.
                             </p>
@@ -377,6 +381,117 @@
                 </div>
             </div>
         </section>
+
+        <section class="pb-20 md:pb-28">
+            <div class="container mx-auto px-4">
+                <div class="max-w-6xl mx-auto bg-gradient-to-br from-slate-800 to-slate-900 border-2 border-slate-700 rounded-2xl p-6 md:p-8">
+                    <div class="text-center mb-8">
+                        <h2 class="text-2xl md:text-3xl font-black text-white mb-3">Available Developers</h2>
+                        <p class="text-slate-400 max-w-3xl mx-auto">
+                            Current team members available to support planning, development, QA, and delivery.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <article class="rounded-xl border border-slate-700 bg-slate-900/70 p-5">
+                            <div class="flex items-center justify-between gap-3 mb-3">
+                                <h3 class="text-white font-bold">Lead Full-stack Developer</h3>
+                                <span class="text-[11px] font-semibold text-emerald-300 bg-emerald-500/10 border border-emerald-500/30 px-2 py-1 rounded-md">Available</span>
+                            </div>
+                            <p class="text-sm text-slate-400">Architecture, backend APIs, database design, and deployment setup.</p>
+                        </article>
+
+                        <article class="rounded-xl border border-slate-700 bg-slate-900/70 p-5">
+                            <div class="flex items-center justify-between gap-3 mb-3">
+                                <h3 class="text-white font-bold">Frontend Developer</h3>
+                                <span class="text-[11px] font-semibold text-emerald-300 bg-emerald-500/10 border border-emerald-500/30 px-2 py-1 rounded-md">Available</span>
+                            </div>
+                            <p class="text-sm text-slate-400">Responsive UI implementation, accessibility, and performance tuning.</p>
+                        </article>
+
+                        <article class="rounded-xl border border-slate-700 bg-slate-900/70 p-5">
+                            <div class="flex items-center justify-between gap-3 mb-3">
+                                <h3 class="text-white font-bold">UI/UX Designer</h3>
+                                <span class="text-[11px] font-semibold text-emerald-300 bg-emerald-500/10 border border-emerald-500/30 px-2 py-1 rounded-md">Available</span>
+                            </div>
+                            <p class="text-sm text-slate-400">Wireframes, design systems, interactive prototypes, and visual assets.</p>
+                        </article>
+
+                        <article class="rounded-xl border border-slate-700 bg-slate-900/70 p-5">
+                            <div class="flex items-center justify-between gap-3 mb-3">
+                                <h3 class="text-white font-bold">QA Engineer</h3>
+                                <span class="text-[11px] font-semibold text-emerald-300 bg-emerald-500/10 border border-emerald-500/30 px-2 py-1 rounded-md">Available</span>
+                            </div>
+                            <p class="text-sm text-slate-400">Test planning, regression testing, UAT assistance, and bug validation.</p>
+                        </article>
+
+                        <article class="rounded-xl border border-slate-700 bg-slate-900/70 p-5">
+                            <div class="flex items-center justify-between gap-3 mb-3">
+                                <h3 class="text-white font-bold">Security Specialist</h3>
+                                <span class="text-[11px] font-semibold text-emerald-300 bg-emerald-500/10 border border-emerald-500/30 px-2 py-1 rounded-md">Available</span>
+                            </div>
+                            <p class="text-sm text-slate-400">Vulnerability assessment, secure coding checks, and hardening recommendations.</p>
+                        </article>
+
+                        <article class="rounded-xl border border-slate-700 bg-slate-900/70 p-5">
+                            <div class="flex items-center justify-between gap-3 mb-3">
+                                <h3 class="text-white font-bold">Project Coordinator</h3>
+                                <span class="text-[11px] font-semibold text-emerald-300 bg-emerald-500/10 border border-emerald-500/30 px-2 py-1 rounded-md">Available</span>
+                            </div>
+                            <p class="text-sm text-slate-400">Timeline tracking, communication updates, and milestone management.</p>
+                        </article>
+
+                        <article class="rounded-xl border border-slate-700 bg-slate-900/70 p-5">
+                            <div class="flex items-center justify-between gap-3 mb-3">
+                                <h3 class="text-white font-bold">PIA Specialist</h3>
+                                <span class="text-[11px] font-semibold text-amber-300 bg-amber-500/10 border border-amber-500/30 px-2 py-1 rounded-md">Outsourceable</span>
+                            </div>
+                            <p class="text-sm text-slate-400">Privacy impact assessment support for compliance documentation and reviews.</p>
+                        </article>
+
+                        <article class="rounded-xl border border-slate-700 bg-slate-900/70 p-5">
+                            <div class="flex items-center justify-between gap-3 mb-3">
+                                <h3 class="text-white font-bold">Backend Developer</h3>
+                                <span class="text-[11px] font-semibold text-emerald-300 bg-emerald-500/10 border border-emerald-500/30 px-2 py-1 rounded-md">Available</span>
+                            </div>
+                            <p class="text-sm text-slate-400">API development, integrations, business logic, and database optimization.</p>
+                        </article>
+
+                        <article class="rounded-xl border border-slate-700 bg-slate-900/70 p-5">
+                            <div class="flex items-center justify-between gap-3 mb-3">
+                                <h3 class="text-white font-bold">Mobile Developer</h3>
+                                <span class="text-[11px] font-semibold text-emerald-300 bg-emerald-500/10 border border-emerald-500/30 px-2 py-1 rounded-md">Available</span>
+                            </div>
+                            <p class="text-sm text-slate-400">Cross-platform app support, mobile optimization, and API integration.</p>
+                        </article>
+
+                        <article class="rounded-xl border border-slate-700 bg-slate-900/70 p-5">
+                            <div class="flex items-center justify-between gap-3 mb-3">
+                                <h3 class="text-white font-bold">DevOps Engineer</h3>
+                                <span class="text-[11px] font-semibold text-emerald-300 bg-emerald-500/10 border border-emerald-500/30 px-2 py-1 rounded-md">Available</span>
+                            </div>
+                            <p class="text-sm text-slate-400">CI/CD pipelines, cloud deployment, monitoring setup, and release automation.</p>
+                        </article>
+
+                        <article class="rounded-xl border border-slate-700 bg-slate-900/70 p-5">
+                            <div class="flex items-center justify-between gap-3 mb-3">
+                                <h3 class="text-white font-bold">Business Analyst</h3>
+                                <span class="text-[11px] font-semibold text-emerald-300 bg-emerald-500/10 border border-emerald-500/30 px-2 py-1 rounded-md">Available</span>
+                            </div>
+                            <p class="text-sm text-slate-400">Requirement mapping, process analysis, and scope definition support.</p>
+                        </article>
+
+                        <article class="rounded-xl border border-slate-700 bg-slate-900/70 p-5">
+                            <div class="flex items-center justify-between gap-3 mb-3">
+                                <h3 class="text-white font-bold">Technical Writer</h3>
+                                <span class="text-[11px] font-semibold text-emerald-300 bg-emerald-500/10 border border-emerald-500/30 px-2 py-1 rounded-md">Available</span>
+                            </div>
+                            <p class="text-sm text-slate-400">User guides, API documentation, and handover documentation for teams.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
     <script>
         const conversionRate = 60;
@@ -394,6 +509,7 @@
         const estimatedPages = document.getElementById('estimated-pages');
         const estimatedFeatures = document.getElementById('estimated-features');
         const estimatedTimeline = document.getElementById('estimated-timeline');
+        const downloadEstimatePdfButton = document.getElementById('download-estimate-pdf');
 
         function formatCurrency(amount, currency) {
             const locale = currency === 'PHP' ? 'en-PH' : 'en-US';
@@ -422,6 +538,83 @@
             });
 
             renderEstimate(currencySelector.value);
+        }
+
+        if (downloadEstimatePdfButton) {
+            downloadEstimatePdfButton.addEventListener('click', () => {
+                const jsPdfModule = window.jspdf;
+                if (!jsPdfModule || !jsPdfModule.jsPDF) {
+                    const fallbackContent = [
+                        'Web Project Estimate',
+                        `Generated: ${new Date().toLocaleString()}`,
+                        '',
+                        `Currency: ${currencySelector ? currencySelector.value : 'PHP'}`,
+                        `Project Type: ${document.getElementById('project-type')?.value || 'N/A'}`,
+                        `Estimated Pages: ${document.getElementById('pages')?.value || 'N/A'}`,
+                        `Timeline: ${document.getElementById('timeline')?.value || 'N/A'}`,
+                        `Design Level: ${document.getElementById('design-level')?.value || 'N/A'}`,
+                        '',
+                        'Estimate Breakdown',
+                        `Base Project: ${estimatedBase?.textContent || '-'}`,
+                        `Pages & Sections: ${estimatedPages?.textContent || '-'}`,
+                        `Features: ${estimatedFeatures?.textContent || '-'}`,
+                        `Timeline Adjustment: ${estimatedTimeline?.textContent || '-'}`,
+                        `Estimated Total: ${estimatedTotal?.textContent || '-'}`,
+                        '',
+                        'Note: PDF library unavailable. This fallback is a text export.',
+                    ].join('\n');
+
+                    const blob = new Blob([fallbackContent], { type: 'text/plain;charset=utf-8' });
+                    const fallbackUrl = URL.createObjectURL(blob);
+                    const link = document.createElement('a');
+                    link.href = fallbackUrl;
+                    link.download = 'web-project-estimate.txt';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    URL.revokeObjectURL(fallbackUrl);
+                    window.alert('PDF library did not load, so a text estimate was downloaded instead.');
+                    return;
+                }
+
+                const { jsPDF } = jsPdfModule;
+                const doc = new jsPDF();
+                const currency = currencySelector ? currencySelector.value : 'PHP';
+                const projectType = document.getElementById('project-type')?.value || 'N/A';
+                const pages = document.getElementById('pages')?.value || 'N/A';
+                const timeline = document.getElementById('timeline')?.value || 'N/A';
+                const designLevel = document.getElementById('design-level')?.value || 'N/A';
+
+                doc.setFontSize(18);
+                doc.text('Web Project Estimate', 14, 20);
+                doc.setFontSize(11);
+                doc.text(`Generated: ${new Date().toLocaleString()}`, 14, 28);
+                doc.text(`Currency: ${currency}`, 14, 34);
+
+                doc.setFontSize(13);
+                doc.text('Project Details', 14, 45);
+                doc.setFontSize(11);
+                doc.text(`Project Type: ${projectType}`, 14, 53);
+                doc.text(`Estimated Pages: ${pages}`, 14, 59);
+                doc.text(`Timeline: ${timeline}`, 14, 65);
+                doc.text(`Design Level: ${designLevel}`, 14, 71);
+
+                doc.setFontSize(13);
+                doc.text('Estimate Breakdown', 14, 84);
+                doc.setFontSize(11);
+                doc.text(`Base Project: ${estimatedBase?.textContent || '-'}`, 14, 92);
+                doc.text(`Pages & Sections: ${estimatedPages?.textContent || '-'}`, 14, 98);
+                doc.text(`Features: ${estimatedFeatures?.textContent || '-'}`, 14, 104);
+                doc.text(`Timeline Adjustment: ${estimatedTimeline?.textContent || '-'}`, 14, 110);
+
+                doc.setFontSize(14);
+                doc.text(`Estimated Total: ${estimatedTotal?.textContent || '-'}`, 14, 123);
+
+                doc.setFontSize(10);
+                doc.text('This estimate is for budgeting purposes only and may change based on final scope.', 14, 135);
+
+                doc.save(`web-project-estimate-${currency.toLowerCase()}.pdf`);
+            });
         }
 
         document.querySelectorAll('.external-compare-link').forEach((link) => {
