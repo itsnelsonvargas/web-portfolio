@@ -492,6 +492,55 @@
                 </div>
             </div>
         </section>
+
+        <section class="pb-24 md:pb-32">
+            <div class="container mx-auto px-4">
+                <div class="max-w-6xl mx-auto bg-gradient-to-br from-slate-800 to-slate-900 border-2 border-slate-700 rounded-2xl p-6 md:p-8">
+                    <div class="text-center mb-8">
+                        <h2 class="text-2xl md:text-3xl font-black text-white mb-3">Why Cheap Devs Provide Low-Quality Products</h2>
+                        <p class="text-slate-400 max-w-3xl mx-auto">
+                            Lower cost can be attractive, but extremely cheap pricing usually cuts critical work that protects quality, security, and long-term business value.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <article class="rounded-xl border border-slate-700 bg-slate-900/70 p-5">
+                            <h3 class="text-white font-bold mb-2">Minimal Discovery Phase</h3>
+                            <p class="text-sm text-slate-400">Requirements are rushed, causing unclear scope, missing features, and costly rework later.</p>
+                        </article>
+
+                        <article class="rounded-xl border border-slate-700 bg-slate-900/70 p-5">
+                            <h3 class="text-white font-bold mb-2">Weak Code Quality</h3>
+                            <p class="text-sm text-slate-400">Quick fixes and poor architecture lead to unstable systems that are harder to maintain and scale.</p>
+                        </article>
+
+                        <article class="rounded-xl border border-slate-700 bg-slate-900/70 p-5">
+                            <h3 class="text-white font-bold mb-2">Limited QA Testing</h3>
+                            <p class="text-sm text-slate-400">Lack of structured testing means bugs reach production and hurt user trust.</p>
+                        </article>
+
+                        <article class="rounded-xl border border-slate-700 bg-slate-900/70 p-5">
+                            <h3 class="text-white font-bold mb-2">Security Gaps</h3>
+                            <p class="text-sm text-slate-400">Security checks are often skipped, increasing risk of vulnerabilities and data exposure.</p>
+                        </article>
+
+                        <article class="rounded-xl border border-slate-700 bg-slate-900/70 p-5">
+                            <h3 class="text-white font-bold mb-2">Poor Documentation</h3>
+                            <p class="text-sm text-slate-400">Without proper docs, future updates become slower, more expensive, and error-prone.</p>
+                        </article>
+
+                        <article class="rounded-xl border border-slate-700 bg-slate-900/70 p-5">
+                            <h3 class="text-white font-bold mb-2">No Reliable Support</h3>
+                            <p class="text-sm text-slate-400">After launch, unresolved issues and weak handover can interrupt operations and growth.</p>
+                        </article>
+                    </div>
+
+                    <p class="text-center text-sm text-slate-500 mt-6">
+                        A balanced budget with proper process usually saves more time and money than a low initial quote.
+                    </p>
+                </div>
+            </div>
+        </section>
     </main>
     <script>
         const conversionRate = 60;
