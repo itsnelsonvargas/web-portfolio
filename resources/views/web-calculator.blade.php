@@ -495,49 +495,66 @@
 
         <section class="pb-24 md:pb-32">
             <div class="container mx-auto px-4">
-                <div class="max-w-6xl mx-auto bg-gradient-to-br from-slate-800 to-slate-900 border-2 border-slate-700 rounded-2xl p-6 md:p-8">
-                    <div class="text-center mb-8">
-                        <h2 class="text-2xl md:text-3xl font-black text-white mb-3">How Extremely Low-Cost Development Affects Product Quality</h2>
-                        <p class="text-slate-400 max-w-3xl mx-auto">
-                            Lower cost can be attractive, but extremely cheap pricing usually cuts critical work that protects quality, security, and long-term business value.
+                <div class="max-w-6xl mx-auto relative overflow-hidden bg-gradient-to-br from-slate-800 via-slate-800 to-slate-900 border-2 border-slate-700 rounded-2xl p-6 md:p-8">
+                    <div class="absolute -top-20 -right-20 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                    <div class="absolute -bottom-24 -left-20 w-72 h-72 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                    <div class="relative text-center mb-8">
+                        <span class="inline-flex items-center gap-2 px-4 py-2 mb-4 bg-blue-500/10 border border-blue-500/30 rounded-lg text-xs font-bold uppercase tracking-wider text-blue-300">
+                            Quality Insights
+                        </span>
+                        <h2 class="text-3xl md:text-4xl font-black text-white mb-3 leading-tight">
+                            How Extremely Low-Cost Development
+                            <span class="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Affects Product Quality</span>
+                        </h2>
+                        <p class="text-slate-300/90 max-w-3xl mx-auto">
+                            Lower cost can look appealing at first, but very low quotes often remove essential quality controls that protect stability, security, and long-term business performance.
                         </p>
                     </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                        <article class="rounded-xl border border-slate-700 bg-slate-900/70 p-5">
+                    <div class="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <article class="group rounded-xl border border-slate-700/90 bg-slate-900/70 p-5 hover:border-blue-500/60 transition-all duration-200">
+                            <div class="w-8 h-8 rounded-md bg-blue-500/15 border border-blue-500/30 flex items-center justify-center text-blue-300 font-bold text-sm mb-3">01</div>
                             <h3 class="text-white font-bold mb-2">Minimal Discovery Phase</h3>
                             <p class="text-sm text-slate-400">Requirements are rushed, causing unclear scope, missing features, and costly rework later.</p>
                         </article>
 
-                        <article class="rounded-xl border border-slate-700 bg-slate-900/70 p-5">
+                        <article class="group rounded-xl border border-slate-700/90 bg-slate-900/70 p-5 hover:border-blue-500/60 transition-all duration-200">
+                            <div class="w-8 h-8 rounded-md bg-blue-500/15 border border-blue-500/30 flex items-center justify-center text-blue-300 font-bold text-sm mb-3">02</div>
                             <h3 class="text-white font-bold mb-2">Weak Code Quality</h3>
                             <p class="text-sm text-slate-400">Quick fixes and poor architecture lead to unstable systems that are harder to maintain and scale.</p>
                         </article>
 
-                        <article class="rounded-xl border border-slate-700 bg-slate-900/70 p-5">
+                        <article class="group rounded-xl border border-slate-700/90 bg-slate-900/70 p-5 hover:border-blue-500/60 transition-all duration-200">
+                            <div class="w-8 h-8 rounded-md bg-blue-500/15 border border-blue-500/30 flex items-center justify-center text-blue-300 font-bold text-sm mb-3">03</div>
                             <h3 class="text-white font-bold mb-2">Limited QA Testing</h3>
                             <p class="text-sm text-slate-400">Lack of structured testing means bugs reach production and hurt user trust.</p>
                         </article>
 
-                        <article class="rounded-xl border border-slate-700 bg-slate-900/70 p-5">
+                        <article class="group rounded-xl border border-slate-700/90 bg-slate-900/70 p-5 hover:border-blue-500/60 transition-all duration-200">
+                            <div class="w-8 h-8 rounded-md bg-blue-500/15 border border-blue-500/30 flex items-center justify-center text-blue-300 font-bold text-sm mb-3">04</div>
                             <h3 class="text-white font-bold mb-2">Security Gaps</h3>
                             <p class="text-sm text-slate-400">Security checks are often skipped, increasing risk of vulnerabilities and data exposure.</p>
                         </article>
 
-                        <article class="rounded-xl border border-slate-700 bg-slate-900/70 p-5">
+                        <article class="group rounded-xl border border-slate-700/90 bg-slate-900/70 p-5 hover:border-blue-500/60 transition-all duration-200">
+                            <div class="w-8 h-8 rounded-md bg-blue-500/15 border border-blue-500/30 flex items-center justify-center text-blue-300 font-bold text-sm mb-3">05</div>
                             <h3 class="text-white font-bold mb-2">Poor Documentation</h3>
                             <p class="text-sm text-slate-400">Without proper docs, future updates become slower, more expensive, and error-prone.</p>
                         </article>
 
-                        <article class="rounded-xl border border-slate-700 bg-slate-900/70 p-5">
+                        <article class="group rounded-xl border border-slate-700/90 bg-slate-900/70 p-5 hover:border-blue-500/60 transition-all duration-200">
+                            <div class="w-8 h-8 rounded-md bg-blue-500/15 border border-blue-500/30 flex items-center justify-center text-blue-300 font-bold text-sm mb-3">06</div>
                             <h3 class="text-white font-bold mb-2">No Reliable Support</h3>
                             <p class="text-sm text-slate-400">After launch, unresolved issues and weak handover can interrupt operations and growth.</p>
                         </article>
                     </div>
 
-                    <p class="text-center text-sm text-slate-500 mt-6">
-                        A balanced budget with proper process usually saves more time and money than a low initial quote.
-                    </p>
+                    <div class="relative mt-6 rounded-xl border border-blue-500/30 bg-blue-500/10 px-4 py-3">
+                        <p class="text-center text-sm text-blue-100">
+                            A balanced budget with proper process usually saves more time and money than a low initial quote.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
