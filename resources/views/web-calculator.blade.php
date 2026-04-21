@@ -514,37 +514,61 @@
 
                     <div class="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                         <article class="group rounded-xl border border-slate-700/90 bg-slate-900/70 p-5 hover:border-blue-500/60 transition-all duration-200">
-                            <div class="w-8 h-8 rounded-md bg-blue-500/15 border border-blue-500/30 flex items-center justify-center text-blue-300 font-bold text-sm mb-3">01</div>
+                            <div class="w-9 h-9 rounded-md bg-blue-500/15 border border-blue-500/30 flex items-center justify-center text-blue-300 mb-3">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
                             <h3 class="text-white font-bold mb-2">Minimal Discovery Phase</h3>
                             <p class="text-sm text-slate-400">Requirements are rushed, causing unclear scope, missing features, and costly rework later.</p>
                         </article>
 
                         <article class="group rounded-xl border border-slate-700/90 bg-slate-900/70 p-5 hover:border-blue-500/60 transition-all duration-200">
-                            <div class="w-8 h-8 rounded-md bg-blue-500/15 border border-blue-500/30 flex items-center justify-center text-blue-300 font-bold text-sm mb-3">02</div>
+                            <div class="w-9 h-9 rounded-md bg-blue-500/15 border border-blue-500/30 flex items-center justify-center text-blue-300 mb-3">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 3v2.25m4.5-2.25V6m-7.5 4.5h10.5M6 21h12a2.25 2.25 0 002.25-2.25V8.25A2.25 2.25 0 0018 6H6A2.25 2.25 0 003.75 8.25v10.5A2.25 2.25 0 006 21z"></path>
+                                </svg>
+                            </div>
                             <h3 class="text-white font-bold mb-2">Weak Code Quality</h3>
                             <p class="text-sm text-slate-400">Quick fixes and poor architecture lead to unstable systems that are harder to maintain and scale.</p>
                         </article>
 
                         <article class="group rounded-xl border border-slate-700/90 bg-slate-900/70 p-5 hover:border-blue-500/60 transition-all duration-200">
-                            <div class="w-8 h-8 rounded-md bg-blue-500/15 border border-blue-500/30 flex items-center justify-center text-blue-300 font-bold text-sm mb-3">03</div>
+                            <div class="w-9 h-9 rounded-md bg-blue-500/15 border border-blue-500/30 flex items-center justify-center text-blue-300 mb-3">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
                             <h3 class="text-white font-bold mb-2">Limited QA Testing</h3>
                             <p class="text-sm text-slate-400">Lack of structured testing means bugs reach production and hurt user trust.</p>
                         </article>
 
                         <article class="group rounded-xl border border-slate-700/90 bg-slate-900/70 p-5 hover:border-blue-500/60 transition-all duration-200">
-                            <div class="w-8 h-8 rounded-md bg-blue-500/15 border border-blue-500/30 flex items-center justify-center text-blue-300 font-bold text-sm mb-3">04</div>
+                            <div class="w-9 h-9 rounded-md bg-blue-500/15 border border-blue-500/30 flex items-center justify-center text-blue-300 mb-3">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-1.5 0h12a1.5 1.5 0 011.5 1.5v7.5A1.5 1.5 0 0118 21h-12a1.5 1.5 0 01-1.5-1.5V12a1.5 1.5 0 011.5-1.5z"></path>
+                                </svg>
+                            </div>
                             <h3 class="text-white font-bold mb-2">Security Gaps</h3>
                             <p class="text-sm text-slate-400">Security checks are often skipped, increasing risk of vulnerabilities and data exposure.</p>
                         </article>
 
                         <article class="group rounded-xl border border-slate-700/90 bg-slate-900/70 p-5 hover:border-blue-500/60 transition-all duration-200">
-                            <div class="w-8 h-8 rounded-md bg-blue-500/15 border border-blue-500/30 flex items-center justify-center text-blue-300 font-bold text-sm mb-3">05</div>
+                            <div class="w-9 h-9 rounded-md bg-blue-500/15 border border-blue-500/30 flex items-center justify-center text-blue-300 mb-3">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A3.375 3.375 0 0011.25 11.625v2.625m8.25 0v3a2.25 2.25 0 01-2.25 2.25h-9a2.25 2.25 0 01-2.25-2.25v-3m13.5 0H6m13.5 0v-1.5a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 006 12.75v1.5"></path>
+                                </svg>
+                            </div>
                             <h3 class="text-white font-bold mb-2">Poor Documentation</h3>
                             <p class="text-sm text-slate-400">Without proper docs, future updates become slower, more expensive, and error-prone.</p>
                         </article>
 
                         <article class="group rounded-xl border border-slate-700/90 bg-slate-900/70 p-5 hover:border-blue-500/60 transition-all duration-200">
-                            <div class="w-8 h-8 rounded-md bg-blue-500/15 border border-blue-500/30 flex items-center justify-center text-blue-300 font-bold text-sm mb-3">06</div>
+                            <div class="w-9 h-9 rounded-md bg-blue-500/15 border border-blue-500/30 flex items-center justify-center text-blue-300 mb-3">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 10.5v6.75a2.25 2.25 0 01-2.25 2.25h-9a2.25 2.25 0 01-2.25-2.25V10.5m13.5 0l-1.5-6h-9l-1.5 6m12 0h-12"></path>
+                                </svg>
+                            </div>
                             <h3 class="text-white font-bold mb-2">No Reliable Support</h3>
                             <p class="text-sm text-slate-400">After launch, unresolved issues and weak handover can interrupt operations and growth.</p>
                         </article>
