@@ -25,6 +25,7 @@ Route::post('/contact', [PortfolioController::class, 'contact'])->name('contact.
 
 Route::get('/portfolio-feedback', [ReviewController::class, 'index'])->name('review.index');
 Route::post('/portfolio-feedback', [ReviewController::class, 'store'])->name('review.store');
+Route::view('/web-calculator', 'web-calculator')->name('web-calculator');
 
 Route::get('/certificates', function () {
     return redirect('https://drive.google.com/drive/folders/1Q37Vv1HtMCmLBKvg0XG6WA1B7uvZQziW');
