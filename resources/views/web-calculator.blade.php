@@ -574,11 +574,55 @@
                         </article>
                     </div>
 
-                    <div class="relative mt-6 rounded-xl border border-blue-500/30 bg-blue-500/10 px-4 py-3">
-                        <p class="text-center text-sm text-blue-100">
-                        Lower upfront costs can be misleading—projects priced too cheaply often incur significant hidden expenses in security, deployment, and unresolved technical issues over time.
+                    <div class="relative mt-6 rounded-2xl border border-blue-500/20 bg-gradient-to-br from-blue-500/10 to-blue-600/5 p-5 shadow-sm">
+
+                        <!-- Message -->
+                        <p class="text-center text-sm leading-relaxed text-blue-100">
+                            Low upfront costs can be deceptive—projects priced too cheaply often lead to hidden expenses in 
+                            <span class="font-medium text-white">security</span>, 
+                            <span class="font-medium text-white">deployment</span>, and 
+                            <span class="font-medium text-white">long-term stability</span>.
                         </p>
+
+                        <!-- Divider -->
+                        <div class="my-4 h-px bg-blue-500/20"></div>
+
+                        <!-- Sources -->
+                        <div class="text-center">
+                            <p class="mb-2 text-[11px] uppercase tracking-wide text-blue-300/70">
+                                Backed by industry research
+                            </p>
+
+                            <div class="flex flex-wrap justify-center gap-2 text-xs">
+                                <a href="https://www.techtarget.com/searchcloudcomputing/tip/The-hidden-costs-of-technical-debt-in-infrastructure" target="_blank"
+                                    class="rounded-full border border-blue-400/20 px-3 py-1 text-blue-200 hover:border-blue-300 hover:text-white transition">
+                                    TechTarget
+                                </a>
+
+                                <a href="https://www.csoonline.com/article/570851/7-ways-technical-debt-increases-security-risk.html" target="_blank"
+                                    class="rounded-full border border-blue-400/20 px-3 py-1 text-blue-200 hover:border-blue-300 hover:text-white transition">
+                                    CSO Online
+                                </a>
+
+                                <a href="https://www.sonarsource.com/blog/new-research-from-sonar-on-cost-of-technical-debt/" target="_blank"
+                                    class="rounded-full border border-blue-400/20 px-3 py-1 text-blue-200 hover:border-blue-300 hover:text-white transition">
+                                    SonarSource
+                                </a>
+
+                                <a href="https://www.sciencedirect.com/science/article/abs/pii/S016412121630108X" target="_blank"
+                                    class="rounded-full border border-blue-400/20 px-3 py-1 text-blue-200 hover:border-blue-300 hover:text-white transition">
+                                    Case Study
+                                </a>
+
+                                <a href="https://www.sciencedirect.com/science/article/abs/pii/S0164121216300978" target="_blank"
+                                    class="rounded-full border border-blue-400/20 px-3 py-1 text-blue-200 hover:border-blue-300 hover:text-white transition">
+                                    Research Paper
+                                </a>
+                            </div>
+                        </div>
+                        
                     </div>
+
                 </div>
             </div>
         </section>
