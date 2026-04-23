@@ -576,7 +576,7 @@
 
                     <div class="relative mt-6 rounded-xl border border-blue-500/30 bg-blue-500/10 px-4 py-3">
                         <p class="text-center text-sm text-blue-100">
-                            A balanced budget with proper process usually saves more time and money than a low initial quote.
+                        Lower upfront costs can be misleading—projects priced too cheaply often incur significant hidden expenses in security, deployment, and unresolved technical issues over time.
                         </p>
                     </div>
                 </div>
