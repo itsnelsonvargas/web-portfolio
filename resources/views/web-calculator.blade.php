@@ -174,6 +174,23 @@
                                         <span class="block text-xs text-slate-400 mt-1">Early support window with incident monitoring and fixes.</span>
                                     </span>
                                 </label>
+
+                                <label class="flex items-start gap-3 p-4 rounded-xl border border-slate-700 bg-slate-900/60 hover:border-cyan-500/70 transition-colors">
+                                    <input type="checkbox" class="mt-1 accent-cyan-500">
+                                    <span>
+                                        <span class="block text-slate-100 font-semibold">User Manual / Documentation</span>
+                                        <span class="block text-xs text-slate-400 mt-1">Structured guide that explains how to use, manage, and maintain the website or system.</span>
+                                    </span>
+                                </label>
+
+                                <label class="flex items-start gap-3 p-4 rounded-xl border border-slate-700 bg-slate-900/60 hover:border-cyan-500/70 transition-colors">
+                                    <input type="checkbox" class="mt-1 accent-cyan-500">
+                                    <span>
+                                        <span class="block text-slate-100 font-semibold">Client Training Session</span>
+                                        <span class="block text-xs text-slate-400 mt-1">Guided walkthrough (live or recorded) where the developer teaches the client how to use and manage the website or system.</span>
+                                    </span>
+                                </label>
+
                             </div>
                         </article>
                     </div>
