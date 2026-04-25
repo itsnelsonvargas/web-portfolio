@@ -771,8 +771,12 @@
         document.querySelectorAll('.external-compare-link').forEach((link) => {
             link.addEventListener('click', (event) => {
                 const confirmed = window.confirm(
-                    'You are about to open a third-party website.\\n\\nFor transparency: we do not own, control, or verify these links.\\n\\nDo you want to continue?'
+                    'You are about to open a third-party website.\n\n' +
+                    'For transparency: we do not own, control, or verify these links.\n\n' +
+                    'Do you want to continue?'
                 );
+
+
 
                 if (!confirmed) {
                     event.preventDefault();
