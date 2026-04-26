@@ -113,6 +113,10 @@
                                 <label class="flex items-center gap-3 p-4 rounded-xl border border-slate-700 bg-slate-900/60 hover:border-blue-500/70 transition-colors">
                                     <input type="checkbox" class="accent-blue-500">
                                     <span>Content Upload</span>
+                                </label> 
+                                <label class="flex items-center gap-3 p-4 rounded-xl border border-slate-700 bg-slate-900/60 hover:border-blue-500/70 transition-colors">
+                                    <input type="checkbox" class="accent-blue-500">
+                                    <span>Application Programming Interface</span>
                                 </label>
                             </div>
                         </article>
@@ -777,7 +781,7 @@
                 );
 
 
-
+ 
                 if (!confirmed) {
                     event.preventDefault();
                 }
