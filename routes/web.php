@@ -72,12 +72,10 @@ Route::prefix('characteristic')->name('characteristic.')->group(function () {
     Route::get('/', [CharacteristicController::class, 'index'])->name('index');
     Route::get('/{character}', [CharacteristicController::class, 'showCharacter'])->name('show');
 });
- 
 
 Route::get('/consultant', function () {
     return view('consultant');
 })->name('consultant');
-
 
 Route::prefix('download')->name('download.')->group(function () {
     Route::get('/tor', [DownloadController::class, 'downloadTor'])->name('tor');
