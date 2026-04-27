@@ -74,8 +74,9 @@ Route::prefix('characteristic')->name('characteristic.')->group(function () {
 });
  
 
-Route::get('/consultant', view('consultant'))->name('consultant');
- 
+Route::get('/consultant', function () {
+    return view('consultant');
+})->name('consultant');
 
 
 Route::prefix('download')->name('download.')->group(function () {
