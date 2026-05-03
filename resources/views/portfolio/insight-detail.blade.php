@@ -57,11 +57,18 @@
                     {{ $insight->title }}
                 </h1>
 
-                <div class="flex items-center gap-4 py-6 border-y border-slate-900">
-                    <img src="{{ $profile->profile_image }}" alt="{{ $profile->name }}" class="w-12 h-12 rounded-full border-2 border-blue-500/20">
+                <div class="flex items-center gap-4 py-8 border-y border-slate-900/50">
+                    <div class="relative group">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full opacity-25 group-hover:opacity-50 transition-opacity blur-sm"></div>
+                        <img src="{{ $profile->profile_image }}" alt="{{ $profile->name }}" class="relative w-14 h-14 rounded-full border-2 border-slate-800 object-cover object-top shadow-xl" style="image-rendering: -webkit-optimize-contrast;">
+                    </div>
                     <div>
-                        <span class="block text-white font-bold text-sm">{{ $profile->name }}</span>
-                        <span class="block text-slate-500 text-xs font-bold uppercase tracking-widest">Author & Developer</span>
+                        <span class="block text-white font-black text-base tracking-tight leading-none mb-1">{{ $profile->name }}</span>
+                        <div class="flex items-center gap-2">
+                            <span class="text-blue-400 font-bold text-[10px] uppercase tracking-[0.2em]">Author</span>
+                            <span class="w-1 h-1 bg-slate-700 rounded-full"></span>
+                            <span class="text-slate-500 font-bold text-[10px] uppercase tracking-[0.2em]">Web Developer</span>
+                        </div>
                     </div>
                 </div>
             </header>

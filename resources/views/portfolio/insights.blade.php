@@ -94,8 +94,14 @@
 
                     <div class="mt-auto flex items-center justify-between">
                         <div class="flex items-center gap-3">
-                            <img src="{{ $profile->profile_image }}" alt="{{ $profile->name }}" class="w-8 h-8 rounded-full border border-slate-700">
-                            <span class="text-xs font-bold text-slate-300">{{ $profile->name }}</span>
+                            <div class="relative">
+                                <img src="{{ $profile->profile_image }}" alt="{{ $profile->name }}" class="w-10 h-10 rounded-full border border-slate-700 object-cover object-top shadow-sm" style="image-rendering: -webkit-optimize-contrast;">
+                                <div class="absolute inset-0 rounded-full border border-white/5"></div>
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-xs font-black text-white leading-none">{{ $profile->name }}</span>
+                                <span class="text-[9px] font-bold text-slate-500 uppercase tracking-widest mt-1">Author</span>
+                            </div>
                         </div>
                         
                         <a href="{{ route('insights.show', $insight->id) }}" class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-xs font-black uppercase tracking-widest transition-colors group/link">
