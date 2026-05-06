@@ -49,8 +49,8 @@
           "type": "certification"
         },
         {
-          "title": "Tara, Basa! Solution",
-          "content": "Developed a zero-budget matching system for DSWD tutoring centers.",
+          "title": "DSWD program matching challenge",
+          "content": "Developed a zero-budget matching system for DSWD tutoring program in 2024. Used in 7 implementing Regions of the Program. The System was built using Java and requires AppScript support for the Longitude and Latitude data needed by the Java program. ",
           "type": "project"
         }
       ]
