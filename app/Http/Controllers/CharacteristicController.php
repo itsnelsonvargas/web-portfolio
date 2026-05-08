@@ -62,16 +62,23 @@ class CharacteristicController extends Controller
             return (object) $link;
         });
 
-        // Find the specific characteristic by ID
-        $characteristic = $this->fileDataService->read('characteristics.json')
-            ->where('id', $character)
-            ->first();
+        // Load all characteristics to find current, next, and previous
+        $allCharacteristics = $this->fileDataService->read('characteristics.json');
+        
+        $currentIndex = $allCharacteristics->search(function ($item) use ($character) {
+            return $item['id'] === $character;
+        });
 
-        if (!$characteristic) {
+        if ($currentIndex === false) {
             return redirect()->route('characteristic.index');
         }
 
-        $characteristic = (object) $characteristic;
+        $characteristic = (object) $allCharacteristics[$currentIndex];
+        
+        // Find next and previous
+        $prevCharacteristic = $currentIndex > 0 ? (object) $allCharacteristics[$currentIndex - 1] : null;
+        $nextCharacteristic = $currentIndex < $allCharacteristics->count() - 1 ? (object) $allCharacteristics[$currentIndex + 1] : null;
+
         // Convert proofs to objects if they exist
         if (isset($characteristic->proofs)) {
             $characteristic->proofs = collect($characteristic->proofs)->map(function ($proof) {
@@ -79,6 +86,12 @@ class CharacteristicController extends Controller
             });
         }
 
-        return view('portfolio.characteristic-detail', compact('profile', 'characteristic', 'socialLinks'));
+        return view('portfolio.characteristic-detail', compact(
+            'profile', 
+            'characteristic', 
+            'socialLinks', 
+            'prevCharacteristic', 
+            'nextCharacteristic'
+        ));
     }
 }

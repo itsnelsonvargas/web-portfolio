@@ -184,4 +184,28 @@ class PortfolioController extends Controller
 
         return back()->with('success', 'Thank you for your message! I will get back to you soon.');
     }
+
+    /**
+     * Show the consultancy service page
+     */
+    public function consultancy()
+    {
+        $fileDataService = new FileDataService;
+
+        // Load profile
+        $profileData = $fileDataService->first('profile.json');
+        $profile = (object) ($profileData ?? [
+            'name' => 'Nelson Vargas',
+            'title' => 'Web Developer',
+            'email' => 'hello@nelvargas.com',
+            'profile_image' => '/images/portfolio-image.JPG',
+        ]);
+
+        // Load social links
+        $socialLinks = $fileDataService->read('social_links.json')->map(function ($link) {
+            return (object) $link;
+        });
+
+        return view('portfolio.consultant', compact('profile', 'socialLinks'));
+    }
 }

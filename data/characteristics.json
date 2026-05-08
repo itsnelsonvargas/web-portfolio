@@ -7,7 +7,7 @@
       "examples": [
         "I wake up at 5:00 AM to start my day early.",
         "I report to work at 7:00 AM even though the official start time is 9:00 AM.",
-        "I was once called a FIFO (First In, FIrst Out) during a company's social event for being early"
+        "I was once called a FIFO (First In, First Out) during a company's social event for being early"
       ],
       "proofs": [
         {
@@ -66,7 +66,7 @@
       "proofs": [
         {
           "title": "Self-Directed Learning",
-          "content": "Independently mastered modern web frameworks (React, Laravel, Tailwind) through documentation and hands-on projects.",
+          "content": "Independently mastered programming languages and frameworks (Java, Laravel, Vue.js, etc.) through documentation and hands-on projects.",
           "type": "text"
         }
       ]

@@ -151,6 +151,41 @@
                     @endforelse
                 </div>
                 
+                <!-- Navigation Buttons -->
+                <div class="flex flex-col sm:flex-row items-center justify-between gap-6 pt-12 border-t border-slate-800 animate-fadeIn" style="animation-delay: 0.4s">
+                    @if($prevCharacteristic)
+                        <a href="{{ route('characteristic.show', $prevCharacteristic->id) }}" class="group flex items-center gap-4 bg-slate-900/50 hover:bg-slate-900 border border-slate-800 hover:border-blue-500/50 px-6 py-4 rounded-2xl transition-all w-full sm:w-auto">
+                            <div class="w-10 h-10 flex items-center justify-center bg-slate-800 rounded-xl group-hover:bg-blue-600 transition-colors">
+                                <svg class="w-5 h-5 text-slate-400 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                                </svg>
+                            </div>
+                            <div class="text-left">
+                                <span class="block text-[10px] font-black text-slate-500 uppercase tracking-widest mb-0.5">Previous</span>
+                                <span class="block text-white font-bold">{{ $prevCharacteristic->characteristic }}</span>
+                            </div>
+                        </a>
+                    @else
+                        <div class="hidden sm:block"></div>
+                    @endif
+
+                    @if($nextCharacteristic)
+                        <a href="{{ route('characteristic.show', $nextCharacteristic->id) }}" class="group flex items-center justify-end gap-4 bg-slate-900/50 hover:bg-slate-900 border border-slate-800 hover:border-blue-500/50 px-6 py-4 rounded-2xl transition-all w-full sm:w-auto">
+                            <div class="text-right">
+                                <span class="block text-[10px] font-black text-slate-500 uppercase tracking-widest mb-0.5">Next Up</span>
+                                <span class="block text-white font-bold">{{ $nextCharacteristic->characteristic }}</span>
+                            </div>
+                            <div class="w-10 h-10 flex items-center justify-center bg-slate-800 rounded-xl group-hover:bg-blue-600 transition-colors">
+                                <svg class="w-5 h-5 text-slate-400 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </div>
+                        </a>
+                    @else
+                        <div class="hidden sm:block"></div>
+                    @endif
+                </div>
+                
                 <!-- CTA -->
                 <div class="pt-12">
                     <div class="bg-gradient-to-r from-blue-600 to-cyan-600 rounded-3xl p-10 text-center">
