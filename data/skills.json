@@ -400,8 +400,11 @@
         "category": "Tools",
         "proficiency": 86,
         "logo_url": "https://icon.icepanel.io/Technology/svg/TortoiseGit.svg"
+    },
+    {
+        "name": "Google Antigravity",
+        "category": "AI",
+        "proficiency": 95,
+        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Google_Antigravity_Logo.svg"
     }
-
-
-
 ]
