@@ -1,0 +1,11 @@
+{
+    "id": "leveraging-laravel-for-scale",
+    "title": "Leveraging Laravel for High-Scale Applications",
+    "excerpt": "How to architect Laravel applications that handle thousands of requests per second without breaking a sweat.",
+    "category": "Architecture",
+    "date": "2024-05-15",
+    "author": "Nelson Vargas",
+    "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1000",
+    "reading_time": "8 min read",
+    "content": "Full content for Leveraging Laravel for High-Scale Applications will go here..."
+}
