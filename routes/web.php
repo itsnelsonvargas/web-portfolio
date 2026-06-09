@@ -13,7 +13,9 @@ use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ResumeController;
 use App\Http\Controllers\DownloadController;
 use App\Http\Controllers\InsightController;
-use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Route; 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 // Health check endpoint for Docker/Render
 Route::get('/health', function () {
@@ -27,7 +29,13 @@ Route::get('/portfolio-feedback', [ReviewController::class, 'index'])->name('rev
 Route::post('/portfolio-feedback', [ReviewController::class, 'store'])->name('review.store');
 Route::view('/web-cost-calculator', 'web-calculator')->name('web-calculator');
 
-Route::get('/certificates', function () {
+Route::get('/certificates', function (Request $request) {
+    Log::info('Certificates visited', [
+        'ip' => $request->ip(),
+        'user_agent' => $request->userAgent(),
+        'referer' => $request->headers->get('referer'),
+    ]);
+    
     return redirect('https://drive.google.com/drive/folders/1Q37Vv1HtMCmLBKvg0XG6WA1B7uvZQziW');
 })->name('certificates');
 
