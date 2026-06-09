@@ -30,6 +30,7 @@ Route::post('/portfolio-feedback', [ReviewController::class, 'store'])->name('re
 Route::view('/web-cost-calculator', 'web-calculator')->name('web-calculator');
 
 Route::get('/certificates', function (Request $request) {
+    
     Log::info('Certificates visited', [
         'ip' => $request->ip(),
         'user_agent' => $request->userAgent(),
