@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\LogController;
 use App\Http\Controllers\Admin\PasswordController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\ReviewManagementController;
@@ -72,6 +73,8 @@ Route::prefix('admin')->name('admin.')->middleware(['admin'])->group(function ()
 
     Route::get('/reviews', [ReviewManagementController::class, 'index'])->name('reviews.index');
     Route::delete('/reviews/{id}', [ReviewManagementController::class, 'destroy'])->name('reviews.destroy');
+
+    Route::get('/logs', [LogController::class, 'index'])->name('logs.index');
 });
 
 Route::get('/resume/{category}', [ResumeController::class, 'index'])->name('resume.index');
